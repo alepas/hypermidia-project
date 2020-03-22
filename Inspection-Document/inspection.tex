@@ -1,0 +1,134 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+
+%Figure progressive enumeration
+\usepackage{chngcntr}
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+
+%package used to enumerate figures
+\usepackage[labelfont=bf]{caption}
+
+%hyperref for interactive PDF index
+\usepackage[bookmarks, colorlinks, breaklinks]{hyperref}
+\hypersetup{linkcolor=black, citecolor=black, filecolor=black, urlcolor=black}
+
+%Package required to use special symbols
+\usepackage{amsmath, amssymb}
+
+%Package required to use figures
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{placeins}
+
+%Include the bibliography in the table of contents
+\usepackage{tocbibind}
+
+%Package used to insert figures at the specified position
+\usepackage{float}
+\usepackage{longtable}
+
+%Our chapters must be called sections
+\addto\captionsenglish{\renewcommand{\chaptername}{Section}}
+
+%Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Stefano Bagarin - Alessandra Pasini}
+\lhead{Usability Evaluation Study 1: Inspection}
+
+\begin{document}
+
+	%Code for title page
+	\begin{titlepage}
+		\centering
+		\includegraphics[width=0.20\textwidth]{./assets/polimi-logo.png}\par
+
+		{Politecnico di Milano \\ AA 2019/2020} \par
+		\vspace{1.5cm}
+
+		{Computer Science and Engineering}\par
+		\Large{Hypermidia Applications}\par
+		\vspace{1.0cm}
+
+		{\LARGE \textbf{Usability Evaluation Study 1: Inspection} \par}
+		\vspace{1.5cm}
+
+		{\normalsize {\textbf{Stefano Bagarin}: mrt. 945159 -  stefano.bagarin@mail.polimi.it }\par}
+		\vspace{0.2cm}
+		{\normalsize{\textbf{Alessandra Pasini}: mtr. 920051 - alessandra.pasini@mail.polimi.it}\par}
+		\vspace{1.0cm}
+		
+		{\normalsize {\textbf{Inspected website}: \url{https://www.visitmonterosa.com/}}\par}
+		\vspace{0.2cm}
+		{\normalsize {\textbf{Delivery Date}: }\par}
+		\vfill
+
+		% Bottom of the page
+		{\large Document version: 1.0\par}
+		{\large \today \par}
+	\end{titlepage}
+
+	%Make the table of contents
+	\tableofcontents
+
+	%Abstract
+	\chapter{Abstract}
+	\label{ch:Abstract}
+
+	\input{./sections/abstract.tex}
+
+
+	%Inspection Methods
+	\chapter{Inspection Methods}
+	\label{ch: Inspection Methods}
+
+	\section{Overview}
+	Testo che dice le fasi tutte in modo scritto come le ha messe lei ma senza i pallini e un’analisi dettagliata
+
+	\section{Heuristic}
+
+	\section{Scoring Method}
+
+	\section{Goals}
+
+	\section{Final Evaluation}
+Verrà analizzato nel capito dopo
+Introduzione dicendo che i valori sono ottenuti secondo la metrica scelta dai valori individuali che si trovano nell’appendice
+
+
+	\section{Report}
+
+
+
+	%Agreed scores on each individual heuristics
+	\chapter{Agreed scores on each individual heuristics}
+	\label{ch: Agreed scores on each individual heuristics}
+
+	\section{Navigation}
+
+	\section{Content}
+
+	\section{Layout}
+
+
+	%Aggregated Results and Discussion
+	\chapter{Aggregated Results and Discussion}
+	\label{ch: Aggregated Results and Discussion}
+Con charts tipo lavoro
+
+
+	%Conclusions
+	\chapter{Conclusions}
+	\label{ch:Conclusions}
+
+
+	%Appendix
+	\appendix
+	\chapter{Appendix}
+
+\end{document}
