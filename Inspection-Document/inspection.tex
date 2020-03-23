@@ -1,13 +1,12 @@
-\documentclass[a4paper,12pt]{report}
+\documentclass[11pt, a4paperm, hidelinks]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{lmodern}
 
-%Figure progressive enumeration
+
+\usepackage[a4paper,top=3cm,bottom=3cm,left=3cm,right=3cm]{geometry}
 \usepackage{chngcntr}
-\counterwithin{figure}{chapter}
-\counterwithin{table}{chapter}
 
 %package used to enumerate figures
 \usepackage[labelfont=bf]{caption}
@@ -31,6 +30,8 @@
 \usepackage{float}
 \usepackage{longtable}
 
+\usepackage{times}
+
 %Our chapters must be called sections
 \addto\captionsenglish{\renewcommand{\chaptername}{Section}}
 
@@ -40,6 +41,7 @@
 \fancyhf{}
 \rhead{Stefano Bagarin - Alessandra Pasini}
 \lhead{Usability Evaluation Study 1: Inspection}
+\rfoot{Page \thepage}
 
 \begin{document}
 
@@ -75,60 +77,70 @@
 
 	%Make the table of contents
 	\tableofcontents
+	\clearpage
+
 
 	%Abstract
-	\chapter{Abstract}
-	\label{ch:Abstract}
-
+	%\chapter{Abstract}
+	%\label{ch:Abstract}
+	\section{Abstract}
 	\input{./sections/abstract.tex}
+	\clearpage
 
 
 	%Inspection Methods
-	\chapter{Inspection Methods}
-	\label{ch: Inspection Methods}
+	%\chapter{Inspection Methods}
+	%\label{ch: Inspection Methods}
+	\section{Inspection Methods}
 
-	\section{Overview}
-	Testo che dice le fasi tutte in modo scritto come le ha messe lei ma senza i pallini e un’analisi dettagliata
+	\subsection{Overview}
+	\input{./sections/inspection-methods/overview.tex}
 
-	\section{Heuristic}
+	\subsection{Heuristic}
+	\input{./sections/inspection-methods/heuristics.tex}
 
-	\section{Scoring Method}
+	\subsection{Scoring Metrics}
+	\input{./sections/inspection-methods/scoring-methods.tex}
 
-	\section{Goals}
+	\subsection{Goals}
+	\input{./sections/inspection-methods/goals.tex}
 
-	\section{Final Evaluation}
+	\subsection{Final Evaluation}
 Verrà analizzato nel capito dopo
 Introduzione dicendo che i valori sono ottenuti secondo la metrica scelta dai valori individuali che si trovano nell’appendice
 
 
-	\section{Report}
+	\subsection{Report}
 
 
 
 	%Agreed scores on each individual heuristics
-	\chapter{Agreed scores on each individual heuristics}
-	\label{ch: Agreed scores on each individual heuristics}
+	%\chapter{Agreed scores on each individual heuristics}
+	%\label{ch: Agreed scores on each individual heuristics}
+	\section{Agreed scores on each individual heuristics}
 
-	\section{Navigation}
+	\subsection{Navigation}
 
-	\section{Content}
+	\subsection{Content}
 
-	\section{Layout}
+	\subsection{Layout}
 
 
 	%Aggregated Results and Discussion
-	\chapter{Aggregated Results and Discussion}
-	\label{ch: Aggregated Results and Discussion}
+	%\chapter{Aggregated Results and Discussion}
+	%\label{ch: Aggregated Results and Discussion}
+	\section{Aggregated Results and Discussion}
 Con charts tipo lavoro
 
 
 	%Conclusions
-	\chapter{Conclusions}
-	\label{ch:Conclusions}
+	%\chapter{Conclusions}
+	%\label{ch:Conclusions}
+	\section{Conclustion}
 
 
 	%Appendix
 	\appendix
-	\chapter{Appendix}
+	%\chapter{Appendix}
 
 \end{document}
