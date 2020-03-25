@@ -22,6 +22,7 @@
 \usepackage{graphicx}
 \usepackage{subfig}
 \usepackage{placeins}
+\usepackage{wrapfig}
 
 %Include the bibliography in the table of contents
 \usepackage{tocbibind}
@@ -103,34 +104,31 @@
 	\clearpage
 
 
-
 	%Agreed scores on each individual heuristics
 	\section{Agreed scores on each individual heuristics}
 
 	\subsection{Navigation}
+	\input{./sections/aggregated-scores/navigation.tex}
 
 	\subsection{Content}
+	\input{./sections/aggregated-scores/contents.tex}
 
 	\subsection{Layout}
-
+	\input{./sections/aggregated-scores/layout.tex}
 	\clearpage
+
 
 	%Aggregated Results and Discussion
-	\section{Aggregated Results and Discussion}
-Con charts tipo lavoro
-
-
-
-
+	\section{Aggregated Results and Conclusion}
+	\input{./sections/aggregated-results.tex}
 	\clearpage
 
-
-	%Conclusions
-	\section{Conclustion}
-
+	\section{Conclusion}
+	\clearpage
 
 	%Appendix
 	\appendix
-	%\chapter{Appendix}
+	\section{Annex}
+	\input{./sections/annex.tex}
 
 \end{document}
