@@ -40,6 +40,16 @@ header {
     height: 135px;
 }
 
+.spacer-small{
+    width: 100%;
+    height: 50px;
+}
+
+.spacer-medium{
+    width: 100%;
+    height: 100px;
+}
+
 footer {
     position: sticky;
     height: 300px;
@@ -201,14 +211,14 @@ ul.breadcrumb li a:hover{
 .grid-container {
     position: relative;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 30px;
-    grid-row-gap: 5%;
+    grid-row-gap: 10%;
     padding: 3% 3%;
     padding-bottom: 10%;
 }
 
-.grid-container div {
+.grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     
@@ -220,8 +230,9 @@ ul.breadcrumb li a:hover{
 }
 
 .grid-item-img {
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 90%;
     border-radius: 0.2em;
 }
 
@@ -245,13 +256,107 @@ ul.breadcrumb li a:hover{
 }
 
 
+/*event presentation*/
+.event-presentation {
+    width: 100%;
+    position: relative;
+}
+
+.event-presentation-left {
+    float: left;
+    width: 65%;
+
+}
+
+.event-presentation-img {
+    width: 600px;
+    position: relative;
+    display:block;
+    border:none;
+    margin: 0 auto;
+}
+
+.event-presentation-right {
+    float: left;
+    width: 35%;
+    height: 400px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.event-presentation h2 {
+    font-weight: bold;
+}
+
+/*Event organizer*/
+.event-organizer-container {
+    position: relative;
+    width: 100%;
+}
+
+.event-organizer {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 600px;
+    height: 180px;
+    text-align: center;
+    
+    position: relative;
+    display:block;
+    border:none;
+    margin: 0 auto;
+    
+    font-size: 30px;
+    border-radius: 0.2em;
+    
+    border: 1.5px solid #3db54a;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+.event-organizer-left {
+    position: relative;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    float: left;
+
+}
+
+.event-organizer-right {
+    background-color: transparent;
+    position: relative;
+    display: table;
+    width: 70%;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+.event-organizer-right span {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+.event-organizer-right p{
+    font-size: small;
+}
+
+.event-organizer-right h1{
+    font-size: medium;
+    font-weight: bold;
+}
+
+.event-organizer-left img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.2em;
+}
 
 /*Grids for involved volunteers*/
 
 .grid-container-volunteers {
     position: relative;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 30px;
     grid-row-gap: 5%;
     padding: 3% 3%;
@@ -268,7 +373,7 @@ ul.breadcrumb li a:hover{
     font-size: 30px;
     border-radius: 0.2em;
     
-    border: 0.5px solid #3db54a;
+    border: 1.5px solid #3db54a;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
@@ -310,12 +415,12 @@ ul.breadcrumb li a:hover{
 }
 
 
-/*Grids for related events*/
+/*Grids for related events and services*/
 
 .grid-container-related-events {
     position: relative;
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 30px;
     grid-row-gap: 5%;
     padding: 3% 3%;
@@ -332,7 +437,7 @@ ul.breadcrumb li a:hover{
     font-size: 30px;
     border-radius: 0.2em;
     
-    border: 0.5px solid #3db54a;
+    border: 1.5px solid #3db54a;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
