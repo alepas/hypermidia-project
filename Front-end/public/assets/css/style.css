@@ -93,7 +93,7 @@ footer, footer section, footer div, footer div p, footer div ul li, footer div u
 .nav_links li a:hover , .events-dropdown:hover {
     color: #3db54a;
     text-decoration: none;
-  }
+}
 
 .nav-logo{
     display:inline-block;
@@ -241,20 +241,6 @@ ul.breadcrumb li a:hover{
     top: 0px;
     right: 0px;
 }
-
-.pagination {
-    color: black;
-    padding: 3% 3%;
-    text-decoration: none;
-    transition: background-color .3s;
-}
-
-.pagination a {
-    color: black;
-    text-decoration: none;
-    transition: background-color .3s;
-}
-
 
 /*event presentation*/
 .event-presentation {
@@ -568,4 +554,113 @@ ul.breadcrumb li a:hover{
 
 .active, .carousel-dot:hover {
   background-color: #717171;
+}
+
+
+/*Division of pages with filters into the left*/
+
+.col-8 div {
+    height: 550px;
+}
+
+#about-menu ul li a:hover {
+    color: #ffffff;
+    background-color: #1a6735;
+    text-decoration: none;
+    border-radius: 0.5em;
+}
+
+#about-menu ul {
+    position: fixed;
+    align-content: center;
+    padding: 3%;
+    border: 1px solid #000000; 
+    box-shadow:1px 2px 15px rgba(100,100,100,0.3);
+    border-radius: 0.2em;
+}
+
+.active a {
+    color: #3db54a;
+    background-color: #ffffff;
+}
+
+/*Pagination*/
+@import url('https://rsms.me/inter/inter-ui.css');
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6%;
+    margin-top: 3%;
+}
+
+.pagination {
+    display: inline-block;
+    position: relative;
+}
+
+.index {
+    cursor: pointer;
+    display: inline;
+    margin-right: 30px;
+    padding: 5px;
+}
+
+.index:last-child {
+    margin: 0;
+}
+
+svg {
+    left: -13px;
+    top: -11px;
+    position: absolute;
+    background-color: transparent;
+    transition: transform 500ms;
+    width: 45px;
+}
+
+path {
+    fill: transparent;
+    stroke:#2FB468;
+    stroke-dasharray: 150 150;
+    stroke-width:15;
+}
+
+.pagination.open:not(.flip) path {
+    animation: OpenRight 500ms;
+}
+
+.pagination.open.flip path {
+    animation: OpenLeft 500ms;
+}
+.pagination.i1 svg {
+    transform: translateX(0);
+}
+
+.pagination.i2 svg {
+    transform: translateX(50px);
+}
+
+.pagination.i3 svg {
+    transform: translateX(102px);
+}
+
+.pagination.i4 svg {
+    transform: translateX(154px);
+}
+
+.pagination.i5 svg {
+    transform: translateX(206px);
+}
+
+@keyframes OpenRight {
+    25% { stroke-dasharray: 100 150; }
+    60% { stroke-dasharray: 100 150; }
+    100% { stroke-dasharray: 150 150; }
+}
+
+@keyframes OpenLeft {
+    25% { stroke-dashoffset: -50px; }
+    60% { stroke-dashoffset: -50px; }
+    100% { stroke-dashoffset: 0; }
 }
