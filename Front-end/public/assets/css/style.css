@@ -244,9 +244,86 @@ ul.breadcrumb li a:hover{
     right: 0px;
 }
 
+/*Grids of people*/
+.grid-container-volunteers {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-gap: 30px;
+    grid-row-gap: 5%;
+    padding: 3% 3%;
+    padding-bottom: 10%;
+}
+.grid-container-volunteers-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    float: left;
+
+    font-size: 50px;
+    border-radius: 0.2em;
+
+    
+    border: 1.5px solid #3db54a;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+.grid-container-volunteers-img {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    float: left;
+
+}
+
+.grid-container-volunteers-text {
+    background-color: transparent;
+    display: table;
+    width: 70%;
+    height: 100%;
+    margin-top: 5%;
+    text-align: center;
+    justify-content: center;
+    float: left;
+}
+.grid-container-volunteers-text span {
+    display: table-cell;
+    font-size: 50px;
+
+    vertical-align: middle;
+  }
+
+.grid-container-volunteers p{
+    font-size: small;
+    font-weight: normal;
+}
+
+.grid-container-volunteers h1{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.grid-container-volunteers img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.2em;
+}
+
+/*People navbar*/
+#people-navbar {
+    height: fit-content;
+    margin-top: 50px;
+    margin-left: 2%;
+}
+
+
 /*event presentation*/
 .event-presentation {
     width: 100%;
+    height: 400px;
     position: relative;
 }
 
@@ -274,6 +351,64 @@ ul.breadcrumb li a:hover{
 }
 
 .event-presentation h2 {
+    font-weight: bold;
+}
+
+/*person data*/
+.person-name{
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    text-align: center;  
+    border-bottom:1px solid #3db54a;
+
+}
+.person-name h1{
+    font-weight: bold;
+    font-size: xx-large;
+    
+}
+
+.person-data {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.person-data-left {
+    float: left;
+    width: 35%;
+
+}
+
+.person-data-img {
+    width: 300px;
+    position: relative;
+    display:block;
+    border:none;
+    margin: 0 auto;
+}
+
+.person-data-middle {
+    float: left;
+    width: 30%;
+    height: 300px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.person-data-right {
+    float: left;
+    width: 35%;
+    height: 300px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.person-data h2 {
     font-weight: bold;
 }
 
@@ -341,7 +476,7 @@ ul.breadcrumb li a:hover{
 
 /*Grids for involved volunteers*/
 
-.grid-container-volunteers {
+.grid-container-involved-volunteers {
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -351,7 +486,7 @@ ul.breadcrumb li a:hover{
     padding-bottom: 10%;
 }
 
-.grid-container-volunteers-item {
+.grid-container-involved-volunteers-item {
     background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
     height: 100%;
@@ -365,7 +500,7 @@ ul.breadcrumb li a:hover{
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
-.grid-container-volunteers-img {
+.grid-container-involved-volunteers-img {
     background-color: rgba(255, 255, 255, 0.8);
     width: 30%;
     height: 100%;
@@ -374,7 +509,7 @@ ul.breadcrumb li a:hover{
 
 }
 
-.grid-container-volunteers-text {
+.grid-container-involved-volunteers-text {
     background-color: transparent;
     display: table;
     width: 70%;
@@ -382,21 +517,21 @@ ul.breadcrumb li a:hover{
     text-align: center;
     float: left;
 }
-.grid-container-volunteers-text span {
+.grid-container-involved-volunteers-text span {
     display: table-cell;
     vertical-align: middle;
   }
 
-.grid-container-volunteers p{
+.grid-container-involved-volunteers p{
     font-size: small;
 }
 
-.grid-container-volunteers h1{
+.grid-container-involved-volunteers h1{
     font-size: medium;
     font-weight: bold;
 }
 
-.grid-container-volunteers img {
+.grid-container-involved-volunteers img {
     width: 100%;
     height: 100%;
     border-radius: 0.2em;
