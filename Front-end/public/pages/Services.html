@@ -21,7 +21,7 @@
         <!--Font Link-->
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body style="min-height: 100%;">
         <!-- Top bar: this is our top landmark-->
         <header>
             <a href="../index.html">
@@ -57,9 +57,9 @@
         <div class="title-group">
             <p>Services</p>
         </div>
-
+        
         <!--Grid for services-->
-        <div class="grid-container">
+        <div class="grid-container" style="height: calc(100% 300px); max-height: calc(100% 250px); overflow-y: auto; overflow: hidden;">
             <div class="grid-item">
                 <div class="grid-item-title">
                     We love ermines
@@ -159,10 +159,11 @@
                 </svg>
             </div>
         </div>
+
         <!--Javascript-->
         <script src="../assets/js/scriptPagination.js"></script>
                 
-        <footer>
+        <footer class="page-footer">
             <section class='footer-section'>
                 <a href="#">Donate</a>
                 <a href="#" style="margin-left: -20px">Contact Form</a>
