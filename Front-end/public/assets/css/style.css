@@ -220,7 +220,11 @@ ul.breadcrumb li a:hover{
     padding-bottom: 10%;
 }
 
-.grid-item {
+.grid-item{
+    height: auto;
+}
+
+.card {
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     
