@@ -190,6 +190,15 @@ ul.breadcrumb li a:hover{
     margin-right: 3%;
 }
 
+.title-group-noline  {
+    text-align: center;
+    font-size:22px;
+    font-weight: bold;
+    margin-top: -15px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
 /*Grids of people*/
 .people-grid-container {
     display: grid;
@@ -590,8 +599,8 @@ ul.breadcrumb li a:hover{
 
 
 /* Carousel container */
-.casousel-container {
-    position: absolute;
+.casousel-containera {
+    position: relative;
     width: 1000px;
     z-index: 1;
     margin: 0 auto;
@@ -599,7 +608,7 @@ ul.breadcrumb li a:hover{
 }
 
 /* Hide the images by default */
-.carousel-item {
+.carousel-itema {
     position: relative;
     display: none;
     align-items: center;
@@ -608,17 +617,6 @@ ul.breadcrumb li a:hover{
     border:none;
     margin: 0 auto;
 }
-
-.carousel-item-index {
-    position: relative;
-    display: none;
-    align-items: center;
-    display:block;
-    width: 100%;
-    border:none;
-    margin: 0 auto;
-}
-
 
 /* carousel image*/
 .carousel-item-img{
@@ -670,17 +668,6 @@ ul.breadcrumb li a:hover{
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* Number text (1/3 etc) */
-.carousel-item-num {
-  color: white;
-  z-index: 2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-  background: transparent;
-}
-
 /* The dots/bullets/indicators */
 .carousel-dot {
   cursor: pointer;
@@ -696,6 +683,95 @@ ul.breadcrumb li a:hover{
 .active, .carousel-dot:hover {
   background-color: #717171;
 }
+
+
+/*index carousel*/
+
+
+/* Hide the images by default */
+.carousel-item-index {
+    position: relative;
+    display: none;
+    align-items: center;
+    display:block;
+    width: 100%;
+    border:none;
+    margin: 0 auto;
+}
+
+/* Next & previous buttons */
+.carousel-prev-index, .carousel-next-index {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(190, 182, 182, 0.4);
+}
+
+/* Position the "next button" to the right */
+.carousel-next-index {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.carousel-prev-index:hover, .carousel-next-index:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+
+/* Month container */
+.month-containera {
+    position: relative;
+    width: auto;
+    z-index: 1;
+    border-bottom:1px solid #3db54a;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 20px;
+}
+
+/* Hide the elements by default */
+.month-itema {
+    position: relative;
+    display: none;
+    display: grid;
+    white-space: nowrap;
+    width: 600px;
+    border:none;
+    align-items: center;
+}
+
+/* Text */
+.month-item-text {
+  font-size: 25px;
+  padding: 2px 3px;
+  position: relative;
+  display: inline-block;
+    margin: 20px;
+}
+
+/* Next & previous buttons */
+.month-prev, .month-next {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: auto;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
 
 
 /*Division of pages with filters into the left*/
@@ -723,6 +799,77 @@ ul.breadcrumb li a:hover{
 .active a {
     color: #3db54a;
     background-color: #ffffff;
+}
+
+/*Buttond for faq*/
+.btn-block{
+    background-color: white;
+    border-color: green;
+    color: green;
+    font-size: x-large;
+    margin-top: 1.5%;
+    margin-left: 10%;
+    max-width: 80%;
+}
+
+.btn-block:hover{
+    background-color: green;
+    border-color: green;
+    color: white;
+    font-size: x-large;
+    margin-top: 1.5%;
+    margin-left: 10%;
+    max-width: 80%;
+}
+
+.btn-block::selection{
+        background-color: green;
+        border-color: green;
+        color: white;
+        font-size: x-large;
+        margin-top: 1.5%;
+        margin-left: 10%;
+        max-width: 80%;
+}
+
+.btn-block:active{
+    background-color: green;
+    border-color: green;
+    color: white;
+    font-size: x-large;
+    margin-top: 1.5%;
+    margin-left: 10%;
+    max-width: 80%;
+}
+
+.btn-block:checked{
+    background-color: green;
+    border-color: green;
+    color: white;
+    font-size: x-large;
+    margin-top: 1.5%;
+    margin-left: 10%;
+    max-width: 80%;
+}
+
+/*Cards for faq*/
+.faq-answer .card {
+    display: none;
+    width: 80%;
+    margin-left: 10%;
+
+    text-align: center;
+    
+    font-size: 30px;
+    border-radius: 0.2em;
+    
+    border: 2px solid #3db54a;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+/*Button form*/
+.form-button .btn{
+    border-radius: 1em;
 }
 
 /*Pagination*/
