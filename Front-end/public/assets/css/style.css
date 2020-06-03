@@ -163,6 +163,7 @@ li.dropdown {
 that is used as a specific stuff for orientation links*/
 ul.breadcrumb {
   padding: 10px 16px;
+  margin-left: 2%;
   list-style: none;
   background-color: #ffffff;
 }
@@ -242,6 +243,14 @@ ul.breadcrumb li a:hover{
     
     border: 0.5px solid #3db54a;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+.card-body{
+    border-radius: 0.2em;
+}
+
+.card-img{
+    border-radius: 0.2em;
 }
 
 .grid-item-img {
@@ -780,6 +789,7 @@ ul.breadcrumb li a:hover{
     height: 550px;
 }
 
+
 #about-menu ul li a:hover {
     color: #ffffff;
     background-color: #1a6735;
@@ -791,9 +801,13 @@ ul.breadcrumb li a:hover{
     position: fixed;
     align-content: center;
     padding: 3%;
-    border: 1px solid #000000; 
+    border: 3px solid #3db54a; 
     box-shadow:1px 2px 15px rgba(100,100,100,0.3);
     border-radius: 0.2em;
+    background-color: rgb(188, 231, 188);
+}
+#about-menu ul li, h3{
+    background-color: transparent;
 }
 
 .active a {
@@ -870,6 +884,54 @@ ul.breadcrumb li a:hover{
 /*Button form*/
 .form-button .btn{
     border-radius: 1em;
+}
+
+/*Event filters*/
+.event-filters .card{
+    margin-top: 9%;
+    border: 3px solid #3db54a;
+    border-radius: 5em;
+    font-size: small;
+}
+
+.event-filters .card-body{
+    border-radius: 5em;
+    background-color: rgb(188, 231, 188);
+    font-size: small;
+}
+
+.event-filters .form-check-input{
+    display: inline-block;
+    background-color: transparent;
+}
+
+.event-filters .form-check-label{
+    display: inline-block;
+    background-color: transparent;
+    margin-top: 3px;
+    margin-left: 20px;
+}
+
+.event-filters .form-check{
+    text-align: left;
+    padding-left: 10%;
+    background-color: transparent;
+}
+
+.event-filters h3{
+    font-weight: bolder;
+    background-color: transparent;
+}
+
+.event-filters h4{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-weight: bold;
+    background-color: transparent
+}
+
+.event-filters div{
+    background-color: transparent;
 }
 
 /*Pagination*/
