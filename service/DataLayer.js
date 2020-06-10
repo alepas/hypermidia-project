@@ -8,8 +8,8 @@ client: "pg",
 connection: {
     host: process.env.DATABASE_URL,
     port: 5432,
-    user: 'postgres',
-    password: 'password'
+    user: 'tevjuzdetgjkdz',
+    password: '3bf167276e24a6a03c82d2918752ffe9087abaeb6fe1a8e4c08d57943b3db7da'
 },
 ssl: true
 });
