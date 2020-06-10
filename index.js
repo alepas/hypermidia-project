@@ -1,7 +1,7 @@
 'use strict';
 let serveStatic = require('serve-static');
 
-process.env.DATABASE_URL = "localhost";
+//process.env.DATABASE_URL = "localhost";
 console.log(process.env.DATABASE_URL);
 
 let { setupDataLayer } = require("./service/DataLayer");
