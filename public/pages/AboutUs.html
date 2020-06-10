@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Wild Care</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Menu laterale-->        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+        <!--Style Sheet-->
+        <link href="../assets/css/style.css" rel="stylesheet"/>
+
+        <!--Icons Libraries-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!--Font Link-->
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    </head>
+    <body data-spy="scroll" data-target="#about-menu" data-offset="0" style="margin:0; min-height: 100%; ">
+        <!-- Top bar: this is our top landmark-->
+        <header>
+            <a href="../index.html">
+                <img src="../assets/logo.png" class='nav-logo'>
+            </a>
+            <nav>
+                <ul class='nav_links'>
+                    <li><a href="./AboutUs.html">About Us</a></li>
+                    <li class='dropdown'>
+                        <a href="javascript:void(0)">Events</a>
+                        <i class="material-icons">keyboard_arrow_down</i>
+                        <div class='events-dropdown'>
+                            <a href="./AllEvents.html">All Events</a>
+                            <a href="./EventsbyMonth.html">Events by Month</a>
+                        </div>
+                    </li>
+                    <li><a href="./Services.html">Services</a></li>
+                    <li><a href="./People.html">Volunteers</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="spacer">
+            &nbsp;
+        </div>
+        <div class="container" style="position: relative; width:100%">
+            <div>
+                <nav>
+                    <ul class='breadcrumb'>
+                        <li><a href='../index.html'></a></li>
+                        <li aria-current="page">About Us </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="title-group">
+                <p>About Us</p>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding: 1% 3%; background-color: transparent; position: relative; height: 100% - 300px;">
+            <div class="row"> 
+                <!--About Us menu-->
+                <nav nav class="col-sm-3" id="about-menu" >
+                    <ul class="nav nav-stacked pills-primary">
+                        <li><h3>Menu</h3></li>
+                        <li class="active" class="nav-item"><a href="#section1">Who we are</a></li>
+                        <li class="nav-item"><a href="#section2">Our mission</a></li>
+                        <li class="nav-item"><a href="#section3">Our history</a></li>
+                    </ul>
+                </nav>
+                <!--Javascript-->
+                <script src="../assets/js/scriptMenuAboutUs.js"></script>
+
+                <div  class="col-sm-9 col-8">
+                    <div id="section1" style="background-color: aquamarine;  position:relative;">    
+                    </div>
+                    <br>
+                    <div id="section2" style="background-color: blueviolet;  position:relative;"> 
+                    </div>  
+                    <br>   
+                    <div id="section3" style="background-color: cornflowerblue; position:relative;">         
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <section class='footer-section'>
+                <a href="#">Donate</a>
+                <a href="./ContactForm.html" style="margin-left: -20px">Contact Form</a>
+                <a href="./Faq.html">FAQ</a>
+            </section>
+            <div>
+                <p class='social'>Social</p>
+                <ul class="social-icons">
+                    <li><a href="#" class="fa fa-facebook"></a></li>
+                    <li><a href="#" class="fa fa-twitter"></a></li>
+                    <li><a href="#" class="fa fa-instagram"></a></li>
+                    <li><a href="#" class="fa fa-linkedin"></a></li>
+                </ul>
+            </div>
+            <div class='copyright'>
+                <p>© Copyright Wild Care All Rights Reserve</p>
+                <p>Developers: Stefano Bagarin - Alessandra Pasini</p>
+            </div>
+        </footer>
+    </body>
+</html>
