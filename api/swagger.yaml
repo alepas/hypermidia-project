@@ -9,7 +9,7 @@ info:
   license:
     name: "Apache-2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "localhost:8080"
+host: "wild-care.herokuapp.com"
 basePath: "/v1"
 tags:
 - name: "event"
@@ -20,6 +20,8 @@ tags:
   description: "Volunteer of the association"
 - name: "information"
   description: "Queries related to user will of searching information"
+schemes:
+  - https  
 paths:
   /events:
     get:
