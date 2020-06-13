@@ -21,7 +21,6 @@ exports.EventDbSetup = function(s) {
     });
     } else 
         console.log("It exists.");
-        knex.schema.dropTable('Event');
   });
 };
 

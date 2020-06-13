@@ -13,15 +13,17 @@ ssl: true
 
 function setupDataLayer() {
 console.log("Setting up Data Layer");
-return EventDbSetup(sqlDb);
+knex.schema.dropTable('Event');
+return EventDbSetup(sqlDb),
        //Event_TypeDbSetup(sqlDb),
        //Event_ServiceDbSetup(sqlDb),
        //ServiceDbSetup(sqlDb),
        //Service_PhotoDbSetup(sqlDb),
-       //IssuesDbSetup(sqlDb),
-       //FaqDbSetup(sqlDb)//,
+       IssuesDbSetup(sqlDb),
+       FaqDbSetup(sqlDb)//,
        //PersonDbSetup(sqlDb),
        //Person_ServiceDbSetup(sqlDb)
+       ;
        
 }
 
