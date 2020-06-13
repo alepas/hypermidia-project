@@ -14,16 +14,14 @@ ssl: true
 function setupDataLayer() {
 console.log("Setting up Data Layer");
 return EventDbSetup(sqlDb),
-       //Event_TypeDbSetup(sqlDb),
-       //Event_ServiceDbSetup(sqlDb),
-       //ServiceDbSetup(sqlDb),
-       //Service_PhotoDbSetup(sqlDb),
+       Event_TypeDbSetup(sqlDb),
+       Event_ServiceDbSetup(sqlDb),
+       ServiceDbSetup(sqlDb),
+       Service_PhotoDbSetup(sqlDb),
        IssuesDbSetup(sqlDb),
-       FaqDbSetup(sqlDb)//,
-       //PersonDbSetup(sqlDb),
-       //Person_ServiceDbSetup(sqlDb)
-       ;
-       
+       FaqDbSetup(sqlDb),
+       PersonDbSetup(sqlDb),
+       Person_ServiceDbSetup(sqlDb);
 }
 
 module.exports = { database: sqlDb, setupDataLayer };
