@@ -17,8 +17,8 @@ exports.PersonDbSetup = function(connection) {
         table.text("photo");
         table.text("description");
         table.text("motto");
-        table.foreign('id_event_type').references('id_type').inTable('Event_type');
-        table.foreign('id_person').references('id_volunteer').inTable('Person');
+        table.foreign('id_event_type').references('Event_type.id_type');
+        table.foreign('id_person').references('Person.id_volunteer');
     });
     } else 
         console.log("It exists.");
@@ -35,8 +35,8 @@ exports.Person_ServiceDbSetup = function(connection) {
         console.log("Creating: Person_Service");
         return sqlDb.schema.createTable("Person_Service", table => {
           table.increments("id").primary();
-          table.foreign('id_person').references('id_person').inTable('Person');
-          table.foreign('id_service').references('id_service').inTable('Service');
+          table.foreign('id_person').references('Person.id_person');
+          table.foreign('id_service').references('Service.id_service');
       });
     } else 
       console.log("Exist: Event_Service");

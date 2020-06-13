@@ -31,7 +31,7 @@ exports.Service_PhotoDbSetup = function(connection) {
         console.log("Creating: Service_Photo");
         return sqlDb.schema.createTable("Service_Photo", table => {
           table.increments("id_service_photo").primary();
-          table.foreign('id_service').references('id_service').inTable('Service');
+          table.foreign('id_service').references('Service.id_service');
       });
     } else 
       console.log("Exist: Event_Service");
