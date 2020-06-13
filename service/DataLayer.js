@@ -1,5 +1,7 @@
-let { eventsDbSetup } = require("./EventService");
-
+let { EventDbSetup, Event_TypeDbSetup, Event_ServiceDbSetup } = require("./EventService");
+let { ServiceDbSetup, Service_PhotoDbSetup } = require("./ServiceService");
+let { IssuesDbSetup, FaqDbSetup } = require("./InformationService");
+let { PersonDbSetup, Person_ServiceDbSetup } = require("./VolunteerService");
 
 const sqlDbFactory = require("knex");
 let sqlDb = sqlDbFactory({
@@ -11,7 +13,16 @@ ssl: true
 
 function setupDataLayer() {
 console.log("Setting up Data Layer");
-return eventsDbSetup(sqlDb);
+return EventDbSetup(sqlDb);
+       //Event_TypeDbSetup(sqlDb),
+       //Event_ServiceDbSetup(sqlDb),
+       //ServiceDbSetup(sqlDb),
+       //Service_PhotoDbSetup(sqlDb),
+       //IssuesDbSetup(sqlDb),
+       //FaqDbSetup(sqlDb)//,
+       //PersonDbSetup(sqlDb),
+       //Person_ServiceDbSetup(sqlDb)
+       
 }
 
 module.exports = { database: sqlDb, setupDataLayer };

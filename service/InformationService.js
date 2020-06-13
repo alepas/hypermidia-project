@@ -1,5 +1,43 @@
 'use strict';
+let sqlDb;
 
+/**
+ * Database table: Issues
+ **/ 
+exports.IssuesDbSetup = function(connection) {
+  sqlDb = connection;
+  return sqlDb.schema.hasTable("Issues").then(exists => {
+    if (!exists) {
+      console.log("Creating: Issues");
+      return sqlDb.schema.createTable("Issues", table => {
+        table.increments('id_issue').primary();
+        table.text("name");
+        table.text("email");
+        table.text("issue");
+        table.date("date");
+      });
+    } else 
+        console.log("It exists.");
+  });
+};
+
+/**
+ * Database table: FAQ
+ **/ 
+exports.FaqDbSetup = function(connection) {
+  sqlDb = connection;
+  return sqlDb.schema.hasTable("Faq").then(exists => {
+      if (!exists) {
+        console.log("Creating: Faq");
+        return sqlDb.schema.createTable("Faq", table => {
+          table.increments('id_faq').primary();
+          table.text("question");
+          table.text("answer");
+      });
+    } else 
+      console.log("Exist: Faq");
+  });
+};
 
 /**
  * Get all FAQ

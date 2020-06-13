@@ -1,13 +1,14 @@
 'use strict';
 let sqlDb;
 
-
-exports.eventsDbSetup = function(s) {
+/**
+ * Database table: Event
+ **/ 
+exports.EventDbSetup = function(s) {
   sqlDb = s;
-  console.log("Checking if events table exists");
   return sqlDb.schema.hasTable("Event").then(exists => {
     if (!exists) {
-      console.log("It doesn't so we create it");
+      console.log("Creating: Event");
       return sqlDb.schema.createTable("Event", table => {
         table.increments('id_event').primary();
         table.text("title");
@@ -15,12 +16,46 @@ exports.eventsDbSetup = function(s) {
         table.text("description");
         table.text("image");
         table.text("place");
-        //table.foreign('id_event_type').references('id_type').inTable('Event_type');
-        //table.foreign('id_person').references('id_volunteer').inTable('Person');
+        table.foreign('id_event_type').references('id_type').inTable('Event_Type');
+        table.foreign('id_person').references('id_person').inTable('Person');
     });
-    } else {
-    console.log("It exists.");
-    }
+    } else 
+        console.log("It exists.");
+        knex.schema.dropTable('Event');
+  });
+};
+
+/**
+ * Database table: Event_Type
+ **/ 
+exports.Event_TypeDbSetup = function(connection) {
+  sqlDb = connection;
+  return sqlDb.schema.hasTable("Event_Type").then(exists => {
+      if (!exists) {
+        console.log("Creating: Event_Type");
+        return sqlDb.schema.createTable("Event_Type", table => {
+          table.increments('id_type').primary();
+          table.text("type");
+      });
+    } else 
+      console.log("Exist: Event_Type");
+  });
+};
+
+/**
+ * Database table: Event_Service
+ **/ 
+exports.Event_ServiceDbSetup = function(connection) {
+  sqlDb = connection;
+  return sqlDb.schema.hasTable("Event_Service").then(exists => {
+      if (!exists) {
+        console.log("Creating: Event_Service");
+        return sqlDb.schema.createTable("Event_Service", table => {
+          table.foreign('id_event').references('id_event').inTable('Event');
+          table.foreign('id_service').references('id_service').inTable('Service');
+      });
+    } else 
+      console.log("Exist: Event_Service");
   });
 };
   

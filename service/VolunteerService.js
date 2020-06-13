@@ -1,5 +1,47 @@
 'use strict';
+let sqlDb;
 
+/**
+ * Database table: Person
+ **/ 
+exports.PersonDbSetup = function(connection) {
+  sqlDb = connection;
+  return sqlDb.schema.hasTable("Person").then(exists => {
+    if (!exists) {
+      console.log("Creating: Person");
+      return sqlDb.schema.createTable("Person", table => {
+        table.increments('id_person').primary();
+        table.text("fullname");
+        table.integer("number");
+        table.text("email");
+        table.text("photo");
+        table.text("description");
+        table.text("motto");
+        table.foreign('id_event_type').references('id_type').inTable('Event_type');
+        table.foreign('id_person').references('id_volunteer').inTable('Person');
+    });
+    } else 
+        console.log("It exists.");
+  });
+};
+
+/**
+ * Database table: Person_Service
+ **/ 
+exports.Person_ServiceDbSetup = function(connection) {
+  sqlDb = connection;
+  return sqlDb.schema.hasTable("Person_Service").then(exists => {
+      if (!exists) {
+        console.log("Creating: Person_Service");
+        return sqlDb.schema.createTable("Person_Service", table => {
+          table.increments("id").primary();
+          table.foreign('id_person').references('id_person').inTable('Person');
+          table.foreign('id_service').references('id_service').inTable('Service');
+      });
+    } else 
+      console.log("Exist: Event_Service");
+  });
+};
 
 /**
  * Details of selected Volunteer

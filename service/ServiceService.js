@@ -1,5 +1,42 @@
 'use strict';
+let sqlDb;
 
+/**
+ * Database table: Service
+ **/ 
+exports.ServiceDbSetup = function(connection) {
+  sqlDb = connection;
+  return sqlDb.schema.hasTable("Service").then(exists => {
+    if (!exists) {
+      console.log("Creating: Service");
+      return sqlDb.schema.createTable("Service", table => {
+        table.increments('id_service').primary();
+        table.text("title");
+        table.text("presentation");
+        table.text("pratical_info");
+        table.text("description");
+    });
+    } else 
+        console.log("It exists.");
+  });
+};
+
+/**
+ * Database table: Service_Photo
+ **/ 
+exports.Service_PhotoDbSetup = function(connection) {
+  sqlDb = connection;
+  return sqlDb.schema.hasTable("Service_Photo").then(exists => {
+      if (!exists) {
+        console.log("Creating: Service_Photo");
+        return sqlDb.schema.createTable("Service_Photo", table => {
+          table.increments("id_service_photo").primary();
+          table.foreign('id_service').references('id_service').inTable('Service');
+      });
+    } else 
+      console.log("Exist: Event_Service");
+  });
+};
 
 /**
  * Details of selected service
