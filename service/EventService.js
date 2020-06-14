@@ -92,7 +92,7 @@ exports.getEvents = function(limit,offset,month) {
     //.limit(limit)
     //.offset(offset)
     //.month(month)
-    .them(data => {
+    .then(data => {
       return data
     })
   /*return new Promise(function(resolve, reject) {
