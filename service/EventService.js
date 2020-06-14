@@ -89,9 +89,9 @@ exports.getEvent = function(eventId) {
  **/
 exports.getEvents = function(limit,offset,month) {
   return sqlDb("Event")
-    .limit(limit)
-    .offset(offset)
-    .month(month)
+    //.limit(limit)
+    //.offset(offset)
+    //.month(month)
     .them(data => {
       return data
     })
