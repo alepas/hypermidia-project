@@ -93,11 +93,7 @@ exports.getEvents = function(limit,offset,month) {
     .offset(offset)
     .month(month)
     .them(data => {
-      return data.map(e => {
-        e.photo = e.image;
-        e.id = e.id_event;
-        return e;
-      })
+      return data
     })
   /*return new Promise(function(resolve, reject) {
     var examples = {};
