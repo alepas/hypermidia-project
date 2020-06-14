@@ -223,12 +223,7 @@
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
     <script>
-        
-        fetch("v1/events?"  + new URLSearchParams({
-            offset: 0,
-            limit: 4,
-            month: 7
-            }))
+        fetch("v1/events")
         .then(function(response) {
         if (!response.ok) {
         throw new Error("HTTP error, status = " + response.status);
@@ -244,5 +239,5 @@
                 event_desc.innerHTML =  `${title}`;
             }
         });
-        </script>
+    </script>
 </html>
