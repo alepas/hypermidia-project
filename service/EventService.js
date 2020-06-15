@@ -88,31 +88,20 @@ exports.getEvent = function(eventId) {
  * returns List
  **/
 exports.getEvents = function(limit,offset,month) {
+  if(month != null){
+    return sqlDb("Event")
+      .limit(limit)
+      .offset(offset)
+      .where(`EXTRACT(MONTH FROM date::date) = ?`, [month])
+      .then(data => {
+        return data
+      })
+  }
   return sqlDb("Event")
-    //.limit(limit)
-    //.offset(offset)
-    //.month(month)
-    .then(data => {
-      return data
-    })
-  /*return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = [ {
-  "photo" : { },
-  "id" : 0,
-  "eventType" : "eventType",
-  "title" : "Titolo evento"
-}, {
-  "photo" : { },
-  "id" : 0,
-  "eventType" : "eventType",
-  "title" : "Titolo evento"
-} ];
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });*/
+      .limit(limit)
+      .offset(offset)
+      .then(data => {
+        return data
+      })
 }
 
