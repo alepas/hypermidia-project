@@ -235,7 +235,7 @@
                 let {title, photo} = json[i];
                 console.log(`${photo}`);
                 document.getElementById("event_img_" + i).src = 'data:image/jpg;base64,' + `${photo}`;
-                event_desc.innerHTML =  `${photo}`;
+                event_desc.innerHTML =  `${title}`;
             }
         });
     </script>

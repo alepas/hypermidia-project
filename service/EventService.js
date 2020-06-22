@@ -101,7 +101,10 @@ exports.getEvents = function(limit,offset,month) {
       .limit(limit)
       .offset(offset)
       .then(data => {
-        return data
+        return data.map(e => {
+           e.photo = image;
+           return e;
+        });
       })
 }
 
