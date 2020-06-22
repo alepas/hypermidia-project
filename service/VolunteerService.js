@@ -69,24 +69,11 @@ exports.getVolunteer = function(volunteerId) {
  * returns List
  **/
 exports.getVolunteers = function(limit,offset) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = [ {
-  "motto" : "motto",
-  "photo" : { },
-  "id" : 0,
-  "fullname" : "Nome Cognome"
-}, {
-  "motto" : "motto",
-  "photo" : { },
-  "id" : 0,
-  "fullname" : "Nome Cognome"
-} ];
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
+  return sqlDb("Person")
+      .limit(limit)
+      .offset(offset)
+      .then(data => {
+        return data
+      })
 }
 
