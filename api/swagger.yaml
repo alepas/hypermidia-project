@@ -244,7 +244,7 @@ definitions:
       title:
         type: "string"
         example: "Titolo evento"
-      image:
+      photo:
         $ref: "#/definitions/Photo"
       eventType:
         type: "string"
