@@ -69,8 +69,8 @@ exports.getEvent = function(eventId) {
   return sqlDb("Event")
       .where('id_event', eventId)
       .join('Person', 'Event.id_person', '=', 'Person.id_person')
-      .innerJoin('Event_Service', 'Event.id_event','=', 'Event_Service.id_event')
-      .innerJoin('Service', 'Event.id_service','=', 'Service.id_service')
+      .join('Event_Service', 'Event.id_event','=', 'Event_Service.id_event')
+      .join('Service', 'Event.id_service','=', 'Service.id_service')
       .join('Service_Photo', 'Event.id_service','=', 'Service_Photo.id_service')
       .then(data => {
         console.log("data! ");
