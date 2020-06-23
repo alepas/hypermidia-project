@@ -71,18 +71,18 @@
         <!--Event presentation-->
         <div class="event-presentation">
             <div class="event-presentation-left" > 
-                <img id="event_img" src="../assets//img/ermines_day.jpg" class='event-presentation-img'>
+                <img id="event_img" src="../assets//img/ermines_day.jpg" class='event-presentation-img' style="display: none;">
             </div>
             <div class="event-presentation-right">
                 <span>
-                    <h2 id="event_date">Date</h2>
-                    <p>25 April 2020</p>
+                    <h2>Date</h2>
+                    <p id="event_date"></p>
 
-                    <h2 id="event_time">Time</h2>
-                    <p>From 9.00 AM to 4.00 PM</p>
+                    <h2>Time</h2>
+                    <p id="event_time"></p>
 
-                    <h2 id="event_place">Location</h2>
-                    <p>Stelvio Park</p>
+                    <h2>Location</h2>
+                    <p id="event_place"></p>
                 </span>
             </div>
         </div>
@@ -212,8 +212,7 @@
     </body>
     
     <script>
-        // + localStorage["id_event"]
-        fetch("../v1/events/1")
+        fetch("../v1/events/"  + localStorage["id_event"])
         .then(function(response) {
         if (!response.ok) 
             throw new Error("HTTP error, status = " + response.status);
@@ -222,13 +221,14 @@
         .then(function(json) {
             let {title, image, date, place, description, fullname, photo, motto} = json[0];
             var dateTime =  `${date}`;
-            var event_date = dateTime.toLocaleDateString();
-            var event_time = dateTime.toLocaleTimeString();
+            //var event_date = dateTime.toLocaleDateString();
+            //var event_time = dateTime.toLocaleTimeString();
 
             document.getElementById("event_title").innerHTML = `${title}`;
             document.getElementById("event_img").src = `${image}`;
-            document.getElementById("event_date").innerHTML = event_date;
-            document.getElementById("event_time").innerHTML = event_time;
+            document.getElementById("event_img").style.display = "block";
+            //document.getElementById("event_date").innerHTML = event_date;
+            //document.getElementById("event_time").innerHTML = event_time;
             document.getElementById("event_place").innerHTML = `${place}`;
             document.getElementById("event_description").innerHTML = `${description}`;
 
