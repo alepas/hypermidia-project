@@ -73,6 +73,8 @@ exports.getEvent = function(eventId) {
       .innerJoin('Event_Service', 'Event.id_event','=', 'Event_Service.id_event')
       .innerJoin('Service', 'Event_Service.id_service','=', 'Service.id_service')
       .then(data => {
+        console.log("data! ");
+        console.log(data);
         return data
       })
 }
