@@ -69,11 +69,11 @@ exports.getService = function(serviceId) {
 exports.getServices = function(limit,offset) {
   return sqlDb("Service")
       .join('Service_Photo', 'Service.id_service','=', 'Service_Photo.id_service')
-      .groupBy('id_service')
-      .first('title', 'photo', 'id_service')
+      .distinctOn('Service.id_service')
       .limit(limit)
       .offset(offset)
       .then(data => {
+        console.log(data);
         return data
       })
 }
