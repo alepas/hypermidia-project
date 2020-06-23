@@ -261,7 +261,7 @@ definitions:
       date:
         type: "string"
         format: "date-time"
-      location:
+      place:
         type: "string"
       description:
         type: "string"
@@ -280,7 +280,7 @@ definitions:
   Volunteer:
     type: "object"
     properties:
-      id:
+      id_person:
         type: "integer"
         format: "int64"
       fullname:
@@ -295,7 +295,7 @@ definitions:
     example:
       motto: "motto"
       photo: {}
-      id: 0
+      id_person: 0
       fullname: "Nome Cognome"
   ExpandedVolunteer:
     title: "Expanded Volunteer"
@@ -324,7 +324,7 @@ definitions:
   Service:
     type: "object"
     properties:
-      id:
+      id_service:
         type: "integer"
         format: "int64"
       title:
@@ -336,7 +336,7 @@ definitions:
     description: "Service info inside galley"
     example:
       photo: {}
-      id: 0
+      id_service: 0
       title: "Nome servizio"
   ExpandedService:
     title: "Expanded Service"
@@ -372,7 +372,7 @@ definitions:
   Faq:
     type: "object"
     properties:
-      id:
+      id_faq:
         type: "integer"
         format: "int64"
       question:
@@ -384,19 +384,19 @@ definitions:
     example:
       question: "question"
       answer: "answer"
-      id: 0
+      id_faq: 0
   request:
     type: "object"
     required:
     - "email"
-    - "fullName"
-    - "message"
+    - "name"
+    - "issue"
     properties:
-      fullName:
+      name:
         type: "string"
       email:
         type: "string"
-      message:
+      issue:
         type: "string"
       topic:
         type: "string"
