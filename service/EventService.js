@@ -88,11 +88,13 @@ exports.getEvent = function(eventId) {
  * returns List
  **/
 exports.getEvents = function(limit,offset,month) {
+  var from = '2020-07-01';
+  var to = '2020-07-30';
   if(month != null){
     return sqlDb("Event")
       .limit(limit)
       .offset(offset)
-      .where('EXTRACT(MONTH FROM date::date)', month)
+      .whereBetween('date', [from, to])
       .then(data => {
         return data
       })
