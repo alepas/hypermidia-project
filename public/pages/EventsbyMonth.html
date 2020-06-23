@@ -297,7 +297,7 @@
                 </a>
             </div>
 
-            <div id="event_6" class="grid-item">
+            <div id="event_6" class="grid-item" style="display: none;">
                 <a href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_6" src="../assets//img/ibex_day.jpg" class="card-img" alt="Event_7"> 
@@ -308,7 +308,7 @@
                 </a>
             </div>
 
-            <div id="event_7" class="grid-item">
+            <div id="event_7" class="grid-item" style="display: none;">
                 <a href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_7" src="../assets//img/ermines_day.jpg" class="card-img" alt="Event_8"> 
@@ -319,7 +319,7 @@
                 </a>
             </div>
 
-            <div id="event_8" class="grid-item">
+            <div id="event_8" class="grid-item" style="display: none;">
                 <a href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_8" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_9"> 
@@ -330,7 +330,7 @@
                 </a>
             </div>    
 
-            <div  id="event_9" class="grid-item">
+            <div  id="event_9" class="grid-item" style="display: none;">
                 <a href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_9" src="../assets//img/marmots_day.png" class="card-img" alt="Event_10"> 
@@ -341,7 +341,7 @@
                 </a>
             </div>
 
-            <div id="event_10" class="grid-item">
+            <div id="event_10" class="grid-item" style="display: none;">
                 <a href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_10" src="../assets//img/ibex_day.jpg" class="card-img" alt="Event_11"> 
@@ -352,7 +352,7 @@
                 </a>
             </div>
 
-            <div id="event_11" class="grid-item">
+            <div id="event_11" class="grid-item" style="display: none;">
                 <a href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_11" src="../assets//img/ermines_day.jpg" class="card-img" alt="Event_2"> 
@@ -392,7 +392,8 @@
     </body>
 
     <script>
-        fetch("../v1/events?limit=12&offset=0&month=7")
+        
+        fetch("../v1/events?limit=12&offset=0&month=1")
         .then(function(response) {
         if (!response.ok) 
             throw new Error("HTTP error, status = " + response.status);

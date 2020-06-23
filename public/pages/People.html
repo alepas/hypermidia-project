@@ -70,7 +70,7 @@
 
         <!--Grid for peoples-->
         <div class="grid-container-volunteers">
-            <a href="./Person.html">
+            <a  id="person_0" href="./Person.html"  style="display: none;">
                 <div class="grid-container-volunteers-item">
                     <div class="grid-container-volunteers-img" > 
                         <img id="person_img_0" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </a>
-            <a href="./Person.html">
+            <a id="person_1" href="./Person.html"  style="display: none;">
                 <div class="grid-container-volunteers-item">
                     <div class="grid-container-volunteers-img" > 
                         <img  id="person_img_1" src="../assets//img/profile-woman.jpg" class='grid-item-img-volunteers'>
@@ -97,7 +97,7 @@
                     </div>
                 </div>
             </a>
-            <a href="./Person.html">
+            <a id="person_2" href="./Person.html"  style="display: none;">
                 <div class="grid-container-volunteers-item">
                     <div class="grid-container-volunteers-img" > 
                         <img  id="person_img_2" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
@@ -110,7 +110,7 @@
                     </div>
                 </div>
             </a>
-            <a href="./Person.html">
+            <a id="person_3" href="./Person.html"  style="display: none;">
                 <div class="grid-container-volunteers-item">
                     <div class="grid-container-volunteers-img" > 
                         <img  id="person_img_3" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
@@ -123,7 +123,7 @@
                     </div>
                 </div>
             </a>
-            <a href="./Person.html">
+            <a id="person_4" href="./Person.html"  style="display: none;">
                 <div class="grid-container-volunteers-item">
                     <div class="grid-container-volunteers-img" > 
                         <img  id="person_img_4" src="../assets//img/profile-woman.jpg" class='grid-item-img-volunteers'>
@@ -137,7 +137,7 @@
                     </div>
                 </div>
             </a>
-            <a href="./Person.html">
+            <a id="person_5" href="./Person.html"  style="display: none;">
                 <div class="grid-container-volunteers-item">
                     <div class="grid-container-volunteers-img" > 
                         <img  id="person_img_5" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
@@ -150,7 +150,7 @@
                     </div>
                 </div>
             </a>
-            <a href="./Person.html">
+            <a id="person_6" href="./Person.html"  style="display: none;">
                 <div class="grid-container-volunteers-item">
                     <div class="grid-container-volunteers-img" > 
                         <img  id="person_img_6" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
@@ -163,7 +163,7 @@
                     </div>
                 </div>
             </a>
-            <a href="./Person.html">
+            <a id="person_7" href="./Person.html"  style="display: none;">
                 <div class="grid-container-volunteers-item">
                     <div class="grid-container-volunteers-img" > 
                         <img  id="person_img_7" src="../assets//img/profile-woman.jpg" class='grid-item-img-volunteers'>
@@ -241,6 +241,7 @@
                 var person_motto = document.getElementById("person_motto_" + i);
                 let {fullname, photo, motto} = json[i];
                 document.getElementById("person_img_" + i).src = `${photo}`;
+                document.getElementById("person_img_" + i).style.display = "block";
                 person_name.innerHTML =  `${fullname}`;
                 person_motto.innerHTML =  `${motto}`;
             }
