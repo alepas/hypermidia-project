@@ -92,7 +92,7 @@ exports.getEvents = function(limit,offset,month) {
     return sqlDb("Event")
       .limit(limit)
       .offset(offset)
-      .where(`EXTRACT(MONTH FROM date::date) = ?`, [month])
+      .where('EXTRACT(MONTH FROM date::date)', month)
       .then(data => {
         return data
       })
