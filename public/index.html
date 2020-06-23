@@ -96,7 +96,7 @@
         <h1>Events of this month</h1>
         <p>Try out our events of may!</p>
         <div class="grid-container-related-events">
-            <div id="event_0" class="grid-item" style="display: none;">
+            <div id="event_0" class="grid-item" style="display: block;">
                 <a id="event_link_0" href="./pages/Event.html" >
                     <div class="card bg-dark text-white">
                         <img id="event_img_0" class="card-img" alt="Event_0"> 
@@ -129,8 +129,8 @@
                 </a>
             </div>
 
-            <div id="event_link_3" class="grid-item" style="display: none;">
-                <a href="./pages/Event.html">
+            <div id="event_3" class="grid-item" style="display: none;">
+                <a id="event_link_3" href="./pages/Event.html">
                     <div id="event_3"class="card bg-dark text-white">
                         <img id="event_img_3" class="card-img" alt="Event_3"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -234,7 +234,7 @@
                 var event_desc = document.getElementById("event_desc_" + i);
                 let {title, image, id_event, date} = json[i];
 
-                document.getElementById("event_" + i).style.display("block");
+                document.getElementById("event_" + i).style.display = "block";
                 document.getElementById("event_img_" + i).src = `${image}`;
                 event_desc.innerHTML =  `${title}`;
                 
