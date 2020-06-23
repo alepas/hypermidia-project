@@ -10,7 +10,7 @@ exports.EventDbSetup = function(s) {
     if (!exists) {
       console.log("Creating: Event");
       return sqlDb.schema.createTable("Event", table => {
-        table.increments('id_event').primary();
+        table.increments('id').primary();
         table.text("title");
         table.text("date");
         table.text("description");
@@ -20,6 +20,7 @@ exports.EventDbSetup = function(s) {
         table.foreign('id_person').references('Person.id_person');
     });
     } else 
+        table.renameColumn('id_event', 'id')
         console.log("It exists.");
   });
 };
