@@ -229,7 +229,7 @@
     </body>
 
     <script>
-        fetch("v1/volunteers?limit=8&offset=0")
+        fetch("../v1/volunteers?limit=8&offset=0")
         .then(function(response) {
         if (!response.ok) 
             throw new Error("HTTP error, status = " + response.status);

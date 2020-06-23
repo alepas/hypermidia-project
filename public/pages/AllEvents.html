@@ -216,7 +216,7 @@
                             </a>
                         </div>
             
-                        <div id="event_8" class="grid-item">
+                        <div id="event_8" class="grid-item" style="display: none;">
                             <a href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_8" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_9"> 
@@ -259,7 +259,7 @@
     </body>
 
     <script>
-        fetch("v1/events?limit=9&offset=0")
+        fetch("../v1/events?limit=9&offset=0")
         .then(function(response) {
         if (!response.ok) 
             throw new Error("HTTP error, status = " + response.status);
