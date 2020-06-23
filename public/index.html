@@ -99,7 +99,7 @@
             <div class="grid-item">
                 <a href="./pages/Event.html">
                     <div id="event_0" class="card bg-dark text-white">
-
+                        <img id="event_img_0" class="card-img" alt="Event_0"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="event_desc_0" class="card-title" style="background-color: transparent;">Such a cutie</h5>
                         </div>
@@ -110,7 +110,7 @@
             <div class="grid-item">
                 <a href="./pages/Event.html">
                     <div id="event_1" class="card bg-dark text-white">
- 
+                        <img id="event_img_1" class="card-img" alt="Event_1"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="event_desc_1" class="card-title" style="background-color: transparent;"></h5>
                         </div>
@@ -121,7 +121,7 @@
             <div class="grid-item">
                 <a href="./pages/Event.html">
                     <div id="event_2" class="card bg-dark text-white">
-
+                        <img id="event_img_2" class="card-img" alt="Event_2"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="event_desc_2" class="card-title" style="background-color: transparent;"></h5>
                         </div>
@@ -132,7 +132,7 @@
             <div class="grid-item">
                 <a href="./pages/Event.html">
                     <div id="event_3"class="card bg-dark text-white">
-
+                        <img id="event_img_3" class="card-img" alt="Event_4"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="event_desc_3" class="card-title" style="background-color: transparent;"></h5>
                         </div>
@@ -223,7 +223,7 @@
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
     <script>
-        fetch("v1/events?limit=4&offset=0")
+        fetch("v1/events?limit=4&offset=0&month=07")
         .then(function(response) {
         if (!response.ok) 
             throw new Error("HTTP error, status = " + response.status);
@@ -234,14 +234,14 @@
                 var event_desc = document.getElementById("event_desc_" + i);
                 let {title, image, id_event, date} = json[i];
 
-                //document.getElementById("event_img_" + i).src = `${image}`;
+                document.getElementById("event_img_" + i).src = `${image}`;
                 event_desc.innerHTML =  `${title}`;
 
                 
-                var image = new Image();
-                image.src = `${image}`;
-                image.className = "card-img";
-                document.getElementById("event_" + i).appendChild(image);
+               // var image = new Image();
+               // image.src = `${image}`;
+               // image.className = "card-img";
+               // document.getElementById("event_" + i).appendChild(image);
             }
         });
     </script>
