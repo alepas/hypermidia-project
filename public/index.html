@@ -254,10 +254,9 @@
         })
 
         .then(function(json) {
-            var j=0;
-            for (var i = 0; i < json.length; i++,j+2) {
+            for (var i = 0; i < json.length/2; i++) {
                 var service_desc = document.getElementById("service_desc_" + i);
-                let {title, photo, id_service} = json[j];
+                let {title, photo, id_service} = json[i*2];
 
                 document.getElementById("service_" + i).style.display = "block";
                 document.getElementById("service_img_" + i).src = `${photo}`;
