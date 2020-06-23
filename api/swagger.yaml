@@ -300,9 +300,6 @@ definitions:
   ExpandedVolunteer:
     title: "Expanded Volunteer"
     properties:
-      birthday:
-        type: "string"
-        format: "date"
       email:
         type: "string"
       number:
@@ -343,11 +340,12 @@ definitions:
     properties:
       presentation:
         type: "string"
-      date:
-        type: "number"
-        format: "date"
-      location:
+      pratical_info:
         type: "string"
+        example: "Informazioni pratiche"
+      description:
+        type: "string"
+        example: "descrizione del servizio"
       events:
         type: "array"
         items:
