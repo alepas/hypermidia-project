@@ -240,8 +240,9 @@
                 var person_name = document.getElementById("person_name_" + i);
                 var person_motto = document.getElementById("person_motto_" + i);
                 let {fullname, photo, motto} = json[i];
+                
                 document.getElementById("person_img_" + i).src = `${photo}`;
-                document.getElementById("person_img_" + i).style.display = "block";
+                document.getElementById("person_" + i).style.display = "block";
                 person_name.innerHTML =  `${fullname}`;
                 person_motto.innerHTML =  `${motto}`;
             }
