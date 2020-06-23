@@ -37,6 +37,8 @@ function changeMonth(month){
       return response.json();
   })
   .then(function(json) {
+      for(var i=0; i<12; i++)
+        document.getElementById("event_" + i).style.display = "none";
       for (var i = 0; i < json.length; i++) {
           var event_desc = document.getElementById("event_desc_" + i);
           let {title, image, id_event, date} = json[i];
