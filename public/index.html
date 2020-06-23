@@ -233,8 +233,13 @@
             for (var i = 0; i < json.length; i++) {
                 var event_desc = document.getElementById("event_desc_" + i);
                 let {title, photo} = json[i];
+
                 document.getElementById("event_img_" + i).src = 'data:image/jpg;base64,' + `${photo}`;
                 event_desc.innerHTML =  `${title}`;
+
+                var image = new Image();
+                image.src = `${photo}`
+                document.body.appendChild(image);
             }
         });
     </script>
