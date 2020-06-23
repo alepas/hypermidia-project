@@ -89,39 +89,39 @@ exports.getEvent = function(eventId) {
  **/
 exports.getEvents = function(limit,offset,month) {
   switch(month){
-    case 01:
+    case 1:
       var from = '2020-01-01';
       var to = '2020-01-31';
       break;
-    case 02:
+    case 2:
       var from = '2020-02-01';
       var to = '2020-02-28';
       break;
-    case 03:
+    case 3:
       var from = '2020-03-01';
       var to = '2020-03-31';
       break;
-    case 04:
+    case 4:
       var from = '2020-04-01';
       var to = '2020-04-30';
       break;
-    case 05:
+    case 5:
       var from = '2020-05-01';
       var to = '2020-05-31';
       break;
-    case 06:
+    case 6:
       var from = '2020-06-01';
       var to = '2020-06-30';
       break;
-    case 07:
+    case 7:
       var from = '2020-07-01';
       var to = '2020-07-31';
       break;
-    case 08:
+    case 8:
       var from = '2020-08-01';
       var to = '2020-08-31';
       break;
-    case 09:
+    case 9:
       var from = '2020-09-01';
       var to = '2020-09-30';
       break;
