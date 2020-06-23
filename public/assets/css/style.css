@@ -231,7 +231,7 @@ ul.breadcrumb li a:hover{
 }
 
 .grid-item{
-    height: 200px;
+    height: auto;
 }
 
 .card {
@@ -250,6 +250,7 @@ ul.breadcrumb li a:hover{
 }
 
 .card-img{
+    height: 300px;
     border-radius: 0.2em;
 }
 
