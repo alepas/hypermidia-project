@@ -67,22 +67,12 @@ exports.getService = function(serviceId) {
  * returns List
  **/
 exports.getServices = function(limit,offset) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = [ {
-  "photo" : { },
-  "id" : 0,
-  "title" : "Nome servizio"
-}, {
-  "photo" : { },
-  "id" : 0,
-  "title" : "Nome servizio"
-} ];
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
+  return sqlDb("Service")
+      .join('Service_Photo', 'Service.id_service','=', 'Service_Photo.id_service')
+      .limit(limit)
+      .offset(offset)
+      .then(data => {
+        return data
+      })
 }
 
