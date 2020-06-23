@@ -245,7 +245,7 @@
     </body>
 
     <script>
-        fetch("../v1/services?limit=24&offset=0")
+        fetch("../v1/services?limit=12&offset=0")
         .then(function(response) {
         if (!response.ok) 
             throw new Error("HTTP error, status = " + response.status);
@@ -253,9 +253,9 @@
         })
 
         .then(function(json) {
-            for (var i = 0; i < json.length/2; i++) {
+            for (var i = 0; i < json.length; i++) {
                 var service_desc = document.getElementById("service_desc_" + i);
-                let {title, photo, id_service} = json[i*2];
+                let {title, photo, id_service} = json[i];
 
                 document.getElementById("service_" + i).style.display = "block";
                 document.getElementById("service_img_" + i).src = `${photo}`;
