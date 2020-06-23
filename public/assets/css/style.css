@@ -223,7 +223,7 @@ ul.breadcrumb li a:hover{
 .grid-container {
     position: relative;
     display: grid;
-    grid-template-columns: 25%, 25%, 25%, 25%;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 30px;
     grid-row-gap: 10%;
     padding: 3% 3%;
@@ -250,7 +250,6 @@ ul.breadcrumb li a:hover{
 }
 
 .card-img{
-    height: 300px;
     border-radius: 0.2em;
 }
 
