@@ -232,9 +232,9 @@
         .then(function(json) {
             for (var i = 0; i < json.length; i++) {
                 var event_desc = document.getElementById("event_desc_" + i);
-                let {title, photo, id_event} = json[i];
+                let {title, image, id_event} = json[i];
 
-                document.getElementById("event_img_" + i).src = `${photo}`;
+                document.getElementById("event_img_" + i).src = `${image}`;
                 event_desc.innerHTML =  `${id_event}`;
 
                 

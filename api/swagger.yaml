@@ -244,14 +244,14 @@ definitions:
       title:
         type: "string"
         example: "Titolo evento"
-      photo:
+      image:
         $ref: "#/definitions/Photo"
       eventType:
         type: "string"
     title: "Event"
     description: "Event info inside galley"
     example:
-      photo: {}
+      image: {}
       id_event: 0
       eventType: "eventType"
       title: "Titolo evento"
