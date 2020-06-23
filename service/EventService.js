@@ -88,8 +88,57 @@ exports.getEvent = function(eventId) {
  * returns List
  **/
 exports.getEvents = function(limit,offset,month) {
-  var from = '2020-07-01';
-  var to = '2020-07-30';
+  switch(month){
+    case 01:
+      var from = '2020-01-01';
+      var to = '2020-01-31';
+      break;
+    case 02:
+      var from = '2020-02-01';
+      var to = '2020-02-28';
+      break;
+    case 03:
+      var from = '2020-03-01';
+      var to = '2020-03-31';
+      break;
+    case 04:
+      var from = '2020-04-01';
+      var to = '2020-04-30';
+      break;
+    case 05:
+      var from = '2020-05-01';
+      var to = '2020-05-31';
+      break;
+    case 06:
+      var from = '2020-06-01';
+      var to = '2020-06-30';
+      break;
+    case 07:
+      var from = '2020-07-01';
+      var to = '2020-07-31';
+      break;
+    case 08:
+      var from = '2020-08-01';
+      var to = '2020-08-31';
+      break;
+    case 09:
+      var from = '2020-09-01';
+      var to = '2020-09-30';
+      break;
+    case 10:
+      var from = '2020-10-01';
+      var to = '2020-10-31';
+      break;
+    case 11:
+      var from = '2020-11-01';
+      var to = '2020-11-30';
+      break;
+    case 12:
+      var from = '2020-12-01';
+      var to = '2020-12-31';
+      break;    
+  }
+
   if(month != null){
     return sqlDb("Event")
       .limit(limit)

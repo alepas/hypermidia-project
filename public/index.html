@@ -96,9 +96,9 @@
         <h1>Events of this month</h1>
         <p>Try out our events of may!</p>
         <div class="grid-container-related-events">
-            <div class="grid-item">
-                <a href="./pages/Event.html">
-                    <div id="event_0" class="card bg-dark text-white">
+            <div id="event_0" class="grid-item" style="display: none;">
+                <a id="event_link_0" href="./pages/Event.html" >
+                    <div class="card bg-dark text-white">
                         <img id="event_img_0" class="card-img" alt="Event_0"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="event_desc_0" class="card-title" style="background-color: transparent;"></h5>
@@ -107,9 +107,9 @@
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./pages/Event.html">
-                    <div id="event_1" class="card bg-dark text-white">
+            <div id="event_1" class="grid-item" style="display: none;">
+                <a id="event_link_1" href="./pages/Event.html">
+                    <div class="card bg-dark text-white">
                         <img id="event_img_1" class="card-img" alt="Event_1"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="event_desc_1" class="card-title" style="background-color: transparent;"></h5>
@@ -118,9 +118,9 @@
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./pages/Event.html">
-                    <div id="event_2" class="card bg-dark text-white">
+            <div id="event_2" class="grid-item" style="display: none;">
+                <a id="event_link_2" href="./pages/Event.html">
+                    <div class="card bg-dark text-white">
                         <img id="event_img_2" class="card-img" alt="Event_2"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="event_desc_2" class="card-title" style="background-color: transparent;"></h5>
@@ -129,7 +129,7 @@
                 </a>
             </div>
 
-            <div class="grid-item">
+            <div id="event_link_3" class="grid-item" style="display: none;">
                 <a href="./pages/Event.html">
                     <div id="event_3"class="card bg-dark text-white">
                         <img id="event_img_3" class="card-img" alt="Event_3"> 
@@ -234,9 +234,10 @@
                 var event_desc = document.getElementById("event_desc_" + i);
                 let {title, image, id_event, date} = json[i];
 
+                document.getElementById("event_" + i).style.display("block");
                 document.getElementById("event_img_" + i).src = `${image}`;
                 event_desc.innerHTML =  `${title}`;
-
+                
                 
                // var image = new Image();
                // image.src = `${image}`;
