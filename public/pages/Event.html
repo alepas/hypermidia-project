@@ -60,7 +60,7 @@
             </nav>
         </div>
         
-        <div class="title-group">
+        <div id="event_title" class="title-group">
             <p>Ermines day</p>
         </div>
 
@@ -71,17 +71,17 @@
         <!--Event presentation-->
         <div class="event-presentation">
             <div class="event-presentation-left" > 
-                <img src="../assets//img/ermines_day.jpg" class='event-presentation-img'>
+                <img id="event_img" src="../assets//img/ermines_day.jpg" class='event-presentation-img'>
             </div>
             <div class="event-presentation-right">
                 <span>
-                    <h2>Date</h2>
+                    <h2 id="event_date">Date</h2>
                     <p>25 April 2020</p>
 
-                    <h2>Time</h2>
+                    <h2 id="event_time">Time</h2>
                     <p>From 9.00 AM to 4.00 PM</p>
 
-                    <h2>Location</h2>
+                    <h2 id="event_place">Location</h2>
                     <p>Stelvio Park</p>
                 </span>
             </div>
@@ -96,7 +96,7 @@
         <div class="spacer_small">
             &nbsp;
         </div>
-        <p>«Tuttavia, perché voi intendiate da dove sia nato tutto questo errore, di quelli che incolpano il piacere ed esaltano il dolore, io spiegherò tutta la questione, e presenterò le idee espresse dal famoso esploratore della verità, vorrei quasi dire dal costruttore della felicità umana. Nessuno, infatti, detesta, odia, o rifugge il piacere in quanto tale, solo perché è piacere, ma perché grandi sofferenze colpiscono quelli che non sono capaci di raggiungere il piacere attraverso la ragione; e al contrario, non c'è nessuno che ami, insegua, voglia raggiungere il dolore in se stesso, soltanto perché è dolore, ma perché qualche volta accadono situazioni tali per cui attraverso la sofferenza o il dolore si cerca di raggiungere un qualche grande piacere. Concentrandoci su casi di piccola importanza: chi di noi intraprende un esercizio ginnico, se non per ottenerne un qualche vantaggio? E d'altra parte, chi avrebbe motivo di criticare colui che desidera provare un piacere cui non segua nessun fastidio, o colui che fugge un dolore che non produce nessun piacere?
+        <p id="event_description">«Tuttavia, perché voi intendiate da dove sia nato tutto questo errore, di quelli che incolpano il piacere ed esaltano il dolore, io spiegherò tutta la questione, e presenterò le idee espresse dal famoso esploratore della verità, vorrei quasi dire dal costruttore della felicità umana. Nessuno, infatti, detesta, odia, o rifugge il piacere in quanto tale, solo perché è piacere, ma perché grandi sofferenze colpiscono quelli che non sono capaci di raggiungere il piacere attraverso la ragione; e al contrario, non c'è nessuno che ami, insegua, voglia raggiungere il dolore in se stesso, soltanto perché è dolore, ma perché qualche volta accadono situazioni tali per cui attraverso la sofferenza o il dolore si cerca di raggiungere un qualche grande piacere. Concentrandoci su casi di piccola importanza: chi di noi intraprende un esercizio ginnico, se non per ottenerne un qualche vantaggio? E d'altra parte, chi avrebbe motivo di criticare colui che desidera provare un piacere cui non segua nessun fastidio, o colui che fugge un dolore che non produce nessun piacere?
             Al contrario, però, noi con indignazione denunciamo e riteniamo meritevoli di odio quelli che, rammolliti e corrotti dai piaceri del momento, accecati dal desiderio, non prevedono a quali dolori e a quali sofferenze andranno incontro, e uguale colpa hanno quelli che abbandonano i propri doveri per pigrizia d'animo, cioè per evitare le fatiche e i dolori. Certamente è facile e rapido distinguere questi casi. Infatti nel tempo libero, quando abbiamo tutta la nostra possibilità di scegliere e niente ci ostacola dal fare ciò che ci piace di più, bisogna accogliere ogni piacere e respingere ogni dolore. Ma in altri momenti, o nei doveri inevitabili o negli obblighi che ci vengono dalle circostanze, spesso accadrà che si debba respingere il piacere e accogliere il fastidio. E così il saggio si regola scegliendo tra questi atteggiamenti, facendo in modo che o – respingendo il piacere – ne ottenga di più grandi, o – sopportando il dolore – ne eviti di peggiori.»</div>
 
         <div class="spacer_medium">
@@ -207,4 +207,26 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
+    <script>
+        fetch("../v1/events/" + localStorage["id_event"])
+        .then(function(response) {
+        if (!response.ok) 
+            throw new Error("HTTP error, status = " + response.status);
+        return response.json();
+        })
+        .then(function(json) {
+            let {title, image, date, place, description} = json[i];
+            var dateTime =  `${date}`;
+            var event_date = dateTime.toLocaleDateString();
+            var event_time = dateTime.toLocaleTimeString();
+
+            document.getElementById("event_title").innerHTML = `${title}`;
+            document.getElementById("event_img").src = `${image}`;
+            document.getElementById("event_date").innerHTML = event_date;
+            document.getElementById("event_time").innerHTML = event_time;
+            document.getElementById("event_place").innerHTML = `${place}`;
+            document.getElementById("event_description").innerHTML = `${description}`;
+
+        });
+    </script>
 </html>
