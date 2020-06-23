@@ -20,7 +20,6 @@ exports.EventDbSetup = function(s) {
         table.foreign('id_person').references('Person.id_person');
     });
     } else 
-        table.renameColumn('id', 'id_event')
         console.log("It exists.");
   });
 };

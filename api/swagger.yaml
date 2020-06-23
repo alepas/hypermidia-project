@@ -238,7 +238,7 @@ definitions:
   Event:
     type: "object"
     properties:
-      id:
+      id_event:
         type: "integer"
         format: "int64"
       title:
@@ -252,7 +252,7 @@ definitions:
     description: "Event info inside galley"
     example:
       photo: {}
-      id: 0
+      id_event: 0
       eventType: "eventType"
       title: "Titolo evento"
   ExpandedEvent:
