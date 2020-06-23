@@ -109,21 +109,24 @@
             &nbsp;
         </div>
          <div class="event-organizer-container">
-            <a href="./Person.html">
+            <a id="organizer" href="./Person.html"  style="display: none;">
                 <div class="event-organizer">
                     <div class="event-organizer-left" > 
-                        <img src="../assets//img/profile-man.jpg" >
+                        <img id="organizer_img" src="../assets//img/profile-man.jpg" >
                     </div>
                     <div class="event-organizer-right">
                         <span>
-                            <h1>Federico Lucchetti</h1>
-                            <p>"Love mother earth as much as you love your mother"</p>
+                            <h1 id="organizer_fullname">Federico Lucchetti</h1>
+                            <p id="organizer_motto">"Love mother earth as much as you love your mother"</p>
                         </span>
                     </div>
                 </div>
             </a>
         </div>
 
+        <p id="ciao">
+
+        </p>
         <div class="spacer_medium">
             &nbsp;
         </div>
@@ -215,7 +218,7 @@
         return response.json();
         })
         .then(function(json) {
-            let {title, image, date, place, description} = json[i];
+            let {title, image, date, place, description, fullname, photo, motto} = json[0];
             var dateTime =  `${date}`;
             var event_date = dateTime.toLocaleDateString();
             var event_time = dateTime.toLocaleTimeString();
@@ -227,6 +230,55 @@
             document.getElementById("event_place").innerHTML = `${place}`;
             document.getElementById("event_description").innerHTML = `${description}`;
 
+            var person_name = document.getElementById("organizer_fullname");
+            var person_motto = document.getElementById("organizer_motto_");
+            document.getElementById("organizer").style.display = "block";
+            document.getElementById("organizer_img").src = `${photo}`;
+            person_name.innerHTML =  `${fullname}`;
+            person_motto.innerHTML =  `${motto}`;
+
+            document.getElementById("ciao").innerHTML = json;
+            
+        });
+
+                fetch("v1/events?limit=4&offset=0&month=07")
+        .then(function(response) {
+        if (!response.ok) 
+            throw new Error("HTTP error, status = " + response.status);
+        return response.json();
+        })
+        .then(function(json) {
+            for (var i = 0; i < json.length; i++) {
+                var event_desc = document.getElementById("event_desc_" + i);
+                let {title, image, id_event} = json[i];
+
+                document.getElementById("event_" + i).style.display = "block";
+                document.getElementById("event_img_" + i).src = `${image}`;
+                document.getElementById("event_link_" + i).onclick = function() 
+                    {localStorage["id_event"] = `${id_event}`;};
+               // document.getElementById("event_img_" + i).style.height = "300"; 
+                event_desc.innerHTML =  `${title}`;
+   
+            }
+        });
+
+        fetch("v1/services?limit=8&offset=0")
+        .then(function(response) {
+        if (!response.ok) 
+            throw new Error("HTTP error, status = " + response.status);
+        return response.json();
+        })
+
+        .then(function(json) {
+            for (var i = 0; i < json.length/2; i++) {
+                var service_desc = document.getElementById("service_desc_" + i);
+                let {title, photo, id_service} = json[i*2];
+
+                document.getElementById("service_" + i).style.display = "block";
+                document.getElementById("service_img_" + i).src = `${photo}`;
+                //document.getElementById("service_img_" + i).style.height = "300";
+                service_desc.innerHTML =  `${title}`;
+            }
         });
     </script>
 </html>

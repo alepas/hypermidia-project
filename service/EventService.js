@@ -66,15 +66,15 @@ exports.Event_ServiceDbSetup = function(connection) {
  * returns List
  **/
 exports.getEvent = function(eventId) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = [ "", "" ];
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
+  return sqlDb("Event")
+      .where('id_event', eventId)
+      .join('Person', 'Event.id_person', '=', 'Person.id_person')
+      .join('Service_Photo', 'Service.id_service','=', 'Service_Photo.id_service')
+      .innerJoin('Event_Service', 'Event.id_event','=', 'Event_Service.id_event')
+      .innerJoin('Service', 'Event_Service.id_service','=', 'Service.id_service')
+      .then(data => {
+        return data
+      })
 }
 
 
