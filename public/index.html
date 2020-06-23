@@ -246,22 +246,22 @@
             }
         });
 
-        fetch("v1/services?limit=4&offset=0")
+        fetch("v1/services?limit=8&offset=0")
         .then(function(response) {
         if (!response.ok) 
             throw new Error("HTTP error, status = " + response.status);
         return response.json();
         })
+
         .then(function(json) {
-            for (var i = 0; i < json.length; i++) {
+            var j=0;
+            for (var i = 0; i < json.length; i++,j+2) {
                 var service_desc = document.getElementById("service_desc_" + i);
-                let {title, photo, id_service} = json[i];
+                let {title, photo, id_service} = json[j];
 
                 document.getElementById("service_" + i).style.display = "block";
                 document.getElementById("service_img_" + i).src = `${photo}`;
                 service_desc.innerHTML =  `${title}`;
-                
-                
             }
         });
     </script>
