@@ -239,46 +239,15 @@
 
             document.getElementById("ciao").innerHTML = json;
             
-        });
+        //for (var i = 0; i < json.length/2; i++) {
+        //        var service_desc = document.getElementById("service_desc_" + i);
+        //        let {title, photo, id_service} = json[i*2];
 
-                fetch("v1/events?limit=4&offset=0&month=07")
-        .then(function(response) {
-        if (!response.ok) 
-            throw new Error("HTTP error, status = " + response.status);
-        return response.json();
-        })
-        .then(function(json) {
-            for (var i = 0; i < json.length; i++) {
-                var event_desc = document.getElementById("event_desc_" + i);
-                let {title, image, id_event} = json[i];
-
-                document.getElementById("event_" + i).style.display = "block";
-                document.getElementById("event_img_" + i).src = `${image}`;
-                document.getElementById("event_link_" + i).onclick = function() 
-                    {localStorage["id_event"] = `${id_event}`;};
-               // document.getElementById("event_img_" + i).style.height = "300"; 
-                event_desc.innerHTML =  `${title}`;
-   
-            }
-        });
-
-        fetch("v1/services?limit=8&offset=0")
-        .then(function(response) {
-        if (!response.ok) 
-            throw new Error("HTTP error, status = " + response.status);
-        return response.json();
-        })
-
-        .then(function(json) {
-            for (var i = 0; i < json.length/2; i++) {
-                var service_desc = document.getElementById("service_desc_" + i);
-                let {title, photo, id_service} = json[i*2];
-
-                document.getElementById("service_" + i).style.display = "block";
-                document.getElementById("service_img_" + i).src = `${photo}`;
-                //document.getElementById("service_img_" + i).style.height = "300";
-                service_desc.innerHTML =  `${title}`;
-            }
+        //        document.getElementById("service_" + i).style.display = "block";
+        //        document.getElementById("service_img_" + i).src = `${photo}`;
+        //        //document.getElementById("service_img_" + i).style.height = "300";
+        //        service_desc.innerHTML =  `${title}`;
+        //    }
         });
     </script>
 </html>
