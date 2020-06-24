@@ -67,7 +67,7 @@ exports.Event_ServiceDbSetup = function(connection) {
  **/
 exports.getEvent = function(eventId) {
   return sqlDb("Event AS e")
-      .where('id_event', eventId)
+      .where('e.id_event', eventId)
       .join('Person AS p', 'e.id_person', '=', 'p.id_person')
       .join('Event_Service AS es', 'e.id_event','=', 'es.id_event')
       //.join('Service', 'Event_Service.id_service','=', 'Service.id_service')
