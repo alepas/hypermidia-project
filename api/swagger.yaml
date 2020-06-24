@@ -347,9 +347,6 @@ definitions:
       pratical_info:
         type: "string"
         example: "Informazioni pratiche"
-      description:
-        type: "string"
-        example: "descrizione del servizio"
       events:
         type: "array"
         items:

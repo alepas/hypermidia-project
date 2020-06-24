@@ -46,15 +46,19 @@ exports.Service_PhotoDbSetup = function(connection) {
  * returns List
  **/
 exports.getService = function(serviceId) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = [ "", "" ];
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
+  return sqlDb("Service AS s")
+      .select(['e.title', 'e.image', 'e.id_event', 'p.fullname', 'p.photo', 'p.motto', 'p.id_person', 's.title as s_title', 'sp.photo as sp_photo', 's.presentation', 's.pratical_info'])
+      .where('s.id_service', serviceId)
+      .join('Person_Service AS ps', 's.id_service','=', 'ps.id_service')
+      .join('Person AS p', 'ps.id_person', '=', 'p.id_person')
+      .join('Event_Service AS es', 'es.id_service','=', 's.id_service')
+      .join('Event AS e', 'e.id_event','=', 'es.id_event')
+      .join('Service_Photo AS sp', 's.id_service','=', 'sp.id_service')
+      .then(data => {
+        console.log("data! ");
+        console.log(data);
+        return data
+      })
 }
 
 

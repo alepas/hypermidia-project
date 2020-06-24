@@ -54,13 +54,13 @@
                 <ul class='breadcrumb'>
                     <li><a href='../index.html'></a> </li>
                     <li aria-current="page">Services </li>
-                    <li aria-current="page">We love ermines </li>
+                    <li id="breadcrumb" aria-current="page"></li>
                 </ul>
             </nav>
         </div>
 
         <div class="title-group">
-            <p>We love ermines</p>
+            <p id="service_title"></p>
         </div>
 
         
@@ -75,21 +75,21 @@
         <div class="carousel-containera">
             <div class="carousel-itema">
                 <a class="carousel-prev" onclick="plusSlides(-1)">&#10094;</a>
-                <img src="../assets/img/ermellino.jpg" class="carousel-item-img">
+                <img id="service_img_1" src="../assets/img/ermellino.jpg" class="carousel-item-img">
                 <div class="carousel-item-text">Ermines</div>
                 <a class="carousel-next" onclick="plusSlides(1)">&#10095;</a>
             </div>
   
             <div class="carousel-itema">
                 <a class="carousel-prev" onclick="plusSlides(-1)">&#10094;</a>
-                <img src="../assets//img/gufo.jpg" class="carousel-item-img">
+                <img id="service_img_2" src="../assets//img/gufo.jpg" class="carousel-item-img">
                 <div class="carousel-item-text">Howl</div>
                 <a class="carousel-next" onclick="plusSlides(1)">&#10095;</a>
             </div>
   
             <div class="carousel-itema">
                 <a class="carousel-prev" onclick="plusSlides(-1)">&#10094;</a>
-                <img src="../assets//img/marmotte.jpg" class="carousel-item-img">
+                <img id="service_img_3" src="../assets//img/marmotte.jpg" class="carousel-item-img">
                 <div class="carousel-item-text">Marmots</div>
                 <a class="carousel-next" onclick="plusSlides(1)">&#10095;</a>
             </div>
@@ -118,8 +118,7 @@
             &nbsp;
         </div>
 
-        <p>«Tuttavia, perché voi intendiate da dove sia nato tutto questo errore, di quelli che incolpano il piacere ed esaltano il dolore, io spiegherò tutta la questione, e presenterò le idee espresse dal famoso esploratore della verità, vorrei quasi dire dal costruttore della felicità umana. Nessuno, infatti, detesta, odia, o rifugge il piacere in quanto tale, solo perché è piacere, ma perché grandi sofferenze colpiscono quelli che non sono capaci di raggiungere il piacere attraverso la ragione; e al contrario, non c'è nessuno che ami, insegua, voglia raggiungere il dolore in se stesso, soltanto perché è dolore, ma perché qualche volta accadono situazioni tali per cui attraverso la sofferenza o il dolore si cerca di raggiungere un qualche grande piacere. Concentrandoci su casi di piccola importanza: chi di noi intraprende un esercizio ginnico, se non per ottenerne un qualche vantaggio? E d'altra parte, chi avrebbe motivo di criticare colui che desidera provare un piacere cui non segua nessun fastidio, o colui che fugge un dolore che non produce nessun piacere?
-            Al contrario, però, noi con indignazione denunciamo e riteniamo meritevoli di odio quelli che, rammolliti e corrotti dai piaceri del momento, accecati dal desiderio, non prevedono a quali dolori e a quali sofferenze andranno incontro, e uguale colpa hanno quelli che abbandonano i propri doveri per pigrizia d'animo, cioè per evitare le fatiche e i dolori. Certamente è facile e rapido distinguere questi casi. Infatti nel tempo libero, quando abbiamo tutta la nostra possibilità di scegliere e niente ci ostacola dal fare ciò che ci piace di più, bisogna accogliere ogni piacere e respingere ogni dolore. Ma in altri momenti, o nei doveri inevitabili o negli obblighi che ci vengono dalle circostanze, spesso accadrà che si debba respingere il piacere e accogliere il fastidio. E così il saggio si regola scegliendo tra questi atteggiamenti, facendo in modo che o – respingendo il piacere – ne ottenga di più grandi, o – sopportando il dolore – ne eviti di peggiori.»</div>
+        <p id="service_presentation"></div>
 
         <div class="spacer_medium">
             &nbsp;
@@ -129,13 +128,18 @@
          <div class="spacer_small">
             &nbsp;
         </div>
-         <h2>When</h2>
+
+        <p id="service_pratical_info"></p>
+        <!--
+        <h2>When</h2>
          <p>Anytime</p>
          <div class="spacer_small">
             &nbsp;
         </div>
          <h2>Where</h2>
          <p>Somewhere</p>
+        -->
+
 
          <div class="spacer_medium">
             &nbsp;
@@ -145,42 +149,42 @@
          <h2>Who is involved</h2>
          <p>The following volunteers are involved in this service</p>
          <div class="grid-container-involved-volunteers">
-            <a href="./Person.html">
+            <a id="person_0" href="./Person.html"  style="display: none;">
                 <div class="grid-container-involved-volunteers-item">
                     <div class="grid-container-involved-volunteers-img" > 
-                        <img src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
+                        <img id="person_img_0" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
                     </div>
                     <div class="grid-container-involved-volunteers-text">
                         <span>
-                            <h1>Federico Lucchetti</h1>
-                            <p>"Love mother earth as much as you love your mother"</p>
+                            <h1 id="person_fullname_0"></h1>
+                            <p id="person_motto_0"></p>
                         </span>
                     </div>
                 </div>
             </a>
-            <a href="./Person.html">
+            <a id="person_1" href="./Person.html" style="display: none;">
                 <div class="grid-container-involved-volunteers-item">
                     <div class="grid-container-involved-volunteers-img" > 
-                        <img src="../assets//img/profile-woman.jpg" class='grid-item-img-volunteers'>
+                        <img id="person_img_1" src="../assets//img/profile-woman.jpg" class='grid-item-img-volunteers'>
 
                     </div>
                     <div class="grid-container-involved-volunteers-text">
                         <span>
-                            <h1>Alice Gatti</h1>
-                            <p>"Animals are better than humans"</p>
+                            <h1 id="person_fullname_1"></h1>
+                            <p id="person_motto_1"></p>
                         </span>
                     </div>
                 </div>
             </a>
-            <a href="./Person.html">
+            <a id="person_2" href="./Person.html" style="display: none;">
                 <div class="grid-container-involved-volunteers-item">
                     <div class="grid-container-involved-volunteers-img" > 
-                        <img src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
+                        <img id="person_img_2" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
                     </div>
                     <div class="grid-container-involved-volunteers-text">
                         <span>
-                            <h1>Federico Lucchetti</h1>
-                            <p>"Love mother earth as much as you love your mother"</p>
+                            <h1  id="person_fullname_2"></h1>
+                            <p id="person_motto_2"></p>
                         </span>
                     </div>
                 </div>
@@ -191,45 +195,45 @@
         <h2>Related events</h2>
         <p>The following events will provide this service</p>
         <div class="grid-container-related-events">
-            <div class="grid-item">
-                <a href="./Event.html">
+            <div id="event_0" class="grid-item" style="display: none;">
+                <a id="event_link_0" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/owl_day.jpg" class="card-img" alt="Owls"> 
+                        <img id="event_img_0" src="../assets//img/owl_day.jpg" class="card-img" alt="Owls"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">Such a cutie</h5>
+                            <h2 id="event_desc_0" class="card-title" style="background-color: transparent;"></h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./Event.html">
+            <div id="event_1" class="grid-item" style="display: none;">
+                <a id="event_link_1" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/marmots_day.png" class="card-img" alt="Owls"> 
+                        <img id="event_img_1" src="../assets//img/marmots_day.png" class="card-img" alt="Owls"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">Marmots</h5>
+                            <h2 id="event_desc_1" class="card-title" style="background-color: transparent;"></h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./Event.html">
+            <div id="event_2" class="grid-item" style="display: none;">
+                <a id="event_link_2" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/ibex_day.jpg" class="card-img" alt="Owls"> 
+                        <img id="event_img_2" src="../assets//img/ibex_day.jpg" class="card-img" alt="Owls"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">Ibex -> best name ever</h5>
+                            <h2 id="event_desc_2" class="card-title" style="background-color: transparent;"></h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./Event.html">
+            <div id="event_3" class="grid-item" style="display: none;">
+                <a id="event_link_3" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/ermines_day.jpg" class="card-img" alt="Owls"> 
+                        <img id="event_img_3" src="../assets//img/ermines_day.jpg" class="card-img" alt="Owls"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">who doesn't want an ermine?</h5>
+                            <h2 id="event_desc_3" class="card-title" style="background-color: transparent;"></h5>
                         </div>
                     </div>
                 </a>
@@ -261,5 +265,42 @@
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
-            </body>
+    </body>
+
+    <script>
+        fetch("../v1/services/"  + localStorage["id_service"])
+        .then(function(response) {
+        if (!response.ok) 
+            throw new Error("HTTP error, status = " + response.status);
+        return response.json();
+        })
+        .then(function(json) {
+            let {s_title, presentation, pratical_info} = json[0];
+
+            document.getElementById("service_title").innerHTML = `${s_title}`;
+            document.getElementById("breadcrumb").innerHTML = `${s_title}`;
+            document.getElementById("service_presentation").src = `${presentation}`;
+            document.getElementById("service_pratical_info").src = `${pratical_info}`;
+            
+            //for *3 sp_photo
+            for (var i = 0; i < json.length; i++) {
+                let {title, image, id_event, fullname, photo, motto, id_person} = json[i];
+
+                //populate people cards
+                document.getElementById("person_fullname_" + i).innerHTML =  `${fullname}`;
+                document.getElementById("person_motto_" + i).innerHTML =  `${motto}`;
+                document.getElementById("person_" + i).style.display = "block";
+                document.getElementById("person_img_" + i).src = `${photo}`;
+                document.getElementById("person_" + i).onclick = function() 
+                    {localStorage["id_person"] = `${id_person}`;};
+
+                //populate event cards
+                document.getElementById("event_" + i).style.display = "block";
+                document.getElementById("service_desc_" + i).innerHTML =  `${title}`;
+                document.getElementById("event_img_" + i).src = `${image}`;
+                document.getElementById("event_link_" + i).onclick = function() 
+                    {localStorage["id_event"] = `${id_event}`;};
+            }
+        });
+    </script>
 </html>

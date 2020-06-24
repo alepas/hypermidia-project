@@ -75,8 +75,6 @@ exports.getEvent = function(eventId) {
       .join('Service_Photo AS sp', 's.id_service','=', 'sp.id_service')
       .distinctOn('s.id_service')
       .then(data => {
-        console.log("data! ");
-        console.log(data);
         return data
       })
 }
