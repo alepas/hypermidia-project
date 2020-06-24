@@ -1,4 +1,5 @@
-var slideIndex = 1;
+var today = new Date();
+var slideIndex = today.getMonth();
 showSlides(slideIndex);
 
 // Next/previous controls
