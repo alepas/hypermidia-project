@@ -50,7 +50,7 @@ exports.Person_ServiceDbSetup = function(connection) {
 exports.getVolunteer = function(volunteerId) {
   return sqlDb("Person AS p")
       .select(['e.title', 'e.image', 'e.id_event', 'p.fullname', 'p.photo', 'p.motto', 'p.email', 'p.number', 'p.description', 's.title as s_title', 's.id_service', 'sp.photo as sp_photo'])
-      .where('s.id_person', volunteerId)
+      .where('p.id_person', volunteerId)
       .join('Person_Service AS ps', 'ps.id_person', '=', 'p.id_person')
       .join('Service AS s', 's.id_service','=', 'ps.id_service')
       .join('Event AS e', 'e.id_person','=', 'p.id_person')
