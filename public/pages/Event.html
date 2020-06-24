@@ -96,8 +96,7 @@
         <div class="spacer_small">
             &nbsp;
         </div>
-        <p id="event_description">«Tuttavia, perché voi intendiate da dove sia nato tutto questo errore, di quelli che incolpano il piacere ed esaltano il dolore, io spiegherò tutta la questione, e presenterò le idee espresse dal famoso esploratore della verità, vorrei quasi dire dal costruttore della felicità umana. Nessuno, infatti, detesta, odia, o rifugge il piacere in quanto tale, solo perché è piacere, ma perché grandi sofferenze colpiscono quelli che non sono capaci di raggiungere il piacere attraverso la ragione; e al contrario, non c'è nessuno che ami, insegua, voglia raggiungere il dolore in se stesso, soltanto perché è dolore, ma perché qualche volta accadono situazioni tali per cui attraverso la sofferenza o il dolore si cerca di raggiungere un qualche grande piacere. Concentrandoci su casi di piccola importanza: chi di noi intraprende un esercizio ginnico, se non per ottenerne un qualche vantaggio? E d'altra parte, chi avrebbe motivo di criticare colui che desidera provare un piacere cui non segua nessun fastidio, o colui che fugge un dolore che non produce nessun piacere?
-            Al contrario, però, noi con indignazione denunciamo e riteniamo meritevoli di odio quelli che, rammolliti e corrotti dai piaceri del momento, accecati dal desiderio, non prevedono a quali dolori e a quali sofferenze andranno incontro, e uguale colpa hanno quelli che abbandonano i propri doveri per pigrizia d'animo, cioè per evitare le fatiche e i dolori. Certamente è facile e rapido distinguere questi casi. Infatti nel tempo libero, quando abbiamo tutta la nostra possibilità di scegliere e niente ci ostacola dal fare ciò che ci piace di più, bisogna accogliere ogni piacere e respingere ogni dolore. Ma in altri momenti, o nei doveri inevitabili o negli obblighi che ci vengono dalle circostanze, spesso accadrà che si debba respingere il piacere e accogliere il fastidio. E così il saggio si regola scegliendo tra questi atteggiamenti, facendo in modo che o – respingendo il piacere – ne ottenga di più grandi, o – sopportando il dolore – ne eviti di peggiori.»</div>
+        <p id="event_description"></div>
 
         <div class="spacer_medium">
             &nbsp;
@@ -136,45 +135,45 @@
         <h2>Services</h2>
         <p>This event will provide the following services</p>
         <div class="grid-container-related-events">
-            <div class="grid-item">
-                <a href="./Service.html">
+            <div id="service_0" class="grid-item"  style="display: none;">
+                <a id="service_link_0" href="./Service.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/gufo.jpg" class="card-img" alt="Owls"> 
+                        <img id="service_img_0" src="../assets//img/gufo.jpg" class="card-img" alt="Owls"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">Such a cutie</h5>
+                            <h2 id="service_desc_0" class="card-title" style="background-color: transparent;"></h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./Service.html">
+            <div id="service_1" class="grid-item" style="display: none;">
+                <a id="service_link_1" href="./Service.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/marmotte.jpg" class="card-img" alt="Owls"> 
+                        <img id="service_img_1" src="../assets//img/marmotte.jpg" class="card-img" alt="Owls"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">Marmots</h5>
+                            <h2 id="service_desc_1" class="card-title" style="background-color: transparent;"></h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./Service.html">
+            <div id="service_2" class="grid-item" style="display: none;">
+                <a id="service_link_2" href="./Service.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/stambecchi.jpg" class="card-img" alt="Owls"> 
+                        <img id="service_img_2" src="../assets//img/stambecchi.jpg" class="card-img" alt="Owls"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">Ibex -> best name ever</h5>
+                            <h2 id="service_desc_2" class="card-title" style="background-color: transparent;"></h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./Service.html">
+            <div id="service_3" class="grid-item" style="display: none;">
+                <a id="service_link_3" href="./Service.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/ermellino.jpg" class="card-img" alt="Owls"> 
+                        <img id="service_img_3" src="../assets//img/ermellino.jpg" class="card-img" alt="Owls"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">who doesn't want an ermine?</h5>
+                            <h2 id="service_desc_3" class="card-title" style="background-color: transparent;"></h5>
                         </div>
                     </div>
                 </a>
@@ -219,7 +218,7 @@
         return response.json();
         })
         .then(function(json) {
-            let {title, image, date, place, description, fullname, photo, motto} = json[0];
+            let {title, image, date, place, description, fullname, photo, motto, id_person} = json[0];
             var dateTime =  `${date}`;
             var array = dateTime.split("T");
             var event_date = array[0];
@@ -243,15 +242,15 @@
             document.getElementById("ciao").innerHTML = json;
             console.log("json! " + json);
             
-        //for (var i = 0; i < json.length/2; i++) {
-        //        var service_desc = document.getElementById("service_desc_" + i);
-        //        let {title, photo, id_service} = json[i*2];
+        for (var i = 0; i < json.length; i++) {
+                var service_desc = document.getElementById("service_desc_" + i);
+                let {s_title, sp_photo, id_service} = json[i];
 
-        //        document.getElementById("service_" + i).style.display = "block";
-        //        document.getElementById("service_img_" + i).src = `${photo}`;
-        //        //document.getElementById("service_img_" + i).style.height = "300";
-        //        service_desc.innerHTML =  `${title}`;
-        //    }
+                document.getElementById("service_" + i).style.display = "block";
+                document.getElementById("service_img_" + i).src = `${sp_photo}`;
+                //document.getElementById("service_img_" + i).style.height = "300";
+                service_desc.innerHTML =  `${s_title}`;
+            }
         });
     </script>
 </html>

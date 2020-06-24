@@ -67,15 +67,20 @@ exports.Event_ServiceDbSetup = function(connection) {
  **/
 exports.getEvent = function(eventId) {
   return sqlDb("Event AS e")
+      .select(['e.title', 'e.image', 'e.date', 'e.place', 'e.description', 'p.fullname', 'p.photo', 'p.motto', 'p.id_person', 's.title as s_title', 'sp.photo as sp_photo', 's.id_service'])
       .where('e.id_event', eventId)
       .join('Person AS p', 'e.id_person', '=', 'p.id_person')
       .join('Event_Service AS es', 'e.id_event','=', 'es.id_event')
-      //.join('Service', 'Event_Service.id_service','=', 'Service.id_service')
-      //.join('Service_Photo', 'Service.id_service','=', 'Service_Photo.id_service')
+      .join('Service AS s', 'es.id_service','=', 's.id_service')
+      .join('Service_Photo AS sp', 's.id_service','=', 'sp.id_service')
+      .distinctOn('s.id_service')
       .then(data => {
         console.log("data! ");
         console.log(data);
-        return data
+        return data.map(e => {
+           e.price = { value: e.value, currency: e.currency };
+           return e;
+           });
       })
 }
 
