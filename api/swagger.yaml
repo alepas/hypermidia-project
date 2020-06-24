@@ -260,7 +260,11 @@ definitions:
     properties:
       date:
         type: "string"
-        format: "date-time"
+        format: "date"
+      start_time:
+        type: "string"
+      end_time:
+        type: "string"
       place:
         type: "string"
       description:
