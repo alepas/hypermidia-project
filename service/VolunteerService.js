@@ -48,15 +48,17 @@ exports.Person_ServiceDbSetup = function(connection) {
  * returns List
  **/
 exports.getVolunteer = function(volunteerId) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = [ "", "" ];
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
+  return sqlDb("Person AS p")
+      .select(['e.title', 'e.image', 'e.id_event', 'p.fullname', 'p.photo', 'p.motto', 'p.email', 'p.number', 'p.description', 's.title as s_title', 's.id_service', 'sp.photo as sp_photo'])
+      .where('s.id_person', volunteerId)
+      .join('Person_Service AS ps', 'ps.id_person', '=', 'p.id_person')
+      .join('Service AS s', 's.id_service','=', 'ps.id_service')
+      .join('Event AS e', 'e.id_person','=', 'p.id_person')
+      .join('Service_Photo AS sp', 's.id_service','=', 'sp.id_service')
+      .distinctOn('s.id_service')
+      .then(data => {
+        return data
+      })
 }
 
 

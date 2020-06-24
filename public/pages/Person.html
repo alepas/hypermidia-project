@@ -54,15 +54,14 @@
                 <ul class='breadcrumb'>
                     <li><a href='../index.html'></a> </li>
                     <li aria-current="page">Volunteers </li>
-                    <li aria-current="page">Federico Lucchetti </li>
+                    <li id="breadcrumb" aria-current="page"></li>
                 </ul>
             </nav>
         </div>
 
         <!--Person name-->
         <div class="person-name">
-            <h1>
-                Federico Lucchetti
+            <h1 id="person_fullname">
             </h1>
         </div>
 
@@ -76,24 +75,36 @@
                     <h2>Birthday</h2>
                     <p>16 January 1986</p>
         
-                    <h2>Motto</h2>
-                    <p>"Love mother earth as much as you love your mother"</p>
+                    <h2 >Motto</h2>
+                    <p id="person_motto">"Love mother earth as much as you love your mother"</p>
                 </span>
             </div>
             <div class="person-data-right">
                 <span>
                     <h2>Phone</h2>
-                    <p>+39 3451112223</p>
+                    <p id="person_number"></p>
         
                     <h2>E-mail</h2>
-                    <p>fluc@gmail.com</p>
+                    <p id="person_email"></p>
                 </span>
             </div>
         </div>
+
+        <div class="spacer_medium">
+            &nbsp;
+        </div>
+    
+         <h1>Description</h1>
+         <div class="spacer_small">
+            &nbsp;
+        </div>
+
+        <p id="person_description"></p>
         
         <div class="spacer_medium">
             &nbsp;
         </div>
+
 
 
          <!--Events -->
@@ -101,45 +112,45 @@
          <h1>Events</h1>
          <p>The following events involve this volunteer</p>
          <div class="grid-container-related-events">
-            <div class="grid-item">
-                <a href="./Event.html">
+            <div id="event_0" class="grid-item" style="display: none;">
+                <a id="event_link_0" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/owl_day.jpg" class="card-img" alt="Event_1"> 
+                        <img id="event_img_0" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_1"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">Such a cutie</h5>
+                            <h2 id="event_desc_0" class="card-title" style="background-color: transparent;">Such a cutie</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./Event.html">
+            <div id="event_1" class="grid-item" style="display: none;">
+                <a id="event_link_1" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/marmots_day.png" class="card-img" alt="Event_2"> 
+                        <img id="event_img_1" src="../assets//img/marmots_day.png" class="card-img" alt="Event_2"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">Marmots</h5>
+                            <h2 id="event_desc_1" class="card-title" style="background-color: transparent;">Marmots</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./Event.html">
+            <div id="event_2" class="grid-item" style="display: none;">
+                <a id="event_link_2" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/ibex_day.jpg" class="card-img" alt="Event_3"> 
+                        <img id="event_img_2" src="../assets//img/ibex_day.jpg" class="card-img" alt="Event_3"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">Ibex -> best name ever</h5>
+                            <h2 id="event_desc_2" class="card-title" style="background-color: transparent;">Ibex -> best name ever</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./Event.html">
+            <div id="event_3" class="grid-item" style="display: none;">
+                <a id="event_link_3" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/ermines_day.jpg" class="card-img" alt="Event_4"> 
+                        <img id="event_img_3" src="../assets//img/ermines_day.jpg" class="card-img" alt="Event_4"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">who doesn't want an ermine?</h5>
+                            <h2 id="event_desc_3" class="card-title" style="background-color: transparent;">who doesn't want an ermine?</h5>
                         </div>
                     </div>
                 </a>
@@ -154,45 +165,45 @@
          <p>The following services involve this volunteer</p>
  
          <div class="grid-container-related-events">
-            <div class="grid-item">
-                <a href="./Service.html">
+            <div id="service_0" class="grid-item" style="display: none;">
+                <a id="service_link_0" href="./Service.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/gufo.jpg" class="card-img" alt="Service_1"> 
+                        <img id="service_img_0" src="../assets//img/gufo.jpg" class="card-img" alt="Service_1"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">Such a cutie</h5>
+                            <h2 id="service_desc_0" class="card-title" style="background-color: transparent;">Such a cutie</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./Service.html">
+            <div id="service_1" class="grid-item" style="display: none;">
+                <a id="service_link_1" href="./Service.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/marmotte.jpg" class="card-img" alt="Service_2"> 
+                        <img id="service_img_1" src="../assets//img/marmotte.jpg" class="card-img" alt="Service_2"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">Marmots</h5>
+                            <h2 id="service_desc_1" class="card-title" style="background-color: transparent;">Marmots</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./Service.html">
+            <div id="service_2" class="grid-item" style="display: none;" class="grid-item">
+                <a id="service_link_2" href="./Service.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/stambecchi.jpg" class="card-img" alt="Service_3"> 
+                        <img id="service_img_2" src="../assets//img/stambecchi.jpg" class="card-img" alt="Service_3"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">Ibex -> best name ever</h5>
+                            <h2 id="service_desc_2" class="card-title" style="background-color: transparent;">Ibex -> best name ever</h5>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="grid-item">
-                <a href="./Service.html">
+            <div id="service_3" class="grid-item" style="display: none;"class="grid-item">
+                <a id="service_link_3" href="./Service.html">
                     <div class="card bg-dark text-white">
-                        <img src="../assets//img/ermellino.jpg" class="card-img" alt="Service_4"> 
+                        <img id="service_img_3" src="../assets//img/ermellino.jpg" class="card-img" alt="Service_4"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 class="card-title" style="background-color: transparent;">who doesn't want an ermine?</h5>
+                            <h2 id="service_desc_3" class="card-title" style="background-color: transparent;">who doesn't want an ermine?</h5>
                         </div>
                     </div>
                 </a>
@@ -225,4 +236,59 @@
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
+    <script>
+        fetch("../v1/volunteers/"  + localStorage["id_person"])
+        .then(function(response) {
+        if (!response.ok) 
+            throw new Error("HTTP error, status = " + response.status);
+        return response.json();
+        })
+        .then(function(json) {
+            let {fullname, photo, motto,email, number, description} = json[0];
+
+            document.getElementById("person_fullname").innerHTML = `${fullname}`;
+            document.getElementById("breadcrumb").innerHTML = `${fullname}`;
+            document.getElementById("person_motto").innerHTML = `${motto}`;
+            document.getElementById("person_number").innerHTML = `${number}`;
+            document.getElementById("person_email").innerHTML = `${email}`;
+            document.getElementById("person_description").innerHTML = `${description}`;
+            
+
+            var id_events = [];
+            var id_services = [];
+            for(var i = 0; i < json.length; i++){
+                let{id_event, id_service} = json[i];
+                if(! id_events.includes(`${id_event}`)){
+                    id_events.push(`${id_event}`)
+                }
+                if(! id_services.includes(`${id_service}`)){
+                    id_services.push(`${id_service}`)
+                }
+            }
+            
+            for (var i = 0; i < json.length; i++) {
+                let {title, image, id_event,  id_service, s_title, sp_photo} = json[i];
+
+                //populate people cards
+                if(id_services.includes(`${id_service}`)){
+                    document.getElementById("service_desc_" + i).innerHTML =  `${s_title}`;
+                    document.getElementById("service_" + i).style.display = "block";
+                    document.getElementById("service_img_" + i).src = `${sp_photo}`;
+                    document.getElementById("service_link_" + i).onclick = function() 
+                        {localStorage["id_service"] = `${id_service}`;};
+                    id_services.splice(id_services.indexOf(`${id_service}`), 1);
+                }
+
+                //populate event cards
+                if(id_events.includes(`${id_event}`)){
+                    document.getElementById("event_" + i).style.display = "block";
+                    document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
+                    document.getElementById("event_img_" + i).src = `${image}`;
+                    document.getElementById("event_link_" + i).onclick = function() 
+                        {localStorage["id_event"] = `${id_event}`;};
+                    id_events.splice(id_events.indexOf(`${id_event}`), 1);
+                }
+            }
+        });
+    </script>
 </html>

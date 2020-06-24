@@ -55,8 +55,6 @@ exports.getService = function(serviceId) {
       .join('Event AS e', 'e.id_event','=', 'es.id_event')
       .join('Service_Photo AS sp', 's.id_service','=', 'sp.id_service')
       .then(data => {
-        console.log("data! ");
-        console.log(data);
         return data
       })
 }
