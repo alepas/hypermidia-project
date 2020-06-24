@@ -115,17 +115,14 @@
                     </div>
                     <div class="event-organizer-right">
                         <span>
-                            <h1 id="organizer_fullname">Federico Lucchetti</h1>
-                            <p id="organizer_motto">"Love mother earth as much as you love your mother"</p>
+                            <h1 id="organizer_fullname"></h1>
+                            <p id="organizer_motto"></p>
                         </span>
                     </div>
                 </div>
             </a>
         </div>
 
-        <p id="ciao">
-
-        </p>
         <div class="spacer_medium">
             &nbsp;
         </div>
@@ -233,13 +230,12 @@
             document.getElementById("event_description").innerHTML = `${description}`;
 
             var person_name = document.getElementById("organizer_fullname");
-            var person_motto = document.getElementById("organizer_motto_");
+            var person_motto = document.getElementById("organizer_motto");
             document.getElementById("organizer").style.display = "block";
             document.getElementById("organizer_img").src = `${photo}`;
             person_name.innerHTML =  `${fullname}`;
             person_motto.innerHTML =  `${motto}`;
 
-            document.getElementById("ciao").innerHTML = json;
             console.log("json! " + json);
             
         for (var i = 0; i < json.length; i++) {
