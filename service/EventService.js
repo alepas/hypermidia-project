@@ -66,10 +66,10 @@ exports.Event_ServiceDbSetup = function(connection) {
  * returns List
  **/
 exports.getEvent = function(eventId) {
-  return sqlDb("Event")
+  return sqlDb("Event AS e")
       .where('id_event', eventId)
-      .join('Person', 'Event.id_person', '=', 'Person.id_person')
-      .join('Event_Service', 'Event.id_event','=', 'Event_Service.id_event')
+      .join('Person AS p', 'e.id_person', '=', 'p.id_person')
+      .join('Event_Service AS es', 'e.id_event','=', 'es.id_event')
       //.join('Service', 'Event_Service.id_service','=', 'Service.id_service')
       //.join('Service_Photo', 'Service.id_service','=', 'Service_Photo.id_service')
       .then(data => {
