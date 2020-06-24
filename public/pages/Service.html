@@ -283,25 +283,43 @@
             document.getElementById("breadcrumb").innerHTML = `${s_title}`;
             document.getElementById("service_presentation").innerHTML = `${presentation}`;
             document.getElementById("service_pratical_info").innerHTML = `${pratical_info}`;
+
+            var id_events = [];
+            var id_people = [];
+            for(var i = 0; i < json.length; i++){
+                let{id_event, id_person} = json[i];
+                if(! id_events.includes(`${id_event}`)){
+                    id_events.push(`${id_event}`)
+                }
+                if(! id_people.includes(`${id_person}`)){
+                    id_people.push(`${id_person}`)
+                }
+            }
             
             //for *3 sp_photo
             for (var i = 0; i < json.length; i++) {
                 let {title, image, id_event, fullname, photo, motto, id_person} = json[i];
 
                 //populate people cards
-                document.getElementById("person_fullname_" + i).innerHTML =  `${fullname}`;
-                document.getElementById("person_motto_" + i).innerHTML =  `${motto}`;
-                document.getElementById("person_" + i).style.display = "block";
-                document.getElementById("person_img_" + i).src = `${photo}`;
-                document.getElementById("person_" + i).onclick = function() 
-                    {localStorage["id_person"] = `${id_person}`;};
+                if(id_people.includes(`${id_person}`)){
+                    document.getElementById("person_fullname_" + i).innerHTML =  `${fullname}`;
+                    document.getElementById("person_motto_" + i).innerHTML =  `${motto}`;
+                    document.getElementById("person_" + i).style.display = "block";
+                    document.getElementById("person_img_" + i).src = `${photo}`;
+                    document.getElementById("person_" + i).onclick = function() 
+                        {localStorage["id_person"] = `${id_person}`;};
+                    id_people.splice(id_people.indexOf(`${id_person}`), 1);
+                }
 
                 //populate event cards
-                document.getElementById("event_" + i).style.display = "block";
-                document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
-                document.getElementById("event_img_" + i).src = `${image}`;
-                document.getElementById("event_link_" + i).onclick = function() 
-                    {localStorage["id_event"] = `${id_event}`;};
+                if(id_events.includes(`${id_event}`)){
+                    document.getElementById("event_" + i).style.display = "block";
+                    document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
+                    document.getElementById("event_img_" + i).src = `${image}`;
+                    document.getElementById("event_link_" + i).onclick = function() 
+                        {localStorage["id_event"] = `${id_event}`;};
+                    id_events.splice(id_events.indexOf(`${id_event}`), 1);
+                }
             }
         });
     </script>

@@ -216,7 +216,7 @@
         })
         .then(function(json) {
             let {title, image, date, start_time, end_time, place, description, fullname, photo, motto, id_person} = json[0];
-            var time =   "From " + `${start_time}` + "to " +  `${end_time}`;
+            var time =   "From " + `${start_time}` + " to " +  `${end_time}`;
             var ev_date =  `${date}`;
             var date_array = ev_date.split("T");
             var date_nice = date_array[0].split("-").reverse();
