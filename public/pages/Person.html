@@ -68,7 +68,7 @@
         <!--Person data-->
         <div class="person-data">
             <div class="person-data-left" > 
-                <img src="../assets//img/profile-man.jpg" class='person-data-img'>
+                <img id="person_photo" src="../assets//img/profile-man.jpg" class='person-data-img'>
             </div>
             <div class="person-data-middle">
                 <span>
@@ -252,7 +252,7 @@
             document.getElementById("person_number").innerHTML = `${number}`;
             document.getElementById("person_email").innerHTML = `${email}`;
             document.getElementById("person_description").innerHTML = `${description}`;
-            
+            document.getElementById("person_photo").src = `${photo}`;
 
             var id_events = [];
             var id_services = [];
