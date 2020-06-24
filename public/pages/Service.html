@@ -118,7 +118,9 @@
             &nbsp;
         </div>
 
-        <p id="service_presentation"></div>
+        <p id="service_presentation">
+
+        </p>
 
         <div class="spacer_medium">
             &nbsp;
@@ -279,8 +281,8 @@
 
             document.getElementById("service_title").innerHTML = `${s_title}`;
             document.getElementById("breadcrumb").innerHTML = `${s_title}`;
-            document.getElementById("service_presentation").src = `${presentation}`;
-            document.getElementById("service_pratical_info").src = `${pratical_info}`;
+            document.getElementById("service_presentation").innerHTML = `${presentation}`;
+            document.getElementById("service_pratical_info").innerHTML = `${pratical_info}`;
             
             //for *3 sp_photo
             for (var i = 0; i < json.length; i++) {
@@ -296,7 +298,7 @@
 
                 //populate event cards
                 document.getElementById("event_" + i).style.display = "block";
-                document.getElementById("service_desc_" + i).innerHTML =  `${title}`;
+                document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
                 document.getElementById("event_img_" + i).src = `${image}`;
                 document.getElementById("event_link_" + i).onclick = function() 
                     {localStorage["id_event"] = `${id_event}`;};
