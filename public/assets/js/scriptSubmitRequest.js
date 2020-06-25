@@ -1,12 +1,6 @@
 
 function submitRequest(){
     var topics = document.getElementById("topic");
-
-    console.log("name " + document.getElementById("fullname").value);
-    console.log("e mail " + document.getElementById("email").value);
-    console.log("option " + topics.options[topics.selectedIndex].text);
-    console.log("issue " + document.getElementById("issue").value);
-
     document.getElementById("alert_message").innerHTML = "";
     fetch("../../v1/contactUs", { 
         method: "post",

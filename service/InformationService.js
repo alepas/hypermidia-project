@@ -61,16 +61,15 @@ exports.getFaq = function() {
  * no response value expected for this operation
  **/
 exports.postForm = function(request) {
-  console.log("request " + request);
-  var json = request.body;
+  var json = request.name;
   console.log("json " + json)
   sqlDb("Issues")
   .insert({
-    name: request.body.name,
-    email: request.body.email,
-    topic: request.body.topic,
-    issue: request.body.issue,
-    privacy: request.body.privacy
+    name: request.name,
+    email: request.email,
+    topic: request.topic,
+    issue: request.issue,
+    privacy: request.privacy
   })
   return "OK";
 }
