@@ -272,7 +272,7 @@
                 let {title, image, id_event,  id_service, s_title, sp_photo} = json[i];
 
                 //populate people cards
-                if(flag_s == 1 && !`${sp_photo}`){
+                if(flag_s == 1 && `${id_service}` == "null"){
                     document.getElementById("service_desc_" + i).innerHTML = `${fullname}` + " is not related to any service at the moment";
                     document.getElementById("service_desc_" + i).style.color = "black";
                     document.getElementById("service_" + i).style.display = "block";
@@ -296,10 +296,9 @@
                     document.getElementById("event_desc_" + i).innerHTML =  `${fullname}` + " is not the coordinator of any event at the moment";
                     document.getElementById("event_desc_" + i).style.color = "black";
                     document.getElementById("event_link_" + i).href = "javascript:function() { return false; }"
-                    flag_e == 0;
+                    flag_e = 0;
                 }else {
                     if(flag_e == 1 && id_events.includes(`${id_event}`)){
-                        console.log(id_events);
                         document.getElementById("event_" + i).style.display = "block";
                         document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
                         document.getElementById("event_img_" + i).src = `${image}`;
