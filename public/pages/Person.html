@@ -273,7 +273,6 @@
 
                 //populate people cards
                 if(flag_s == 1 && !`${sp_photo}`){
-                    console.log("s_fuori " + `${sp_photo}`);
                     document.getElementById("service_desc_" + i).innerHTML = `${fullname}` + " is not related to any service at the moment";
                     document.getElementById("service_desc_" + i).style.color = "black";
                     document.getElementById("service_" + i).style.display = "block";
@@ -281,7 +280,6 @@
                     flag_s = 0;
                 }else{
                     if(flag_s == 1 && id_services.includes(`${id_service}`)){
-                        console.log("s_dentro " + `${sp_photo}`);
                         document.getElementById("service_desc_" + i).innerHTML =  `${s_title}`;
                         document.getElementById("service_" + i).style.display = "block";
                         document.getElementById("service_img_" + i).src = `${sp_photo}`;
@@ -301,7 +299,7 @@
                     flag_e == 0;
                 }else {
                     if(flag_e == 1 && id_events.includes(`${id_event}`)){
-                        console.log("e_dentro " + `${image}`);
+                        console.log(id_events);
                         document.getElementById("event_" + i).style.display = "block";
                         document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
                         document.getElementById("event_img_" + i).src = `${image}`;
