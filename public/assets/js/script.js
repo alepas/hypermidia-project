@@ -1,6 +1,5 @@
 var slideIndex = 1;
 var slideNumber = 1;
-showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
@@ -15,7 +14,7 @@ function currentSlide(n) {
 // Sets the number of slides
 function setSlides(n){
     slideNumber = n;
-    showSlides(n);
+    showSlides(slideIndex);
 }
 
 function showSlides(n) {
@@ -32,7 +31,7 @@ function showSlides(n) {
             slides[i].style.display = "none";
     }
     for(i= slideNumber; i< slides.length; i++){
-        dots[slideIndex-1].style.display = "none";
+        dots[i].style.display = "none";
     }
     for (i = 0; i < slideNumber; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
