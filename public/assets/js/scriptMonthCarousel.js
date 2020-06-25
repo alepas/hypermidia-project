@@ -41,13 +41,11 @@ function changeMonth(month){
       for(var i=0; i<12; i++)
         document.getElementById("event_" + i).style.display = "none";
       for (var i = 0; i < json.length; i++) {
-          var event_desc = document.getElementById("event_desc_" + i);
           let {title, image, id_event, date} = json[i];
 
           document.getElementById("event_" + i).style.display = "block";
           document.getElementById("event_img_" + i).src = `${image}`;
-      //  document.getElementById("event_img_" + i).style.height = "300";
-          event_desc.innerHTML =  `${title}`;
+          document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
       }
   });
 }
