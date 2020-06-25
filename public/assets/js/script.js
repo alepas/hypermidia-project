@@ -1,5 +1,6 @@
 var slideIndex = 1;
 var slideNumber = 1;
+hideSlides();
 
 // Next/previous controls
 function plusSlides(n) {
@@ -28,7 +29,7 @@ function showSlides(n) {
         slideIndex = slideNumber
     }
     for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+        slides[i].style.display = "none";
     }
     for(i= slideNumber; i< slides.length; i++){
         dots[i].style.display = "none";
@@ -38,4 +39,11 @@ function showSlides(n) {
     }
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
+}
+
+function hideSlides(){
+    var slides = document.getElementsByClassName("carousel-itema");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
 }

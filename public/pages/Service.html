@@ -305,6 +305,12 @@
             for (var i = 0; i < json.length; i++) {
                 let {title, image, id_event, fullname, photo, motto, id_person, id_service_photo, sp_photo} = json[i];
 
+                //populate image carousel
+                if(id_service_photoes.includes(`${id_service_photo}`)){
+                    document.getElementById("service_img_" + i).src = `${sp_photo}`;
+                    id_service_photoes.splice(id_service_photoes.indexOf(`${id_service_photo}`), 1);
+                }
+
                 //populate people cards
                 if(id_people.includes(`${id_person}`)){
                     document.getElementById("person_fullname_" + i).innerHTML =  `${fullname}`;
@@ -326,11 +332,6 @@
                     id_events.splice(id_events.indexOf(`${id_event}`), 1);
                 }
 
-                //populate image carousel
-                if(id_service_photoes.includes(`${id_service_photo}`)){
-                    document.getElementById("service_img_" + i).src = `${sp_photo}`;
-                    id_service_photoes.splice(id_events.indexOf(`${id_service_photo}`), 1);
-                }
             }
         });
     </script>
