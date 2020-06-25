@@ -75,21 +75,21 @@
         <div class="carousel-containera">
             <div class="carousel-itema">
                 <a class="carousel-prev" onclick="plusSlides(-1)">&#10094;</a>
-                <img id="service_img_1" src="../assets/img/ermellino.jpg" class="carousel-item-img">
+                <img id="service_img_0" src="../assets/img/ermellino.jpg" class="carousel-item-img">
                 <div class="carousel-item-text">Ermines</div>
                 <a class="carousel-next" onclick="plusSlides(1)">&#10095;</a>
             </div>
   
             <div class="carousel-itema">
                 <a class="carousel-prev" onclick="plusSlides(-1)">&#10094;</a>
-                <img id="service_img_2" src="../assets//img/gufo.jpg" class="carousel-item-img">
+                <img id="service_img_1" src="../assets//img/gufo.jpg" class="carousel-item-img">
                 <div class="carousel-item-text">Howl</div>
                 <a class="carousel-next" onclick="plusSlides(1)">&#10095;</a>
             </div>
   
             <div class="carousel-itema">
                 <a class="carousel-prev" onclick="plusSlides(-1)">&#10094;</a>
-                <img id="service_img_3" src="../assets//img/marmotte.jpg" class="carousel-item-img">
+                <img id="service_img_2" src="../assets//img/marmotte.jpg" class="carousel-item-img">
                 <div class="carousel-item-text">Marmots</div>
                 <a class="carousel-next" onclick="plusSlides(1)">&#10095;</a>
             </div>
@@ -286,19 +286,24 @@
 
             var id_events = [];
             var id_people = [];
+            var id_service_photoes = [];
             for(var i = 0; i < json.length; i++){
-                let{id_event, id_person} = json[i];
+                let{id_event, id_person, id_service_photo} = json[i];
                 if(! id_events.includes(`${id_event}`)){
                     id_events.push(`${id_event}`)
                 }
                 if(! id_people.includes(`${id_person}`)){
                     id_people.push(`${id_person}`)
                 }
+                if(! id_service_photoes.includes(`${id_service_photo}`)){
+                    id_service_photoes.push(`${id_service_photo}`)
+                }
             }
+
+            setSlides(id_service_photoes.length());
             
-            //for *3 sp_photo
             for (var i = 0; i < json.length; i++) {
-                let {title, image, id_event, fullname, photo, motto, id_person} = json[i];
+                let {title, image, id_event, fullname, photo, motto, id_person, id_service_photo, sp_photo} = json[i];
 
                 //populate people cards
                 if(id_people.includes(`${id_person}`)){
@@ -319,6 +324,12 @@
                     document.getElementById("event_link_" + i).onclick = function() 
                         {localStorage["id_event"] = `${id_event}`;};
                     id_events.splice(id_events.indexOf(`${id_event}`), 1);
+                }
+
+                //populate image carousel
+                if(id_service_photoes.includes(`${id_service_photo}`)){
+                    document.getElementById("service_img_" + i).src = `${sp_photo}`;
+                    id_service_photoes.splice(id_events.indexOf(`${id_service_photo}`), 1);
                 }
             }
         });

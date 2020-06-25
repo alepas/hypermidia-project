@@ -64,7 +64,7 @@
         <!--Grid for services-->
         <div class="grid-container">
             <div id="service_0" class="grid-item" style="display: none;">
-                <a href="./Service.html">
+                <a id="service_link_0" href="./Service.html">
                     <div class="card bg-dark text-white">
                         <img id="service_img_0" src="../assets//img/gufo.jpg" class="card-img" alt="Service_1"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -75,7 +75,7 @@
             </div>
 
             <div id="service_1" class="grid-item" style="display: none;">
-                <a href="./Service.html">
+                <a id="service_link_1" href="./Service.html">
                     <div class="card bg-dark text-white">
                         <img id="service_img_1" src="../assets//img/marmotte.jpg" class="card-img" alt="Service_2"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -86,7 +86,7 @@
             </div>
 
             <div id="service_2" class="grid-item" style="display: none;">
-                <a href="./Service.html">
+                <a id="service_link_2" href="./Service.html">
                     <div class="card bg-dark text-white">
                         <img id="service_img_2" src="../assets//img/stambecchi.jpg" class="card-img" alt="Service_3"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -97,7 +97,7 @@
             </div>
 
             <div id="service_3" class="grid-item" style="display: none;">
-                <a href="./Service.html">
+                <a id="service_link_3" href="./Service.html">
                     <div class="card bg-dark text-white">
                         <img id="service_img_3" src="../assets//img/ermellino.jpg" class="card-img" alt="Service_4"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -108,7 +108,7 @@
             </div>
 
             <div id="service_4" class="grid-item" style="display: none;">
-                <a href="./Service.html">
+                <a id="service_link_4" href="./Service.html">
                     <div class="card bg-dark text-white">
                         <img id="service_img_4" src="../assets//img/gufo.jpg" class="card-img" alt="Service_5"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -119,7 +119,7 @@
             </div>   
 
             <div id="service_5" class="grid-item" style="display: none;">
-                <a href="./Service.html">
+                <a id="service_link_5" href="./Service.html">
                     <div class="card bg-dark text-white">
                         <img id="service_img_5" src="../assets//img/marmotte.jpg" class="card-img" alt="Service_6"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -130,7 +130,7 @@
             </div>
 
             <div id="service_6" class="grid-item" style="display: none;">
-                <a href="./Service.html">
+                <a id="service_link_6" href="./Service.html">
                     <div class="card bg-dark text-white">
                         <img id="service_img_6" src="../assets//img/stambecchi.jpg" class="card-img" alt="Service_7"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -141,7 +141,7 @@
             </div>
 
             <div id="service_7" class="grid-item" style="display: none;">
-                <a href="./Service.html">
+                <a id="service_link_7" href="./Service.html">
                     <div class="card bg-dark text-white">
                         <img id="service_img_7" src="../assets//img/ermellino.jpg" class="card-img" alt="Service_8"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -152,7 +152,7 @@
             </div>
 
             <div id="service_8" class="grid-item" style="display: none;">
-                <a href="./Service.html">
+                <a id="service_link_8" href="./Service.html">
                     <div class="card bg-dark text-white">
                         <img id="service_img_8" src="../assets//img/gufo.jpg" class="card-img" alt="Service_9"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -163,7 +163,7 @@
             </div>    
 
             <div id="service_9" class="grid-item" style="display: none;">
-                <a href="./Service.html">
+                <a id="service_link_9" href="./Service.html">
                     <div class="card bg-dark text-white">
                         <img id="service_img_9" src="../assets//img/marmotte.jpg" class="card-img" alt="Service_10"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -174,7 +174,7 @@
             </div>
 
             <div id="service_10" class="grid-item" style="display: none;">
-                <a href="./Service.html">
+                <a id="service_link_10" href="./Service.html">
                     <div class="card bg-dark text-white">
                         <img id="service_img_10" src="../assets//img/stambecchi.jpg" class="card-img" alt="Service_11"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -185,7 +185,7 @@
             </div>
 
             <div id="service_11" class="grid-item" style="display: none;">
-                <a href="./Service.html">
+                <a id="service_link_11" href="./Service.html">
                     <div class="card bg-dark text-white">
                         <img id="service_img_11" src="../assets//img/ermellino.jpg" class="card-img" alt="Service_12"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
@@ -254,13 +254,13 @@
 
         .then(function(json) {
             for (var i = 0; i < json.length; i++) {
-                var service_desc = document.getElementById("service_desc_" + i);
                 let {title, photo, id_service} = json[i];
 
+                document.getElementById("service_desc_" + i).innerHTML =  `${title}`;
                 document.getElementById("service_" + i).style.display = "block";
                 document.getElementById("service_img_" + i).src = `${photo}`;
-                //document.getElementById("service_img_" + i).style.height = "300";
-                service_desc.innerHTML =  `${title}`;
+                document.getElementById("service_link_" + i).onclick = function() 
+                    {localStorage["id_service"] = `${id_service}`;};
             }
         });
     </script>

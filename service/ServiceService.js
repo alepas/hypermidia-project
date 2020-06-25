@@ -47,7 +47,7 @@ exports.Service_PhotoDbSetup = function(connection) {
  **/
 exports.getService = function(serviceId) {
   return sqlDb("Service AS s")
-      .select(['e.title', 'e.image', 'e.id_event', 'p.fullname', 'p.photo', 'p.motto', 'p.id_person', 's.title as s_title', 'sp.photo as sp_photo', 's.presentation', 's.pratical_info'])
+      .select(['e.title', 'e.image', 'e.id_event', 'p.fullname', 'p.photo', 'p.motto', 'p.id_person', 's.title as s_title', 'sp.id_service_photo','sp.photo as sp_photo', 's.presentation', 's.pratical_info'])
       .where('s.id_service', serviceId)
       .join('Person_Service AS ps', 's.id_service','=', 'ps.id_service')
       .join('Person AS p', 'ps.id_person', '=', 'p.id_person')

@@ -129,7 +129,7 @@
                 <div class="col-sm-9 rightside">
                     <div class="grid-container">
                         <div id="event_0" class="grid-item"  style="display: none;">
-                            <a href="./Event.html">
+                            <a id="event_link_0" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_0" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_1"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
@@ -140,7 +140,7 @@
                         </div>
             
                         <div id="event_1" class="grid-item"  style="display: none;">
-                            <a href="./Event.html">
+                            <a id="event_link_1" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_1" src="../assets//img/marmots_day.png" class="card-img" alt="Event_2"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
@@ -150,8 +150,8 @@
                             </a>
                         </div>
             
-                        <div  id="event_2" class="grid-item"  style="display: none;">
-                            <a href="./Event.html">
+                        <div id="event_2" class="grid-item"  style="display: none;">
+                            <a id="event_link_2" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_2" src="../assets//img/ibex_day.jpg" class="card-img" alt="Event_3"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
@@ -162,7 +162,7 @@
                         </div>
             
                         <div id="event_3" class="grid-item"  style="display: none;">
-                            <a href="./Event.html">
+                            <a id="event_link_3" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_3" src="../assets//img/ermines_day.jpg" class="card-img" alt="Event_4"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
@@ -173,7 +173,7 @@
                         </div>
             
                         <div id="event_4" class="grid-item"  style="display: none;">
-                            <a href="./Event.html">
+                            <a id="event_link_4" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_4" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_5"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
@@ -184,7 +184,7 @@
                         </div>   
             
                         <div id="event_5" class="grid-item"  style="display: none;">
-                            <a href="./Event.html">
+                            <a id="event_link_5" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_5" src="../assets//img/marmots_day.png" class="card-img" alt="Event_6"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
@@ -195,7 +195,7 @@
                         </div>
             
                         <div id="event_6" class="grid-item"  style="display: none;">
-                            <a href="./Event.html">
+                            <a id="event_link_6" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_6" src="../assets//img/ibex_day.jpg" class="card-img" alt="Event_7"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
@@ -206,7 +206,7 @@
                         </div>
             
                         <div id="event_7" class="grid-item"  style="display: none;">
-                            <a href="./Event.html">
+                            <a id="event_link_7" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_7" src="../assets//img/ermines_day.jpg" class="card-img" alt="Event_8"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
@@ -217,7 +217,7 @@
                         </div>
             
                         <div id="event_8" class="grid-item" style="display: none;">
-                            <a href="./Event.html">
+                            <a id="event_link_8" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_8" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_9"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
@@ -267,13 +267,13 @@
         })
         .then(function(json) {
             for (var i = 0; i < json.length; i++) {
-                var event_desc = document.getElementById("event_desc_" + i);
                 let {title, image, id_event, date} = json[i];
 
                 document.getElementById("event_" + i).style.display = "block";
+                document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
                 document.getElementById("event_img_" + i).src = `${image}`;
-              //  document.getElementById("event_img_" + i).style.height = "300";
-                event_desc.innerHTML =  `${title}`;
+                document.getElementById("event_link_" + i).onclick = function() 
+                    {localStorage["id_event"] = `${id_event}`;};
             }
         });
     </script>

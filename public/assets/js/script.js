@@ -1,4 +1,5 @@
 var slideIndex = 1;
+var slideNumber = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
@@ -11,20 +12,29 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
+// Sets the number of slides
+function setSlides(n){
+    slideNumber = n;
+    showSlides(n);
+}
+
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("carousel-itema");
     var dots = document.getElementsByClassName("carousel-dot");
-    if (n > slides.length) {
+    if (n > slideNumber) {
         slideIndex = 1
     }
     if (n < 1) {
-        slideIndex = slides.length
+        slideIndex = slideNumber
     }
     for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
-        }
-    for (i = 0; i < dots.length; i++) {
+    }
+    for(i= slideNumber; i< slides.length; i++){
+        dots[slideIndex-1].style.display = "none";
+    }
+    for (i = 0; i < slideNumber; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     slides[slideIndex-1].style.display = "block";
