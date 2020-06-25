@@ -61,6 +61,8 @@ exports.getFaq = function() {
  * no response value expected for this operation
  **/
 exports.postForm = function(request) {
+  var date = new Date();
+  var currentDate = date.getUTCDate();
 
   sqlDb("Issues")
   .insert({
@@ -68,10 +70,11 @@ exports.postForm = function(request) {
     email: request.email,
     topic: request.topic,
     issue: request.issue,
-    privacy: request.privacy
+    privacy: request.privacy,
+    date: currentDate
   })
   .then(function () {
-    res.send('200') 
+   return request;
   })
 }
 
