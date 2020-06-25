@@ -61,6 +61,7 @@ exports.getFaq = function() {
  * no response value expected for this operation
  **/
 exports.postForm = function(request) {
+
   sqlDb("Issues")
   .insert({
     name: request.name,
@@ -69,8 +70,8 @@ exports.postForm = function(request) {
     issue: request.issue,
     privacy: request.privacy
   })
-  .then(function() {
-    console.log("Ok")
+  .then(res => {
+    return res
   })
 }
 
