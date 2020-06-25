@@ -197,7 +197,7 @@
             return response.json();
         })
         .then(function(json) {
-            for (var i = 0; i < json.length; i++) {
+            for (var i = 1; i < json.length + 1; i++) {
                 let {answer, question} = json[i];
 
                 document.getElementById("button" + i).innerHTML =  `${question}`;

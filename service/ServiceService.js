@@ -75,7 +75,6 @@ exports.getServices = function(limit,offset) {
       .limit(limit)
       .offset(offset)
       .then(data => {
-        console.log(data);
         return data
       })
 }
