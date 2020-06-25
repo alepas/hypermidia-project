@@ -61,8 +61,6 @@ exports.getFaq = function() {
  * no response value expected for this operation
  **/
 exports.postForm = function(request) {
-  var json = request.name;
-  console.log("json " + json)
   sqlDb("Issues")
   .insert({
     name: request.name,
