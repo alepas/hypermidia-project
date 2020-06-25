@@ -115,7 +115,7 @@
             <div id="event_0" class="grid-item" style="display: none;">
                 <a id="event_link_0" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img id="event_img_0" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_1"> 
+                        <img id="event_img_0" src="../assets//img/white_img.jpg" class="card-img" alt="Event_1"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="event_desc_0" class="card-title" style="background-color: transparent;">Such a cutie</h5>
                         </div>
@@ -126,7 +126,7 @@
             <div id="event_1" class="grid-item" style="display: none;">
                 <a id="event_link_1" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img id="event_img_1" src="../assets//img/marmots_day.png" class="card-img" alt="Event_2"> 
+                        <img id="event_img_1" src="../assets//img/white_img.jpg" class="card-img" alt="Event_2"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="event_desc_1" class="card-title" style="background-color: transparent;">Marmots</h5>
                         </div>
@@ -137,7 +137,7 @@
             <div id="event_2" class="grid-item" style="display: none;">
                 <a id="event_link_2" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img id="event_img_2" src="../assets//img/ibex_day.jpg" class="card-img" alt="Event_3"> 
+                        <img id="event_img_2" src="../assets//img/white_img.jpg" class="card-img" alt="Event_3"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="event_desc_2" class="card-title" style="background-color: transparent;">Ibex -> best name ever</h5>
                         </div>
@@ -148,7 +148,7 @@
             <div id="event_3" class="grid-item" style="display: none;">
                 <a id="event_link_3" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img id="event_img_3" src="../assets//img/ermines_day.jpg" class="card-img" alt="Event_4"> 
+                        <img id="event_img_3" src="../assets//img/white_img.jpg" class="card-img" alt="Event_4"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="event_desc_3" class="card-title" style="background-color: transparent;">who doesn't want an ermine?</h5>
                         </div>
@@ -168,7 +168,7 @@
             <div id="service_0" class="grid-item" style="display: none;">
                 <a id="service_link_0" href="./Service.html">
                     <div class="card bg-dark text-white">
-                        <img id="service_img_0" src="../assets//img/gufo.jpg" class="card-img" alt="Service_1"> 
+                        <img id="service_img_0" src="../assets//img/white_img.jpg" class="card-img" alt="Service_1"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="service_desc_0" class="card-title" style="background-color: transparent;">Such a cutie</h5>
                         </div>
@@ -179,7 +179,7 @@
             <div id="service_1" class="grid-item" style="display: none;">
                 <a id="service_link_1" href="./Service.html">
                     <div class="card bg-dark text-white">
-                        <img id="service_img_1" src="../assets//img/marmotte.jpg" class="card-img" alt="Service_2"> 
+                        <img id="service_img_1" src="../assets//img/white_img.jpg" class="card-img" alt="Service_2"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="service_desc_1" class="card-title" style="background-color: transparent;">Marmots</h5>
                         </div>
@@ -190,7 +190,7 @@
             <div id="service_2" class="grid-item" style="display: none;" class="grid-item">
                 <a id="service_link_2" href="./Service.html">
                     <div class="card bg-dark text-white">
-                        <img id="service_img_2" src="../assets//img/stambecchi.jpg" class="card-img" alt="Service_3"> 
+                        <img id="service_img_2" src="../assets//img/white_img.jpg" class="card-img" alt="Service_3"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="service_desc_2" class="card-title" style="background-color: transparent;">Ibex -> best name ever</h5>
                         </div>
@@ -201,7 +201,7 @@
             <div id="service_3" class="grid-item" style="display: none;"class="grid-item">
                 <a id="service_link_3" href="./Service.html">
                     <div class="card bg-dark text-white">
-                        <img id="service_img_3" src="../assets//img/ermellino.jpg" class="card-img" alt="Service_4"> 
+                        <img id="service_img_3" src="../assets//img/white_img.jpg" class="card-img" alt="Service_4"> 
                         <div class="card-img-overlay" style="background-color: transparent;">
                             <h2 id="service_desc_3" class="card-title" style="background-color: transparent;">who doesn't want an ermine?</h5>
                         </div>
@@ -270,12 +270,10 @@
                 let {title, image, id_event,  id_service, s_title, sp_photo} = json[i];
 
                 //populate people cards
-                if(id_services.length > 0 && id_services[0] == null){
+                if(id_services.length > 0 && `${s_title}` == null){
                     document.getElementById("service_desc_" + i).innerHTML = `${fullname}` + " is not related to any service at the moment";
                     document.getElementById("service_desc_" + i).style.color = "black";
                     document.getElementById("service_" + i).style.display = "block";
-                    document.getElementById("service_img_" + i).src = "";
-                    document.getElementById("service_img_" + i).style.backgroundColor = "transparent";
                     document.getElementById("service_link_" + i).href = "javascript:function() { return false; }"
                     id_services.splice(id_services.indexOf(null), 1);
                 }else if(id_services.includes(`${id_service}`)){
@@ -293,8 +291,6 @@
                     document.getElementById("event_" + i).style.display = "block";
                     document.getElementById("event_desc_" + i).innerHTML =  `${fullname}` + " is not the coordinator of any event at the moment";
                     document.getElementById("event_desc_" + i).style.color = "black";
-                    document.getElementById("event_img_" + i).src = "";
-                    document.getElementById("event_img_" + i).style.backgroundColor = "transparent";
                     document.getElementById("event_link_" + i).href = "javascript:function() { return false; }"
                     id_events.splice(id_events.indexOf(null), 1);
                 }else if(id_events.includes(`${id_event}`)){
