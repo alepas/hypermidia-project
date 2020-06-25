@@ -16,9 +16,9 @@ function submitRequest(){
         })
      })
      .then(
-        document.getElementById("alert_message").innerHTML = "Your request has been correctly submitted. You will receive an answer soon!"
+        console.log("200")
      )
      .catch(
-        document.getElementById("alert_message").innerHTML = "Sorry, an error occured. Try to submit your message later."
+       console.log("500")
      )
 }
