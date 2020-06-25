@@ -61,9 +61,6 @@ exports.getFaq = function() {
  * no response value expected for this operation
  **/
 exports.postForm = function(request) {
-  const moment = require('moment');
-  const dateStr = moment().utc().format();
-  console.log(dateStr); 
 
   sqlDb("Issues")
   .insert({
@@ -71,8 +68,7 @@ exports.postForm = function(request) {
     email: request.email,
     topic: request.topic,
     issue: request.issue,
-    privacy: request.privacy,
-    date: dateStr
+    privacy: request.privacy
   })
   .then(function () {
     console.log("ok")
