@@ -61,12 +61,15 @@
             <div id="people-navbar">
                 <nav class="navbar navbar-light" style="background-color: transparent;">
                     <form class="form-inline">
-                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      <input id="filter" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="filterPeople()">Search</button>
                     </form>
                   </nav>
             </div>
         </div>
+
+        <!--Javascript-->
+        <script src="../assets/js/searchPeople.js"></script>
 
         <!--Grid for peoples-->
         <div class="grid-container-volunteers">
@@ -242,6 +245,7 @@
                 document.getElementById("person_motto_" + i).innerHTML =  `${motto}`;
                 document.getElementById("person_" + i).onclick = function() 
                     {localStorage["id_person"] = `${id_person}`;};
+                savePeople(`${fullname}`);
             }
         });
     </script>
