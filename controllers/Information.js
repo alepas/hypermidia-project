@@ -16,10 +16,10 @@ module.exports.getFaq = function getFaq (req, res, next) {
 module.exports.postForm = function postForm (req, res, next) {
   var request = req.swagger.params['request'].value;
   Information.postForm(request)
-    .then(function (response) {
+    /*.then(function (response) {
       utils.writeJson(res, response);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
-    });
+    });*/
 };

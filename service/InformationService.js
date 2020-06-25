@@ -74,7 +74,7 @@ exports.postForm = function(request) {
     date: currentDate
   })
   .then(function () {
-   return request;
+    console.log("200");
   })
 }
 
