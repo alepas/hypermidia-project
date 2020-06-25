@@ -51,10 +51,10 @@ exports.getVolunteer = function(volunteerId) {
   return sqlDb("Person AS p")
       .select(['e.title', 'e.image', 'e.id_event', 'p.fullname', 'p.photo', 'p.motto', 'p.email', 'p.number', 'p.description', 's.title as s_title', 's.id_service', 'sp.photo as sp_photo'])
       .where('p.id_person', volunteerId)
-      .join('Person_Service AS ps', 'ps.id_person', '=', 'p.id_person')
-      .join('Service AS s', 's.id_service','=', 'ps.id_service')
-      .join('Event AS e', 'e.id_person','=', 'p.id_person')
-      .join('Service_Photo AS sp', 's.id_service','=', 'sp.id_service')
+      .leftJoin('Person_Service AS ps', 'ps.id_person', '=', 'p.id_person')
+      .leftJoinoin('Service AS s', 's.id_service','=', 'ps.id_service')
+      .leftJoin('Event AS e', 'e.id_person','=', 'p.id_person')
+      .leftJoin('Service_Photo AS sp', 's.id_service','=', 'sp.id_service')
       .distinctOn('s.id_service')
       .then(data => {
         return data
