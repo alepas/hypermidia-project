@@ -288,7 +288,8 @@
                 }
 
                 //populate event cards
-                if(id_events.length > 0 && id_events[0] == null){
+                console.log(`${title}`);
+                if(id_events.length > 0 && `${title}` == null){
                     document.getElementById("event_" + i).style.display = "block";
                     document.getElementById("event_desc_" + i).innerHTML =  `${fullname}` + " is not the coordinator of any event at the moment";
                     document.getElementById("event_desc_" + i).style.color = "black";
