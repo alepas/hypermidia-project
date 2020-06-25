@@ -290,8 +290,8 @@
                 }
                 
                 //populate event cards
-                if(flag_e == 1 && !`${image}`){
-                    console.log("e_fuori " + `${image}`);
+                if(flag_e == 1 && `${id_event}` == "null"){
+                    console.log("e_fuori " + `${id_event}`);
                     document.getElementById("event_" + i).style.display = "block";
                     document.getElementById("event_desc_" + i).innerHTML =  `${fullname}` + " is not the coordinator of any event at the moment";
                     document.getElementById("event_desc_" + i).style.color = "black";
