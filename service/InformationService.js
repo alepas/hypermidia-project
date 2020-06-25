@@ -61,8 +61,9 @@ exports.getFaq = function() {
  * no response value expected for this operation
  **/
 exports.postForm = function(request) {
-  var date = new Date();
-  var currentDate = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay();
+  const moment = require('moment');
+  const dateStr = moment().utc().format();
+  console.log(dateStr); 
 
   sqlDb("Issues")
   .insert({
@@ -71,7 +72,7 @@ exports.postForm = function(request) {
     topic: request.topic,
     issue: request.issue,
     privacy: request.privacy,
-    date: currentDate
+    date: dateStr
   })
   .then(function () {
     console.log("200");
