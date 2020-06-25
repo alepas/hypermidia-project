@@ -1,5 +1,12 @@
 
 function submitRequest(){
+    var topics = document.getElementById("topic");
+
+    console.log("name " + document.getElementById("fullname").value);
+    console.log("e mail " + document.getElementById("email").value);
+    console.log("option " + topics.options[topics.selectedIndex].text);
+    console.log("issue " + document.getElementById("issue").value);
+    
     document.getElementById("alert_message").innerHTML = "";
     fetch("../../v1/contactUs", { 
         method: "post",
@@ -9,9 +16,9 @@ function submitRequest(){
         body: JSON.stringify({
            name: document.getElementById("fullname").value,
            email: document.getElementById("email").value,
-           topic: document.getElementById("topic").value,
+           topic: topics.options[topics.selectedIndex].text,
            issue: document.getElementById("issue").value,
-           privacy: document.getElementById("privacy").value
+           privacy: true
         })
      })
      .then(
