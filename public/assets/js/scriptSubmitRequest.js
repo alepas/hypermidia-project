@@ -6,7 +6,7 @@ function submitRequest(){
     console.log("e mail " + document.getElementById("email").value);
     console.log("option " + topics.options[topics.selectedIndex].text);
     console.log("issue " + document.getElementById("issue").value);
-    
+
     document.getElementById("alert_message").innerHTML = "";
     fetch("../../v1/contactUs", { 
         method: "post",
@@ -18,7 +18,7 @@ function submitRequest(){
            email: document.getElementById("email").value,
            topic: topics.options[topics.selectedIndex].text,
            issue: document.getElementById("issue").value,
-           privacy: true
+           privacy: document.getElementById("privacy").checked 
         })
      })
      .then(

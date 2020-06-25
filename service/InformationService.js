@@ -63,7 +63,7 @@ exports.getFaq = function() {
 exports.postForm = function(request) {
   console.log("request " + request);
   var json = request.body;
-  consol.log("json " + json)
+  console.log("json " + json)
   sqlDb("Issues")
   .insert({
     name: request.body.name,
