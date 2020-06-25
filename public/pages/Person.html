@@ -272,7 +272,7 @@
                 let {title, image, id_event,  id_service, s_title, sp_photo} = json[i];
 
                 //populate people cards
-                if(flag_s == 1 && `${s_title}` == null){
+                if(flag_s == 1 && !`${s_title}`){
                     document.getElementById("service_desc_" + i).innerHTML = `${fullname}` + " is not related to any service at the moment";
                     document.getElementById("service_desc_" + i).style.color = "black";
                     document.getElementById("service_" + i).style.display = "block";
@@ -290,8 +290,8 @@
                 }
                 
                 //populate event cards
-                console.log(`${title}`);
-                if(flag_e == 1 && `${title}` == null){
+                if(flag_e == 1 && !`${title}`){
+                    console.log(`${title}`);
                     document.getElementById("event_" + i).style.display = "block";
                     document.getElementById("event_desc_" + i).innerHTML =  `${fullname}` + " is not the coordinator of any event at the moment";
                     document.getElementById("event_desc_" + i).style.color = "black";
