@@ -266,40 +266,46 @@
                 }
             }
             
+            var flag_e = 1;
+            var flag_s = 1;
             for (var i = 0; i < json.length; i++) {
                 let {title, image, id_event,  id_service, s_title, sp_photo} = json[i];
 
                 //populate people cards
-                if(id_services.length > 0 && `${s_title}` == null){
+                if(flag_s == 1 && `${s_title}` == null){
                     document.getElementById("service_desc_" + i).innerHTML = `${fullname}` + " is not related to any service at the moment";
                     document.getElementById("service_desc_" + i).style.color = "black";
                     document.getElementById("service_" + i).style.display = "block";
                     document.getElementById("service_link_" + i).href = "javascript:function() { return false; }"
-                    id_services.splice(id_services.indexOf(null), 1);
-                }else if(id_services.includes(`${id_service}`)){
-                    document.getElementById("service_desc_" + i).innerHTML =  `${s_title}`;
-                    document.getElementById("service_" + i).style.display = "block";
-                    document.getElementById("service_img_" + i).src = `${sp_photo}`;
-                    document.getElementById("service_link_" + i).onclick = function() 
-                        {localStorage["id_service"] = `${id_service}`;};
-                    id_services.splice(id_services.indexOf(`${id_service}`), 1);
+                    flag_s = 0;
+                }else{
+                    if(flag_s == 1 && id_services.includes(`${id_service}`)){
+                        document.getElementById("service_desc_" + i).innerHTML =  `${s_title}`;
+                        document.getElementById("service_" + i).style.display = "block";
+                        document.getElementById("service_img_" + i).src = `${sp_photo}`;
+                        document.getElementById("service_link_" + i).onclick = function() 
+                            {localStorage["id_service"] = `${id_service}`;};
+                        id_services.splice(id_services.indexOf(`${id_service}`), 1);
+                    }
                 }
-
+                
                 //populate event cards
                 console.log(`${title}`);
-                if(id_events.length > 0 && `${title}` == null){
+                if(flag_e == 1 && `${title}` == null){
                     document.getElementById("event_" + i).style.display = "block";
                     document.getElementById("event_desc_" + i).innerHTML =  `${fullname}` + " is not the coordinator of any event at the moment";
                     document.getElementById("event_desc_" + i).style.color = "black";
                     document.getElementById("event_link_" + i).href = "javascript:function() { return false; }"
-                    id_events.splice(id_events.indexOf(null), 1);
-                }else if(id_events.includes(`${id_event}`)){
-                    document.getElementById("event_" + i).style.display = "block";
-                    document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
-                    document.getElementById("event_img_" + i).src = `${image}`;
-                    document.getElementById("event_link_" + i).onclick = function() 
-                        {localStorage["id_event"] = `${id_event}`;};
-                    id_events.splice(id_events.indexOf(`${id_event}`), 1);
+                    flag_e == 0;
+                }else {
+                    if(flag_e == 1 && id_events.includes(`${id_event}`)){
+                        document.getElementById("event_" + i).style.display = "block";
+                        document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
+                        document.getElementById("event_img_" + i).src = `${image}`;
+                        document.getElementById("event_link_" + i).onclick = function() 
+                            {localStorage["id_event"] = `${id_event}`;};
+                        id_events.splice(id_events.indexOf(`${id_event}`), 1);
+                    }
                 }
             }
         });
