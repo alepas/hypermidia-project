@@ -10,6 +10,7 @@ function filterPeople(){
     }
 
     var filter = document.getElementById("filter").value;
+    console.log(filter);
 
     for(var i=0; i< people; i++){
         if(people[i].includes(filter))
