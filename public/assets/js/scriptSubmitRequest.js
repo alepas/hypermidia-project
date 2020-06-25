@@ -1,7 +1,6 @@
 
 function submitRequest(){
     var topics = document.getElementById("topic");
-    document.getElementById("alert_message").innerHTML = "";
     fetch("../../v1/contactUs", { 
         method: "post",
         headers: new Headers({
