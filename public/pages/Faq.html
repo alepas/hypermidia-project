@@ -80,7 +80,6 @@
         <div class="faq-answer">
             <div id="answer1" class="card">
                 <div id="answer_1" class="card-body">
-                  Send us an e-mail through the contact form and lets party togheter!
                 </div>
             </div>
         </div>
@@ -89,7 +88,6 @@
         <div class="faq-answer">
             <div id="answer2" class="card">
                 <div id="answer_2" class="card-body">
-                  Click the "donate" link in the bottom of the page.
                 </div>
             </div>
         </div>
@@ -192,7 +190,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
     <script>
-    fetch("v1/faq")
+    fetch("../v1/faq")
         .then(function(response) {
             if (!response.ok) 
                 throw new Error("HTTP error, status = " + response.status);
