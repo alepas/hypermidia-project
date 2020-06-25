@@ -79,8 +79,8 @@
         <button id="button1" type="button" class="btn btn-primary btn-lg btn-block" onclick="showAnswer(1)">How can I join Wild Care?</button>
         <div class="faq-answer">
             <div id="answer1" class="card">
-                <div class="card-body">
-                  Send us an e-mail throught the contact form and lets party togheter!
+                <div id="answer_1" class="card-body">
+                  Send us an e-mail through the contact form and lets party togheter!
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@
         <button id="button2" type="button" class="btn btn-primary btn-lg btn-block" onclick="showAnswer(2)">How can I donate to Wild Care?</button>
         <div class="faq-answer">
             <div id="answer2" class="card">
-                <div class="card-body">
+                <div id="answer_2" class="card-body">
                   Click the "donate" link in the bottom of the page.
                 </div>
             </div>
@@ -97,22 +97,7 @@
         <button id="button3" type="button" class="btn btn-primary btn-lg btn-block" onclick="showAnswer(3)">How can I donate to Wild Care?</button>
         <div class="faq-answer">
             <div id="answer3" class="card">
-                <div class="card-body">
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
-                    Click the "donate" link in the bottom of the page.
+                <div id="answer_3" class="card-body">
                 </div>
             </div>
         </div>
@@ -120,8 +105,7 @@
         <button id="button4" type="button" class="btn btn-primary btn-lg btn-block" onclick="showAnswer(4)">How can I donate to Wild Care?</button>
         <div class="faq-answer">
             <div id="answer4" class="card">
-                <div class="card-body">
-                  Click the "donate" link in the bottom of the page.
+                <div id="answer_4" class="card-body">
                 </div>
             </div>
         </div>
@@ -129,8 +113,7 @@
         <button id="button5" type="button" class="btn btn-primary btn-lg btn-block" onclick="showAnswer(5)">How can I donate to Wild Care?</button>
         <div class="faq-answer">
             <div id="answer5" class="card">
-                <div class="card-body">
-                  Click the "donate" link in the bottom of the page.
+                <div id="answer_5" class="card-body">
                 </div>
             </div>
         </div>
@@ -138,8 +121,7 @@
         <button id="button6" type="button" class="btn btn-primary btn-lg btn-block" onclick="showAnswer(6)">How can I donate to Wild Care?</button>
         <div class="faq-answer">
             <div id="answer6" class="card">
-                <div class="card-body">
-                  Click the "donate" link in the bottom of the page.
+                <div id="answer_6" class="card-body">
                 </div>
             </div>
         </div>
@@ -147,8 +129,7 @@
         <button id="button7" type="button" class="btn btn-primary btn-lg btn-block" onclick="showAnswer(7)">How can I donate to Wild Care?</button>
         <div class="faq-answer">
             <div id="answer7" class="card">
-                <div class="card-body">
-                  Click the "donate" link in the bottom of the page.
+                <div id="answer_7" class="card-body">
                 </div>
             </div>
         </div>
@@ -156,8 +137,7 @@
         <button id="button8" type="button" class="btn btn-primary btn-lg btn-block" onclick="showAnswer(8)">How can I donate to Wild Care?</button>
         <div class="faq-answer">
             <div id="answer8" class="card">
-                <div class="card-body">
-                  Click the "donate" link in the bottom of the page.
+                <div id="answer_8" class="card-body">
                 </div>
             </div>
         </div>
@@ -165,8 +145,15 @@
         <button id="button9" type="button" class="btn btn-primary btn-lg btn-block" onclick="showAnswer(9)">How can I donate to Wild Care?</button>
         <div class="faq-answer">
             <div id="answer9" class="card">
-                <div class="card-body">
-                  Click the "donate" link in the bottom of the page.
+                <div id="answer_9" class="card-body">
+                </div>
+            </div>
+        </div>
+
+        <button id="button10" type="button" class="btn btn-primary btn-lg btn-block" onclick="showAnswer(10)">How can I donate to Wild Care?</button>
+        <div class="faq-answer">
+            <div id="answer10" class="card">
+                <div id="answer_10" class="card-body">
                 </div>
             </div>
         </div>
@@ -204,4 +191,20 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
+    <script>
+    fetch("v1/faq")
+        .then(function(response) {
+            if (!response.ok) 
+                throw new Error("HTTP error, status = " + response.status);
+            return response.json();
+        })
+        .then(function(json) {
+            for (var i = 0; i < json.length; i++) {
+                let {answer, question} = json[i];
+
+                document.getElementById("button" + i).innerHTML =  `${question}`;
+                document.getElementById("answer_" + i).innerHTML =  `${answer}`;
+            }
+        });
+    </script>
 </html>

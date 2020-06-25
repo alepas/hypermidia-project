@@ -46,23 +46,10 @@ exports.FaqDbSetup = function(connection) {
  * returns List
  **/
 exports.getFaq = function() {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = [ {
-  "question" : "question",
-  "answer" : "answer",
-  "id" : 0
-}, {
-  "question" : "question",
-  "answer" : "answer",
-  "id" : 0
-} ];
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
+  return sqlDb("Faq")
+  .then(data => {
+    return data
+  })
 }
 
 
