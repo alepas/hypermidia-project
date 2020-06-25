@@ -71,6 +71,8 @@ exports.postForm = function(request) {
     issue: request.issue,
     privacy: request.privacy
   })
-  .then(console.log("Ok"))
+  .then(function() {
+    console.log("Ok")
+  })
 }
 
