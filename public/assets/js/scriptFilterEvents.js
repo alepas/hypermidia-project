@@ -1,5 +1,5 @@
 var topic;
-var perios;
+var period;
 
 function filterEvents(offset){
     var radios = document.getElementsByClassName("form-check-input");
