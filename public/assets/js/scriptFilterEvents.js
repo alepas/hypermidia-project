@@ -12,7 +12,7 @@ function filterEvents(offset){
         }
     }
 
-    var fet = "../../v1/events?limit=9&offset=" + offset;
+    var fet = "../../v1/events?limit=10&offset=" + offset;
     if(topic != null)
         fet = fet + "&" + "topic=" + topic;
     if(period != null)
@@ -25,10 +25,12 @@ function filterEvents(offset){
     return response.json();
     })
     .then(function(json) {
+        if(json.length < 10 && offset < 9)
+            document.getElementById("all_event_index_1").style.display = "none";
         for(var i=0; i<9; i++)
             document.getElementById("event_" + i).style.display = "none";
 
-        for (var i = 0; i < json.length; i++) {
+        for (var i = 0; i < json.length && i<9; i++) {
             let {title, image, id_event} = json[i];
 
             document.getElementById("event_" + i).style.display = "block";
