@@ -969,6 +969,14 @@ ul.breadcrumb li a:hover{
     margin-top: 3%;
 }
 
+.index-pagination-container {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    height: 6%;
+    margin-top: 3%;
+}
+
 .pagination {
     display: inline-block;
     position: relative;
