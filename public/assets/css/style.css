@@ -650,8 +650,10 @@ ul.breadcrumb li a:hover{
 .carousel-item-img{
     display:block;
     width: 100%;
-    border:none;
     margin: 0 auto;
+    border-radius: 0.5em;
+    border: 0.5px solid #3db54a;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
 /* Next & previous buttons */
@@ -837,8 +839,8 @@ ul.breadcrumb li a:hover{
 /*Buttond for faq*/
 .btn-block{
     background-color: white;
-    border-color: #1a6735;
-    color: #1a6735;
+    border-color: #3db54a;
+    color: #3db54a;
     font-size: x-large;
     margin-top: 1.5%;
     margin-left: 10%;
@@ -846,8 +848,8 @@ ul.breadcrumb li a:hover{
 }
 
 .btn-block:hover{
-    background-color: #1a6735;
-    border-color: #1a6735;
+    background-color: #3db54a;
+    border-color: #3db54a;
     color: white;
     font-size: x-large;
     margin-top: 1.5%;
@@ -856,8 +858,8 @@ ul.breadcrumb li a:hover{
 }
 
 .btn-block::selection{
-        background-color: #1a6735;
-        border-color: #1a6735;
+        background-color: #3db54a;
+        border-color: #3db54a;
         color: white;
         font-size: x-large;
         margin-top: 1.5%;
@@ -866,8 +868,8 @@ ul.breadcrumb li a:hover{
 }
 
 .btn-block:active{
-    background-color: #1a6735;
-    border-color: #1a6735;
+    background-color: #3db54a;
+    border-color: #3db54a;
     color: white;
     font-size: x-large;
     margin-top: 1.5%;
@@ -876,8 +878,8 @@ ul.breadcrumb li a:hover{
 }
 
 .btn-block:checked{
-    background-color: #1a6735;
-    border-color: #1a6735;
+    background-color: #3db54a;
+    border-color: #3db54a;
     color: white;
     font-size: x-large;
     margin-top: 1.5%;
@@ -896,7 +898,7 @@ ul.breadcrumb li a:hover{
     font-size: medium;
     border-radius: 0.2em;
     
-    border: 2px solid #1a6735;
+    border: 2px solid #3db54a;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
@@ -908,12 +910,12 @@ ul.breadcrumb li a:hover{
 /*Event filters*/
 .event-filters .card{
     margin-top: 9%;
-    border: 3px solid #1a6735;
+    border: 3px solid #3db54a;
     border-radius: 5em;
     font-size: small;
 }
 .event-filters .btn{
-    border: 2px solid #1a6735;
+    border: 2px solid #3db54a;
     font-size: medium;
 }
 
