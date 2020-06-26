@@ -837,19 +837,19 @@ ul.breadcrumb li a:hover{
 }
 
 /*Buttond for faq*/
-.btn-block{
+.block{
     background-color: white;
-    border-color: #3db54a;
-    color: #3db54a;
+    border-color: green;
+    color: green;
     font-size: x-large;
     margin-top: 1.5%;
     margin-left: 10%;
     max-width: 80%;
 }
 
-.btn-block:hover{
-    background-color: #3db54a;
-    border-color: #3db54a;
+.block:hover{
+    background-color: green;
+    border-color: green;
     color: white;
     font-size: x-large;
     margin-top: 1.5%;
@@ -857,9 +857,9 @@ ul.breadcrumb li a:hover{
     max-width: 80%;
 }
 
-.btn-block::selection{
-        background-color: #3db54a;
-        border-color: #3db54a;
+.block::selection{
+        background-color: green;
+        border-color: green;
         color: white;
         font-size: x-large;
         margin-top: 1.5%;
@@ -867,9 +867,9 @@ ul.breadcrumb li a:hover{
         max-width: 80%;
 }
 
-.btn-block:active{
-    background-color: #3db54a;
-    border-color: #3db54a;
+.block:active{
+    background-color: green;
+    border-color: green;
     color: white;
     font-size: x-large;
     margin-top: 1.5%;
@@ -877,9 +877,9 @@ ul.breadcrumb li a:hover{
     max-width: 80%;
 }
 
-.btn-block:checked{
-    background-color: #3db54a;
-    border-color: #3db54a;
+.block:checked{
+    background-color: green;
+    border-color: green;
     color: white;
     font-size: x-large;
     margin-top: 1.5%;
