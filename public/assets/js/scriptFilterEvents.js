@@ -1,4 +1,4 @@
-function filterEvents(){
+function filterEvents(offset){
     var radios = document.getElementsByClassName("form-check-input");
     var topic;
     var period;
@@ -12,7 +12,7 @@ function filterEvents(){
         }
     }
 
-    var fet = "../../v1/events?limit=9&offset=0";
+    var fet = "../../v1/events?limit=9&offset=" + offset;
     if(topic != null)
         fet = fet + "&" + "topic=" + topic;
     if(period != null)
