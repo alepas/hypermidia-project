@@ -223,11 +223,12 @@ ul.breadcrumb li a:hover{
 .grid-container {
     position: relative;
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 33% 33% 33%;
     grid-gap: 30px;
     grid-row-gap: 10%;
     padding: 3% 3%;
     padding-bottom: 10%;
+    margin-right: 3%;
 }
 
 .grid-item{
@@ -506,6 +507,7 @@ ul.breadcrumb li a:hover{
     grid-row-gap: 5%;
     padding: 3% 3%;
     padding-bottom: 10%;
+    margin-right: 3%;
 }
 
 .grid-container-involved-volunteers-item {
@@ -570,6 +572,7 @@ ul.breadcrumb li a:hover{
     grid-row-gap: 5%;
     padding: 3% 3%;
     padding-bottom: 10%;
+    margin-right: 3%;
 }
 
 .grid-container-related-events-item {
@@ -892,6 +895,10 @@ ul.breadcrumb li a:hover{
     border: 3px solid #3db54a;
     border-radius: 5em;
     font-size: small;
+}
+.event-filters .button{
+    border: 2px solid #3db54a;
+    font-size: medium;
 }
 
 .event-filters .card-body{
