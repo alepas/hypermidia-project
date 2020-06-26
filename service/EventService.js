@@ -164,7 +164,6 @@ exports.getEvents = function(limit,offset,month,topic,period) {
         return data
       })
   }else if(topic == null && period!=null){
-    console.log("topic no, period yes");
     var date = new Date();
     var d_day = date.getDate();
     var d_month = date.getMonth() +1;
@@ -172,24 +171,20 @@ exports.getEvents = function(limit,offset,month,topic,period) {
     var d_date;
     var d_from;
     var d_to;
-    console.log("pre-date " + d_day + " " + d_month + " " + d_year);
     switch(period){
       case "Today":
         d_date = d_year + "-" + d_month + "-" + d_day;
         d_from = d_date;
         d_date = d_year + "-" + d_month + "-" + d_day;
         d_to = d_date;
-        d_date = d_year + "-" + d_month + "-" + d_day;
-        console.log("today " + d_from + " " + d_to);
         break;
       case "Tomorrow":
-        d_day = d_day;
-        d_date = d_year + "-" + d_month + "-" + d_day;
-        d_from = d_date;
         d_day = d_day +1;
         d_date = d_year + "-" + d_month + "-" + d_day;
+        d_from = d_date;
+        d_day = d_day;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         d_to = d_date;
-        console.log("tomorrow " + d_date);
         break;
       case "In 7 days":
         d_date = d_year + "-" + d_month + "-" + d_day;
@@ -197,7 +192,6 @@ exports.getEvents = function(limit,offset,month,topic,period) {
         d_day = d_day + 7;
         d_date = d_year + "-" + d_month + "-" + d_day;
         d_to = d_date;
-        console.log("in 7 days " + d_date);
         break;
       case "In 1 month":
         d_date = d_year + "-" + d_month + "-" + d_day;
@@ -205,7 +199,6 @@ exports.getEvents = function(limit,offset,month,topic,period) {
         d_month = d_month + 1;
         d_date = d_year + "-" + d_month + "-" + d_day;
         d_to = d_date;
-        console.log("month " + d_date);
         break;
       default:
         console.log("An error occourred " + period);
@@ -220,7 +213,6 @@ exports.getEvents = function(limit,offset,month,topic,period) {
       })
     
   }else if(topic != null && period != null){
-    console.log("topic yes, period yes");
     var date = new Date();
     var d_day = date.getDate();
     var d_month = date.getMonth() +1;
@@ -228,24 +220,20 @@ exports.getEvents = function(limit,offset,month,topic,period) {
     var d_date;
     var d_from;
     var d_to;
-    console.log("pre-date " + d_day + " " + d_month + " " + d_year);
     switch(period){
       case "Today":
         d_date = d_year + "-" + d_month + "-" + d_day;
         d_from = d_date;
         d_date = d_year + "-" + d_month + "-" + d_day;
         d_to = d_date;
-        d_date = d_year + "-" + d_month + "-" + d_day;
-        console.log("today " + d_from + " " + d_to);
         break;
       case "Tomorrow":
-        d_day = d_day;
-        d_date = d_year + "-" + d_month + "-" + d_day;
-        d_from = d_date;
         d_day = d_day +1;
         d_date = d_year + "-" + d_month + "-" + d_day;
+        d_from = d_date;
+        d_day = d_day;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         d_to = d_date;
-        console.log("tomorrow " + d_date);
         break;
       case "In 7 days":
         d_date = d_year + "-" + d_month + "-" + d_day;
@@ -253,7 +241,6 @@ exports.getEvents = function(limit,offset,month,topic,period) {
         d_day = d_day + 7;
         d_date = d_year + "-" + d_month + "-" + d_day;
         d_to = d_date;
-        console.log("in 7 days " + d_date);
         break;
       case "In 1 month":
         d_date = d_year + "-" + d_month + "-" + d_day;
@@ -261,7 +248,6 @@ exports.getEvents = function(limit,offset,month,topic,period) {
         d_month = d_month + 1;
         d_date = d_year + "-" + d_month + "-" + d_day;
         d_to = d_date;
-        console.log("month " + d_date);
         break;
       default:
         console.log("An error occourred " + period);

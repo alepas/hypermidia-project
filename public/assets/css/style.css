@@ -223,7 +223,7 @@ ul.breadcrumb li a:hover{
 .grid-container {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: 33fr 33fr 33fr;
     grid-gap: 30px;
     grid-row-gap: 10%;
     padding: 3% 3%;

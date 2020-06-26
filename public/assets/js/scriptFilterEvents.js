@@ -18,8 +18,6 @@ function filterEvents(){
     if(period != null)
         fet = fet + "&" + "period=" + period;
 
-    console.log(fet);
-
     fetch(fet)
     .then(function(response) {
     if (!response.ok) 
