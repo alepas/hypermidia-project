@@ -166,7 +166,7 @@ exports.getEvents = function(limit,offset,month,topic,period) {
   }else if(topic == null && period!=null){
     console.log("topic no, period yes");
     var date = new Date();
-    var d_day = date.getDay() +1;
+    var d_day = date.getDate();
     var d_month = date.getMonth() +1;
     var d_year = date.getFullYear();
     var d_date;
@@ -210,7 +210,7 @@ exports.getEvents = function(limit,offset,month,topic,period) {
     return sqlDb("Event")
       .limit(limit)
       .offset(offset)
-      .whereBetween('date', d_[from, d_to])
+      .whereBetween('date', [d_from, d_to])
       .then(data => {
         return data
       })
@@ -218,7 +218,7 @@ exports.getEvents = function(limit,offset,month,topic,period) {
   }else if(topic != null && period != null){
     console.log("topic yes, period yes");
     var date = new Date();
-    var d_day = date.getDay() +1;
+    var d_day = date.getDate();
     var d_month = date.getMonth() +1;
     var d_year = date.getFullYear();
     var d_date;
