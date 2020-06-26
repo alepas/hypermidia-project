@@ -168,37 +168,41 @@ exports.getEvents = function(limit,offset,month,topic,period) {
     var date = new Date();
     var d_day = date.getDay() +1;
     var d_month = date.getMonth() +1;
-    var d_year = date.getFullYear() +1;
+    var d_year = date.getFullYear();
     var d_date;
-    var from;
-    var to;
+    var d_from;
+    var d_to;
     console.log("pre-date " + d_day + " " + d_month + " " + d_year);
     switch(period){
       case "Today":
-        from = d_date;
-        to = d_date;
+        d_from = d_date;
+        d_to = d_date;
         d_date = d_year + "-" + d_month + "-" + d_day;
         console.log("today " + d_date);
+        break;
       case "Tomorrow":
         d_day = d_day +1;
         d_date = d_year + "-" + d_month + "-" + d_day;
-        from = d_date;
-        to = d_date;
+        d_from = d_date;
+        d_to = d_date;
         console.log("tomorrow " + d_date);
+        break;
       case "In 7 days":
         d_date = d_year + "-" + d_month + "-" + d_day;
-        from = date;
+        d_from = date;
         d_day = d_day + 7;
         d_date = d_year + "-" + d_month + "-" + d_day;
-        to = d_date;
+        d_to = d_date;
         console.log("in 7 days " + d_date);
+        break;
       case "In 1 month":
         d_date = d_year + "-" + d_month + "-" + d_day;
-        from = date;
+        d_from = date;
         d_month = d_month + 1;
         d_date = d_year + "-" + d_month + "-" + d_day;
-        to = d_date;
+        d_to = d_date;
         console.log("month " + d_date);
+        break;
       default:
         console.log("An error occourred " + period);
     }
@@ -206,7 +210,7 @@ exports.getEvents = function(limit,offset,month,topic,period) {
     return sqlDb("Event")
       .limit(limit)
       .offset(offset)
-      .whereBetween('date', [from, to])
+      .whereBetween('date', d_[from, d_to])
       .then(data => {
         return data
       })
@@ -216,37 +220,41 @@ exports.getEvents = function(limit,offset,month,topic,period) {
     var date = new Date();
     var d_day = date.getDay() +1;
     var d_month = date.getMonth() +1;
-    var d_year = date.getFullYear() +1;
+    var d_year = date.getFullYear();
     var d_date;
-    var from;
-    var to;
+    var d_from;
+    var d_to;
     console.log("pre-date " + d_day + " " + d_month + " " + d_year);
     switch(period){
       case "Today":
-        from = d_date;
-        to = d_date;
+        d_from = d_date;
+        d_to = d_date;
         d_date = d_year + "-" + d_month + "-" + d_day;
         console.log("today " + d_date);
+        break;
       case "Tomorrow":
         d_day = d_day +1;
         d_date = d_year + "-" + d_month + "-" + d_day;
-        from = d_date;
-        to = d_date;
+        d_from = d_date;
+        d_to = d_date;
         console.log("tomorrow " + d_date);
+        break;
       case "In 7 days":
         d_date = d_year + "-" + d_month + "-" + d_day;
-        from = date;
+        d_from = date;
         d_day = d_day + 7;
         d_date = d_year + "-" + d_month + "-" + d_day;
-        to = d_date;
+        d_to = d_date;
         console.log("in 7 days " + d_date);
+        break;
       case "In 1 month":
         d_date = d_year + "-" + d_month + "-" + d_day;
-        from = date;
+        d_from = date;
         d_month = d_month + 1;
         d_date = d_year + "-" + d_month + "-" + d_day;
-        to = d_date;
+        d_to = d_date;
         console.log("month " + d_date);
+        break;
       default:
         console.log("An error occourred " + period);
     }
@@ -256,7 +264,7 @@ exports.getEvents = function(limit,offset,month,topic,period) {
       .offset(offset)
       .join('Event_Type as et', 'e.id_event_type', '=', 'et.id_type')
       .where('et.type', topic)
-      .whereBetween('e.date', [from, to])
+      .whereBetween('e.date', [d_from, d_to])
       .then(data => {
         return data
       })
