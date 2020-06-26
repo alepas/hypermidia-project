@@ -49,6 +49,9 @@ indexs.forEach((index, i) => {
       return response.json();
       })
       .then(function(json) {
+        for (var i = 0; i < 8; i++) {
+          document.getElementById("person_" + i).style.display = "none";
+        }
           for (var i = 0; i < json.length; i++) {
               let {fullname, photo, motto, id_person} = json[i];
 
@@ -72,6 +75,9 @@ indexs.forEach((index, i) => {
       return response.json();
       })
       .then(function(json) {
+        for (var i = 0; i < 9; i++) {
+          document.getElementById("event_" + i).style.display = "none";
+        }
           for (var i = 0; i < json.length; i++) {
               let {title, image, id_event} = json[i];
 
@@ -101,6 +107,9 @@ indexs.forEach((index, i) => {
       return response.json();
       })
       .then(function(json) {
+        for (var i = 0; i < 12; i++) {
+          document.getElementById("event_" + i).style.display = "none";
+        }
           for (var i = 0; i < json.length; i++) {
               let {title, image, id_event, date} = json[i];
 
@@ -125,6 +134,9 @@ indexs.forEach((index, i) => {
           return response.json();
       })
       .then(function(json) {
+        for (var i = 0; i < 4; i++) {
+          document.getElementById("event_" + i).style.display = "none";
+        }
           for (var i = 0; i < json.length; i++) {
               let {title, image, id_event} = json[i];
 
@@ -147,6 +159,9 @@ indexs.forEach((index, i) => {
       })
 
       .then(function(json) {
+        for (var i = 0; i < 4; i++) {
+          document.getElementById("service_" + i).style.display = "none";
+        }
           for (var i = 0; i < json.length; i++) {
               let {title, photo, id_service} = json[i];
 
