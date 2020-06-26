@@ -12,12 +12,11 @@ indexs.forEach((index, i) => {
       c.classList.add('flip')
     }
     cur = i
-
-    var offset = (index.innerHTML - 1) * 12;
-    console.log(offset);
-    console.log(index.innerHTML);
-
+    
     if(index.id.includes("service_index")){
+      var offset = (index.innerHTML - 1) * 12;
+      console.log(offset);
+      console.log(index.innerHTML);
     fetch("../../v1/services?limit=12&offset=" + offset)
     .then(function(response) {
     if (!response.ok) 
@@ -40,6 +39,9 @@ indexs.forEach((index, i) => {
       }
      });
     } else if(index.id.includes("person_index")){
+      var offset = (index.innerHTML - 1) * 8;
+      console.log(offset);
+      console.log(index.innerHTML);
       fetch("../../v1/volunteers?limit=8&offset=" + offset)
       .then(function(response) {
       if (!response.ok) 
