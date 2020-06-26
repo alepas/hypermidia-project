@@ -175,11 +175,9 @@ exports.getEvents = function(limit,offset,month,topic,period) {
     console.log("pre-date " + d_day + " " + d_month + " " + d_year);
     switch(period){
       case "Today":
-        d_day = d_day -1;
-        d_date = d_year + "-" + d_month + "-" + d_day;
-        d_day = d_day +2;
         d_date = d_year + "-" + d_month + "-" + d_day;
         d_from = d_date;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         d_to = d_date;
         d_date = d_year + "-" + d_month + "-" + d_day;
         console.log("today " + d_from + " " + d_to);
@@ -233,15 +231,19 @@ exports.getEvents = function(limit,offset,month,topic,period) {
     console.log("pre-date " + d_day + " " + d_month + " " + d_year);
     switch(period){
       case "Today":
+        d_date = d_year + "-" + d_month + "-" + d_day;
         d_from = d_date;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         d_to = d_date;
         d_date = d_year + "-" + d_month + "-" + d_day;
-        console.log("today " + d_date);
+        console.log("today " + d_from + " " + d_to);
         break;
       case "Tomorrow":
-        d_day = d_day +1;
+        d_day = d_day;
         d_date = d_year + "-" + d_month + "-" + d_day;
         d_from = d_date;
+        d_day = d_day +1;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         d_to = d_date;
         console.log("tomorrow " + d_date);
         break;
