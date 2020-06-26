@@ -69,7 +69,7 @@ indexs.forEach((index, i) => {
       console.log(offset);
       console.log(index.innerHTML);
 
-      filterEvents(offset)
+      fetchEvents(offset)
     }
   })
 })
