@@ -372,8 +372,10 @@ ul.breadcrumb li a:hover{
     width: 600px;
     position: relative;
     display:block;
-    border:none;
     margin: 0 auto;
+    border-radius: 0.5em;
+    border: 0.5px solid #3db54a;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
 .event-presentation-right {
@@ -422,7 +424,7 @@ ul.breadcrumb li a:hover{
     position: relative;
     display:block;
     margin: 0 auto;
-    border-radius: 0.2em;
+    border-radius: 0.5em;
     border: 0.5px solid #3db54a;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
@@ -835,8 +837,8 @@ ul.breadcrumb li a:hover{
 /*Buttond for faq*/
 .btn-block{
     background-color: white;
-    border-color: green;
-    color: green;
+    border-color: #1a6735;
+    color: #1a6735;
     font-size: x-large;
     margin-top: 1.5%;
     margin-left: 10%;
@@ -844,8 +846,8 @@ ul.breadcrumb li a:hover{
 }
 
 .btn-block:hover{
-    background-color: green;
-    border-color: green;
+    background-color: #1a6735;
+    border-color: #1a6735;
     color: white;
     font-size: x-large;
     margin-top: 1.5%;
@@ -854,8 +856,8 @@ ul.breadcrumb li a:hover{
 }
 
 .btn-block::selection{
-        background-color: green;
-        border-color: green;
+        background-color: #1a6735;
+        border-color: #1a6735;
         color: white;
         font-size: x-large;
         margin-top: 1.5%;
@@ -864,8 +866,8 @@ ul.breadcrumb li a:hover{
 }
 
 .btn-block:active{
-    background-color: green;
-    border-color: green;
+    background-color: #1a6735;
+    border-color: #1a6735;
     color: white;
     font-size: x-large;
     margin-top: 1.5%;
@@ -874,8 +876,8 @@ ul.breadcrumb li a:hover{
 }
 
 .btn-block:checked{
-    background-color: green;
-    border-color: green;
+    background-color: #1a6735;
+    border-color: #1a6735;
     color: white;
     font-size: x-large;
     margin-top: 1.5%;
@@ -894,7 +896,7 @@ ul.breadcrumb li a:hover{
     font-size: medium;
     border-radius: 0.2em;
     
-    border: 2px solid #3db54a;
+    border: 2px solid #1a6735;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
@@ -906,12 +908,12 @@ ul.breadcrumb li a:hover{
 /*Event filters*/
 .event-filters .card{
     margin-top: 9%;
-    border: 3px solid #3db54a;
+    border: 3px solid #1a6735;
     border-radius: 5em;
     font-size: small;
 }
 .event-filters .btn{
-    border: 2px solid #3db54a;
+    border: 2px solid #1a6735;
     font-size: medium;
 }
 
