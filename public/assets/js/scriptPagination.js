@@ -64,7 +64,7 @@ indexs.forEach((index, i) => {
               savePeople(`${fullname}`);
           }
       });
-    }else if(index.id.includes("all_event_index")){
+    } /*else if(index.id.includes("all_event_index")){
       var offset = (index.innerHTML - 1) * 9;
       console.log(offset);
       console.log(index.innerHTML);
@@ -172,6 +172,6 @@ indexs.forEach((index, i) => {
                   {localStorage["id_service"] = `${id_service}`;};
           }
       });
-    }
+    }*/
   })
 })
