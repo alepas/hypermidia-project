@@ -837,7 +837,7 @@ ul.breadcrumb li a:hover{
 }
 
 /*Buttond for faq*/
-.block{
+.btn-block{
     background-color: white;
     border-color: green;
     color: green;
@@ -847,7 +847,7 @@ ul.breadcrumb li a:hover{
     max-width: 80%;
 }
 
-.block:hover{
+.btn-block:hover{
     background-color: green;
     border-color: green;
     color: white;
@@ -857,7 +857,7 @@ ul.breadcrumb li a:hover{
     max-width: 80%;
 }
 
-.block::selection{
+.btn-block::selection{
         background-color: green;
         border-color: green;
         color: white;
@@ -867,7 +867,7 @@ ul.breadcrumb li a:hover{
         max-width: 80%;
 }
 
-.block:active{
+.btn-block:active{
     background-color: green;
     border-color: green;
     color: white;
@@ -877,7 +877,7 @@ ul.breadcrumb li a:hover{
     max-width: 80%;
 }
 
-.block:checked{
+.btn-block:checked{
     background-color: green;
     border-color: green;
     color: white;

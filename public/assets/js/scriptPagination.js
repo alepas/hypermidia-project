@@ -13,8 +13,9 @@ indexs.forEach((index, i) => {
     }
     cur = i
 
-    var offset = index.value * 12;
+    var offset = index.innerHTML * 12;
     console.log(offset);
+    console.log(index.innerHTML);
 
     fetch("../../v1/services?limit=12&offset=" + offset)
     .then(function(response) {
