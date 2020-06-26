@@ -49,6 +49,16 @@ paths:
         description: "Filter by month"
         required: false
         type: "number"
+      - name: "topic"
+        in: "query"
+        description: "Filter by topic"
+        required: false
+        type: "string"
+      - name: "period"
+        in: "query"
+        description: "Filter by period"
+        required: false
+        type: "string"
       responses:
         "200":
           description: "OK"

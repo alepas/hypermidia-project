@@ -74,20 +74,20 @@
                                     <h4>Filter by topic</h2>
                                </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
-                                    <label class="form-check-label" for="exampleRadios1">
+                                    <input class="form-check-input" type="radio" name="topicRadio" id="topicRadio_0" value="Animal's care" >
+                                    <label class="form-check-label" for="topicRadio_0">
                                         Animal's care
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                    <label class="form-check-label" for="exampleRadios2">
+                                    <input class="form-check-input" type="radio" name="topicRadio" id="topicRadio_1" value="Animals in the wild">
+                                    <label class="form-check-label" for="topicRadio_1">
                                         Animals in the wild
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
-                                    <label class="form-check-label" for="exampleRadios3">
+                                    <input class="form-check-input" type="radio" name="topicRadio" id="topicRadio_2" value="Nature" >
+                                    <label class="form-check-label" for="topicRadio_2">
                                         Nature
                                     </label>
                                 </div>
@@ -96,36 +96,41 @@
                                </div>
                                
                                <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
-                                <label class="form-check-label" for="exampleRadios1">
-                                     During this week
+                                <input class="form-check-input" type="radio" name="periodRadio" id="periodRadio_0" value="Today" >
+                                <label class="form-check-label" for="periodRadio_0">
+                                     Today
                                 </label>
                               </div>
                               <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
-                                    This weekend
+                                <input class="form-check-input" type="radio" name="periodRadio" id="periodRadio_1" value="Tomorrow">
+                                <label class="form-check-label" for="periodRadio_1">
+                                    Tomorrow
                                 </label>
                               </div>
                               <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
-                                    Next week
+                                <input class="form-check-input" type="radio" name="periodRadio" id="periodRadio_2" value="In 7 days">
+                                <label class="form-check-label" for="periodRadio_2">
+                                    In 7 days
                                 </label>
                               </div>
                               <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
-                                <label class="form-check-label" for="exampleRadios3">
-                                    This month
+                                <input class="form-check-input" type="radio" name="periodRadio" id="periodRadio_3" value="In 1 month" >
+                                <label class="form-check-label" for="periodRadio_3">
+                                    In 1 month
                                 </label>
                               </div>
                               <div class="spacer-small">
                                 &nbsp;
                               </div>
+                              <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="filterEvents()">Filter</button>
                             </div>
                         </div>
-                        </div>
                     </div>
+                </div>
+
+                <!--Javascript-->
+                <script src="../assets/js/scriptFilterEvents.js"></script>
+
                 <div class="col-sm-9 rightside">
                     <div class="grid-container">
                         <div id="event_0" class="grid-item"  style="display: none;">
@@ -133,7 +138,7 @@
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_0" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_1"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
-                                        <h2 id="event_desc_0" class="card-title" style="background-color: transparent;">Such a cutie</h5>
+                                        <h2 id="event_desc_0" class="card-title" style="background-color: transparent;"></h5>
                                     </div>
                                 </div>
                             </a>
@@ -144,7 +149,7 @@
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_1" src="../assets//img/marmots_day.png" class="card-img" alt="Event_2"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
-                                        <h2 id="event_desc_1" class="card-title" style="background-color: transparent;">Marmots</h5>
+                                        <h2 id="event_desc_1" class="card-title" style="background-color: transparent;"></h5>
                                     </div>
                                 </div>
                             </a>
@@ -155,7 +160,7 @@
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_2" src="../assets//img/ibex_day.jpg" class="card-img" alt="Event_3"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
-                                        <h2 id="event_desc_2" class="card-title" style="background-color: transparent;">Ibex -> best name ever</h5>
+                                        <h2 id="event_desc_2" class="card-title" style="background-color: transparent;"></h5>
                                     </div>
                                 </div>
                             </a>
@@ -166,7 +171,7 @@
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_3" src="../assets//img/ermines_day.jpg" class="card-img" alt="Event_4"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
-                                        <h2 id="event_desc_3" class="card-title" style="background-color: transparent;">who doesn't want an ermine?</h5>
+                                        <h2 id="event_desc_3" class="card-title" style="background-color: transparent;"></h5>
                                     </div>
                                 </div>
                             </a>
@@ -177,7 +182,7 @@
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_4" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_5"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
-                                        <h2 id="event_desc_4" class="card-title" style="background-color: transparent;">Such a cutie</h5>
+                                        <h2 id="event_desc_4" class="card-title" style="background-color: transparent;"></h5>
                                     </div>
                                 </div>
                             </a>
@@ -188,7 +193,7 @@
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_5" src="../assets//img/marmots_day.png" class="card-img" alt="Event_6"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
-                                        <h2 id="event_desc_5" class="card-title" style="background-color: transparent;">Marmots</h5>
+                                        <h2 id="event_desc_5" class="card-title" style="background-color: transparent;"></h5>
                                     </div>
                                 </div>
                             </a>
@@ -199,7 +204,7 @@
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_6" src="../assets//img/ibex_day.jpg" class="card-img" alt="Event_7"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
-                                        <h2 id="event_desc_6" class="card-title" style="background-color: transparent;">ibex -> best name ever</h5>
+                                        <h2 id="event_desc_6" class="card-title" style="background-color: transparent;"></h5>
                                     </div>
                                 </div>
                             </a>
@@ -210,7 +215,7 @@
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_7" src="../assets//img/ermines_day.jpg" class="card-img" alt="Event_8"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
-                                        <h2 id="event_desc_7" class="card-title" style="background-color: transparent;">Who doesn't want an ermine?</h5>
+                                        <h2 id="event_desc_7" class="card-title" style="background-color: transparent;"></h5>
                                     </div>
                                 </div>
                             </a>
@@ -221,7 +226,7 @@
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_8" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_9"> 
                                     <div class="card-img-overlay" style="background-color: transparent;">
-                                        <h2 id="event_desc_8" class="card-title" style="background-color: transparent;">Such a cutie</h5>
+                                        <h2 id="event_desc_8" class="card-title" style="background-color: transparent;"></h5>
                                     </div>
                                 </div>
                             </a>
@@ -267,7 +272,7 @@
         })
         .then(function(json) {
             for (var i = 0; i < json.length; i++) {
-                let {title, image, id_event, date} = json[i];
+                let {title, image, id_event} = json[i];
 
                 document.getElementById("event_" + i).style.display = "block";
                 document.getElementById("event_desc_" + i).innerHTML =  `${title}`;

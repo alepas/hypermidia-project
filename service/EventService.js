@@ -89,56 +89,60 @@ exports.getEvent = function(eventId) {
  * month BigDecimal Filter by month (optional)
  * returns List
  **/
-exports.getEvents = function(limit,offset,month) {
-  switch(month){
-    case 1:
-      var from = '2020-01-01';
-      var to = '2020-01-31';
-      break;
-    case 2:
-      var from = '2020-02-01';
-      var to = '2020-02-28';
-      break;
-    case 3:
-      var from = '2020-03-01';
-      var to = '2020-03-31';
-      break;
-    case 4:
-      var from = '2020-04-01';
-      var to = '2020-04-30';
-      break;
-    case 5:
-      var from = '2020-05-01';
-      var to = '2020-05-31';
-      break;
-    case 6:
-      var from = '2020-06-01';
-      var to = '2020-06-30';
-      break;
-    case 7:
-      var from = '2020-07-01';
-      var to = '2020-07-31';
-      break;
-    case 8:
-      var from = '2020-08-01';
-      var to = '2020-08-31';
-      break;
-    case 9:
-      var from = '2020-09-01';
-      var to = '2020-09-30';
-      break;
-    case 10:
-      var from = '2020-10-01';
-      var to = '2020-10-31';
-      break;
-    case 11:
-      var from = '2020-11-01';
-      var to = '2020-11-30';
-      break;
-    case 12:
-      var from = '2020-12-01';
-      var to = '2020-12-31';
-      break;    
+var from;
+var to;
+exports.getEvents = function(limit,offset,month,topic,period) {
+  if(month!=null){
+    switch(month){
+      case 1:
+        var from = '2020-01-01';
+        var to = '2020-01-31';
+        break;
+      case 2:
+        var from = '2020-02-01';
+        var to = '2020-02-28';
+        break;
+      case 3:
+        var from = '2020-03-01';
+        var to = '2020-03-31';
+        break;
+      case 4:
+        var from = '2020-04-01';
+        var to = '2020-04-30';
+        break;
+      case 5:
+        var from = '2020-05-01';
+        var to = '2020-05-31';
+        break;
+      case 6:
+        var from = '2020-06-01';
+        var to = '2020-06-30';
+        break;
+      case 7:
+        var from = '2020-07-01';
+        var to = '2020-07-31';
+        break;
+      case 8:
+        var from = '2020-08-01';
+        var to = '2020-08-31';
+        break;
+      case 9:
+        var from = '2020-09-01';
+        var to = '2020-09-30';
+        break;
+      case 10:
+        var from = '2020-10-01';
+        var to = '2020-10-31';
+        break;
+      case 11:
+        var from = '2020-11-01';
+        var to = '2020-11-30';
+        break;
+      case 12:
+        var from = '2020-12-01';
+        var to = '2020-12-31';
+        break;    
+    }
   }
 
   if(month != null){
@@ -149,8 +153,112 @@ exports.getEvents = function(limit,offset,month) {
       .then(data => {
         return data
       })
-  }
-  return sqlDb("Event")
+  }else if(topic != null && period==null){
+    console.log("topic yes, period no");
+    return sqlDb("Event as e")
+      .limit(limit)
+      .offset(offset)
+      .join('Event_Type as et', 'e.id_event_type', '=', 'et.id_type')
+      .where('et.type', topic)
+      .then(data => {
+        return data
+      })
+  }else if(topic == null && period!=null){
+    console.log("topic no, period yes");
+    var date = new Date();
+    var d_day = date.getDay() +1;
+    var d_month = date.getMonth() +1;
+    var d_year = date.getFullYear() +1;
+    var d_date;
+    var from;
+    var to;
+    console.log("pre-date " + d_date);
+    switch(period){
+      case "today":
+        from = d_date;
+        to = d_date;
+        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        console.log("today " + d_date);
+      case "tomorrow":
+        d_day = d_day +1;
+        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        from = d_date;
+        to = d_date;
+        console.log("tomorrow " + d_date);
+      case "In 7 days":
+        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        from = date;
+        d_day = d_day + 7;
+        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        to = d_date;
+        console.log("in 7 days " + d_date);
+      case "In 1 month":
+        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        from = date;
+        d_month = d_month + 1;
+        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        to = d_date;
+        console.log("month " + d_date);
+    }
+
+    return sqlDb("Event")
+      .limit(limit)
+      .offset(offset)
+      .whereBetween('date', [from, to])
+      .then(data => {
+        return data
+      })
+    
+  }else if(topic != null && period != null){
+    console.log("topic yes, period yes");
+    var date = new Date();
+    var d_day = date.getDay() +1;
+    var d_month = date.getMonth() +1;
+    var d_year = date.getFullYear() +1;
+    var d_date;
+    var from;
+    var to;
+    console.log("pre-date " + d_date);
+    switch(period){
+      case "today":
+        from = d_date;
+        to = d_date;
+        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        console.log("today " + d_date);
+      case "tomorrow":
+        d_day = d_day +1;
+        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        from = d_date;
+        to = d_date;
+        console.log("tomorrow " + d_date);
+      case "In 7 days":
+        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        from = date;
+        d_day = d_day + 7;
+        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        to = d_date;
+        console.log("in 7 days " + d_date);
+      case "In 1 month":
+        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        from = date;
+        d_month = d_month + 1;
+        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        to = d_date;
+        console.log("month " + d_date);
+    }
+
+    return sqlDb("Event as e")
+      .limit(limit)
+      .offset(offset)
+      .join('Event_Type as et', 'e.id_event_type', '=', 'et.id_type')
+      .where('et.type', topic)
+      .whereBetween('e.date', [from, to])
+      .then(data => {
+        return data
+      })
+
+  }else 
+    return sqlDb("Event")
       .limit(limit)
       .offset(offset)
       .then(data => {

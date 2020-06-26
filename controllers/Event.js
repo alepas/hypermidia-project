@@ -18,7 +18,9 @@ module.exports.getEvents = function getEvents (req, res, next) {
   var limit = req.swagger.params['limit'].value;
   var offset = req.swagger.params['offset'].value;
   var month = req.swagger.params['month'].value;
-  Event.getEvents(limit,offset,month)
+  var topic = req.swagger.params['topic'].value;
+  var period = req.swagger.params['period'].value;
+  Event.getEvents(limit,offset,month,topic,period)
     .then(function (response) {
       utils.writeJson(res, response);
     })
