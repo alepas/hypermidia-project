@@ -172,7 +172,7 @@ exports.getEvents = function(limit,offset,month,topic,period) {
     var d_date;
     var from;
     var to;
-    console.log("pre-date " + d_date);
+    console.log("pre-date " + d_day + " " + d_month + " " + d_year);
     switch(period){
       case "today":
         from = d_date;
@@ -199,6 +199,8 @@ exports.getEvents = function(limit,offset,month,topic,period) {
         d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
         to = d_date;
         console.log("month " + d_date);
+      default:
+        console.log("An error occourred " + period);
     }
 
     return sqlDb("Event")
@@ -218,7 +220,7 @@ exports.getEvents = function(limit,offset,month,topic,period) {
     var d_date;
     var from;
     var to;
-    console.log("pre-date " + d_date);
+    console.log("pre-date " + d_day + " " + d_month + " " + d_year);
     switch(period){
       case "today":
         from = d_date;
@@ -245,6 +247,8 @@ exports.getEvents = function(limit,offset,month,topic,period) {
         d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
         to = d_date;
         console.log("month " + d_date);
+      default:
+        console.log("An error occourred " + period);
     }
 
     return sqlDb("Event as e")
