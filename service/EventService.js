@@ -174,29 +174,29 @@ exports.getEvents = function(limit,offset,month,topic,period) {
     var to;
     console.log("pre-date " + d_day + " " + d_month + " " + d_year);
     switch(period){
-      case "today":
+      case "Today":
         from = d_date;
         to = d_date;
-        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         console.log("today " + d_date);
-      case "tomorrow":
+      case "Tomorrow":
         d_day = d_day +1;
-        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         from = d_date;
         to = d_date;
         console.log("tomorrow " + d_date);
       case "In 7 days":
-        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         from = date;
         d_day = d_day + 7;
-        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         to = d_date;
         console.log("in 7 days " + d_date);
       case "In 1 month":
-        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         from = date;
         d_month = d_month + 1;
-        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         to = d_date;
         console.log("month " + d_date);
       default:
@@ -222,29 +222,29 @@ exports.getEvents = function(limit,offset,month,topic,period) {
     var to;
     console.log("pre-date " + d_day + " " + d_month + " " + d_year);
     switch(period){
-      case "today":
+      case "Today":
         from = d_date;
         to = d_date;
-        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         console.log("today " + d_date);
-      case "tomorrow":
+      case "Tomorrow":
         d_day = d_day +1;
-        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         from = d_date;
         to = d_date;
         console.log("tomorrow " + d_date);
       case "In 7 days":
-        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         from = date;
         d_day = d_day + 7;
-        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         to = d_date;
         console.log("in 7 days " + d_date);
       case "In 1 month":
-        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         from = date;
         d_month = d_month + 1;
-        d_date = d_year.toString + "-" + d_month.toString + "-" + d_day.toString;
+        d_date = d_year + "-" + d_month + "-" + d_day;
         to = d_date;
         console.log("month " + d_date);
       default:
