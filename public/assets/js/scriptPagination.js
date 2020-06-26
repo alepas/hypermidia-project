@@ -13,10 +13,11 @@ indexs.forEach((index, i) => {
     }
     cur = i
 
-    var offset = index.innerHTML * 12;
+    var offset = (index.innerHTML - 1) * 12;
     console.log(offset);
     console.log(index.innerHTML);
 
+    if(index.id.includes("service_index")){
     fetch("../../v1/services?limit=12&offset=" + offset)
     .then(function(response) {
     if (!response.ok) 
@@ -37,6 +38,27 @@ indexs.forEach((index, i) => {
           document.getElementById("service_link_" + i).onclick = function() 
               {localStorage["id_service"] = `${id_service}`;};
       }
-  });
+     });
+    } else if(index.id.includes("person_index")){
+      fetch("../../v1/volunteers?limit=8&offset=" + offset)
+      .then(function(response) {
+      if (!response.ok) 
+          throw new Error("HTTP error, status = " + response.status);
+      return response.json();
+      })
+      .then(function(json) {
+          for (var i = 0; i < json.length; i++) {
+              let {fullname, photo, motto, id_person} = json[i];
+
+              document.getElementById("person_" + i).style.display = "block";
+              document.getElementById("person_name_" + i).innerHTML =  `${fullname}`;
+              document.getElementById("person_img_" + i).src = `${photo}`;
+              document.getElementById("person_motto_" + i).innerHTML =  `${motto}`;
+              document.getElementById("person_" + i).onclick = function() 
+                  {localStorage["id_person"] = `${id_person}`;};
+              savePeople(`${fullname}`);
+          }
+      });
+    }
   })
 })
