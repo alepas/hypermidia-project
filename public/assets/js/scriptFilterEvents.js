@@ -15,7 +15,7 @@ function filterEvents(){
     var fet = "../../v1/events?limit=9&offset=0";
     if(topic != null)
         fet = fet + "&" + "topic=" + topic;
-    if(perio != null)
+    if(period != null)
         fet = fet + "&" + "period=" + period;
 
     console.log(fet);
@@ -27,6 +27,9 @@ function filterEvents(){
     return response.json();
     })
     .then(function(json) {
+        for(var i=0; i<9; i++)
+            document.getElementById("event_" + i).style.display = "none";
+
         for (var i = 0; i < json.length; i++) {
             let {title, image, id_event} = json[i];
 
