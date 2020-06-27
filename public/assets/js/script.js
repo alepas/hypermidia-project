@@ -4,20 +4,10 @@ var slideNumber = 1;
 
 hideSlides();
 
-$(document).ready(function(){
-    $('.carousel-containera').slick({
-    autoplay: true,
-    autoplaySpeed: 3000,
-    dots: true,
-    arrows: false
-    });
-});
-
-/*
 // Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
-}*/
+}
 
 // Thumbnail image controls
 function currentSlide(n) {
