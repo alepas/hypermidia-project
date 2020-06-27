@@ -585,6 +585,7 @@ ul.breadcrumb li a:hover{
     position: relative;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+    height: 30vh;
     grid-gap: 30px;
     grid-row-gap: 5%;
     padding: 3% 3%;
