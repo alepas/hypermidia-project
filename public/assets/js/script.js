@@ -1,7 +1,6 @@
 var slideIndex = 1;
 var slideNumber = 1;
- 
-var slides = document.getElementsByClassName("carousel-itema");
+
 $(document).ready(function(){
     $('.carousel-containera').slick({
     autoplay: true,
@@ -10,7 +9,7 @@ $(document).ready(function(){
     arrows: false
     });
 });
-hideSlides();
+//hideSlides();
 
 /*
 // Next/previous controls
