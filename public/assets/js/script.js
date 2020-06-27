@@ -1,5 +1,6 @@
-
-
+var slideIndex = 1;
+var slideNumber = 1;
+ 
 var slides = document.getElementsByClassName("carousel-itema");
 $(document).ready(function(){
     $('.carousel-containera').slick({
@@ -12,19 +13,17 @@ $(document).ready(function(){
 hideSlides();
 
 /*
-var slideIndex = 1;
-var slideNumber = 1;
 // Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
-}
+}*/
 
 // Thumbnail image controls
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
-// Sets the number of slides
+//Sets the number of slides
 function setSlides(n){
     slideNumber = n;
     showSlides(slideIndex);
@@ -51,7 +50,7 @@ function showSlides(n) {
     }
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
-}*/
+}
 
 function hideSlides(){
     var slides = document.getElementsByClassName("carousel-itema");
