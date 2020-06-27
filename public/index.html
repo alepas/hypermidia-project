@@ -14,6 +14,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         
+        <!--Allow Carousel to move-->
+        <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+
         <!--Style Sheet-->
         <link href="./assets/css/style.css" rel="stylesheet"/>
 
@@ -55,41 +59,33 @@
         <!-- Slideshow container -->
         <div class="carousel-containera">
             <div class="carousel-item-index">
-                <a class="carousel-prev-index" onclick="plusSlides(-1)">&#10094;</a>
                 <img src="assets/img/panorama.jpg" class="carousel-item-img">
                 <div class="carousel-item-text">Our view of the mountains</div>
-                <a class="carousel-next-index" onclick="plusSlides(1)">&#10095;</a>
             </div>
   
             <div class="carousel-item-index">
-                <a class="carousel-prev-index" onclick="plusSlides(-1)">&#10094;</a>
+                <!--<a class="carousel-prev-index" onclick="plusSlides(-1)">&#10094;</a>-->
                 <img src="assets//img/marmots_lake.jpg" class="carousel-item-img">
                 <div class="carousel-item-text">Marmots' lake</div>
-                <a class="carousel-next-index" onclick="plusSlides(1)">&#10095;</a>
+                <!--<a class="carousel-next-index" onclick="plusSlides(1)">&#10095;</a>-->
             </div>
   
             <div class="carousel-item-index">
-                <a class="carousel-prev-index" onclick="plusSlides(-1)">&#10094;</a>
-                <img src="assets//img/panorama_ermine.jpg" class="carousel-item-img">
-                <div class="carousel-item-text">Ermine!</div>
-                <a class="carousel-next-index" onclick="plusSlides(1)">&#10095;</a>
+                <img src="assets//img/panorama3.jpg" class="carousel-item-img">
+                <div class="carousel-item-text">Say hi to ibex, the king of the mountains!</div>
             </div>
         </div>
 
+        <!--
         <br>
-        <!-- The dots/circles -->
+        The dots/circles 
         <div style="text-align:center">
-            <span class="carousel-dot" onclick="currentSlide(1)"></span>
-            <span class="carousel-dot" onclick="currentSlide(2)"></span>
-            <span class="carousel-dot" onclick="currentSlide(3)"></span>
+            <span class="carousel-dot"></span>
+            <span class="carousel-dot"></span>
+            <span class="carousel-dot"></span>
         </div>
+        -->
 
-        <!--Javascript-->
-        <script src="assets/js/scriptCarouselIndex.js"></script>
-
-
-
-        
 
         <!--Events of the month-->
 
@@ -213,14 +209,24 @@
             </div>
         </footer>
 
-                <!--Bootstrap jquery-->
-                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!--Bootstrap jquery-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+        <!--Carousel slick scripts-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="https://kenwheeler.github.io/slick/slick/slick.min.js"></script>
+    
+        <!--Javascript-->
+        <script src="assets/js/scriptCarouselIndex.js"></script>
+
     </body>
     <script>
         var date = new Date();
         var month = date.getMonth() + 1;
+
         fetch("v1/events?limit=4&offset=0&month=" + month)
         .then(function(response) {
             if (!response.ok) 

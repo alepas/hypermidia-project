@@ -1,7 +1,19 @@
-var slideIndex = 1;
-var slideNumber = 1;
+
+
+var slides = document.getElementsByClassName("carousel-itema");
+$(document).ready(function(){
+    $('.carousel-containera').slick({
+    autoplay: true,
+    autoplaySpeed: 3000,
+    dots: true,
+    arrows: false
+    });
+});
 hideSlides();
 
+/*
+var slideIndex = 1;
+var slideNumber = 1;
 // Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
@@ -39,7 +51,7 @@ function showSlides(n) {
     }
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
-}
+}*/
 
 function hideSlides(){
     var slides = document.getElementsByClassName("carousel-itema");
