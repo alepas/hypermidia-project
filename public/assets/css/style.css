@@ -327,7 +327,7 @@ that is used as a specific stuff for orientation links*/
     position: relative;
     display: grid;
     grid-template-columns: 48% 48%;
-    height: 100vh;
+    height: 140vh;
     column-gap: 4%;
     row-gap: 10%;
     padding-top: 3%;
@@ -343,49 +343,33 @@ that is used as a specific stuff for orientation links*/
     justify-content: center;
     float: left;
 
-    font-size: 50px;
     border-radius: 0.2em;
-
     
     border: 0.15vmin solid #3db54a;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+
 }
 
 .grid-container-volunteers-img {
     background-color: rgba(255, 255, 255, 0.8);
-    width: 30vmin;
+    width: 30%;
     height: 29vh;
     text-align: center;
     float: left;
-
 }
 
 .grid-container-volunteers-text {
-    background-color: transparent;
-    display: table;
     width: 70%;
-    height: 100%;
-    margin-top: 5%;
-    text-align: center;
-    justify-content: center;
+    height: 29vh;
     float: left;
+    border-radius: 0.2em;
 }
+
 .grid-container-volunteers-text span {
-    display: table-cell;
-    font-size: 50px;
-
-    vertical-align: middle;
-  }
-
-.grid-container-volunteers p{
-    font-size: small;
-    font-weight: normal;
+    display: inline-block;
+    padding-top: 7vh ;
 }
 
-.grid-container-volunteers h1{
-    font-size: x-large;
-    font-weight: bold;
-}
 
 .grid-container-volunteers img {
     width: 100%;
@@ -396,8 +380,9 @@ that is used as a specific stuff for orientation links*/
 /*People navbar*/
 #people-navbar {
     height: fit-content;
-    margin-top: 50px;
+    margin-top: 9vh;
     margin-left: 2%;
+    
 }
 
 
