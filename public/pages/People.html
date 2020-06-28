@@ -53,7 +53,7 @@
             </nav>
         </div>
         <div class="title-group">
-            <p>Our volunteers</p>
+            <h1>Our volunteers</h1>
         </div>
 
         <!--Search bar-->
@@ -73,7 +73,7 @@
 
         <!--Grid for peoples-->
         <div class="grid-container-volunteers">
-            <a  id="person_0" href="./Person.html"  style="display: none;">
+            <a  id="person_0" href="./Person.html"  >
                 <div class="grid-container-volunteers-item">
                     <div class="grid-container-volunteers-img" > 
                         <img id="person_img_0" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
             </a>
-            <a id="person_1" href="./Person.html"  style="display: none;">
+            <a id="person_1" href="./Person.html"  >
                 <div class="grid-container-volunteers-item">
                     <div class="grid-container-volunteers-img" > 
                         <img  id="person_img_1" src="../assets//img/profile-woman.jpg" class='grid-item-img-volunteers'>
@@ -100,7 +100,7 @@
                     </div>
                 </div>
             </a>
-            <a id="person_2" href="./Person.html"  style="display: none;">
+            <a id="person_2" href="./Person.html"  >
                 <div class="grid-container-volunteers-item">
                     <div class="grid-container-volunteers-img" > 
                         <img  id="person_img_2" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
@@ -181,7 +181,13 @@
                 </div>
             </a>
         </div>         
-        <br>
+        <div class="spacer">
+            &nbsp;
+        </div>
+        
+        <div class="spacer-small">
+            &nbsp;
+        </div>
         <div class=pagination-container>
             <div class="pagination">
                 <span>
@@ -198,6 +204,9 @@
                 </svg>
             </div>
         </div>
+        <div class="spacer-small">
+            &nbsp;
+        </div>
 
         <!--Javascript-->
         <script src="../assets/js/scriptPagination.js"></script>
@@ -205,22 +214,22 @@
         <footer class="page-footer">
             <section class='footer-section'>
                 <a href="#">Donate</a>
-                <a href="./ContactForm.html" style="margin-left: -20px">Contact Form</a>
-                <a href="./Faq.html">FAQ</a>
+                <a href="./pages/ContactForm.html" style="margin-left: -2vw">Contact Form</a>
+                <a href="./pages/Faq.html">FAQ</a>
             </section>
-            <div>
+            <section class="social-div">
                 <p class='social'>Social</p>
-                <ul class="social-icons">
-                    <li><a href="#" class="fa fa-facebook"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
-                    <li><a href="#" class="fa fa-instagram"></a></li>
-                    <li><a href="#" class="fa fa-linkedin"></a></li>
-                </ul>
-            </div>
-            <div class='copyright'>
+                <div>
+                    <a href="#" class="fa fa-fw fa-facebook fa-2x"></a>
+                    <a href="#" class="fa fa-fw fa-twitter fa-2x"></a>
+                    <a href="#" class="fa fa-fw fa-instagram fa-2x"></a>
+                    <a href="#" class="fa fa-fw fa-linkedin fa-2x"></a>
+                </div>
+            </section>
+            <section class='copyright'>
                 <p>© Copyright Wild Care All Rights Reserve</p>
                 <p>Developers: Stefano Bagarin - Alessandra Pasini</p>
-            </div>
+            </section>
         </footer>
 
         <!--Bootstrap jquery-->
