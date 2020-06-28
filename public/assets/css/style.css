@@ -27,6 +27,20 @@ h2 {
     background: rgba(0, 0, 0, 0.4);
 }
 
+h3 {
+    font-weight: 700;
+    font-size: 3.5vmin;
+    color: #000000;
+    background-color: transparent;
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 2.5vmin;
+    color: #000000;
+    background-color: transparent;
+}
+
 li, a {
     font-weight: 700;
     font-size: 3vmin;
@@ -206,6 +220,7 @@ footer, footer section, .section-div, .social-div div, .copyright p, .social, .f
 /*Orientation links: breadcrumb is a predefined class 
 that is used as a specific stuff for orientation links*/
 .breadcrumb {
+    height: fit-content;
     margin-left: 2%;
     margin-top: 1%;
     list-style: none;
@@ -257,12 +272,14 @@ that is used as a specific stuff for orientation links*/
 .grid-container-allEvents {
     position: relative;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-gap: 30px;
-    grid-row-gap: 10%;
-    padding: 3% 3%;
+    grid-template-columns: 32% 32% 32%;
+    height: 100vh;
+    column-gap: 2%;
+    row-gap: 10%;
+    padding-top: 3%;
     padding-bottom: 10%;
-    margin-right: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 /*Grids of events and services*/
@@ -937,51 +954,43 @@ that is used as a specific stuff for orientation links*/
 
 /*Event filters*/
 .event-filters .card{
-    margin-top: 9%;
-    border: 3px solid #3db54a;
-    height: 55vh;
+    margin-top: 5vh;
+    border: 0.2vmin solid #3db54a;
+    height: fit-content;
     border-radius: 5em;
-    font-size: small;
+    font-weight: normal;
+    font-size: 2vmin;
 }
+
 .event-filters .btn{
-    border: 2px solid #3db54a;
-    font-size: medium;
+    border: 0.2vmin solid #3db54a;
+    font-size: 3vmin
 }
 
 .event-filters .card-body{
     border-radius: 5em;
     background-color: rgb(188, 231, 188);
-    font-size: small;
+    font-weight: normal;
+    font-size: 2vmin;
 }
 
 .event-filters .form-check-input{
     display: inline-block;
     background-color: transparent;
+    height: 2vmin;
+    width: 2vmin;;
 }
 
 .event-filters .form-check-label{
     display: inline-block;
     background-color: transparent;
-    margin-top: 3px;
-    margin-left: 20px;
+    margin-top: 0.1vh;
+    margin-left: 2vw;
 }
 
 .event-filters .form-check{
     text-align: left;
-    padding-left: 10%;
     background-color: transparent;
-}
-
-.event-filters h3{
-    font-weight: bolder;
-    background-color: transparent;
-}
-
-.event-filters h4{
-    padding-top: 2%;
-    padding-bottom: 2%;
-    font-weight: bold;
-    background-color: transparent
 }
 
 .event-filters div{
