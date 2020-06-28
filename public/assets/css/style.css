@@ -595,17 +595,16 @@ that is used as a specific stuff for orientation links*/
 }
 
 .grid-container-involved-volunteers-text {
-    background-color: transparent;
-    display: table;
     width: 70%;
     height: 100%;
-    text-align: center;
     float: left;
+    border-radius: 0.2em;
 }
+
 
 .grid-container-involved-volunteers-text span {
     display: inline-block;
-    padding-top: 7vh ;
+    padding-top: 5vh ;
   }
 
 
@@ -613,6 +612,14 @@ that is used as a specific stuff for orientation links*/
     width: 100%;
     height: 19.5vh;
     border-radius: 0.2em;
+}
+
+.grid-container-involved-volunteers p{
+    font-size: 1.5vmin;
+}
+
+.grid-container-involved-volunteers h1{
+    font-size: 2vmin;
 }
 
 
