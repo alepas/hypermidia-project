@@ -57,14 +57,14 @@
             <nav>
                 <ul class='breadcrumb'>
                     <li><a href='../index.html'></a> </li>
-                    <li aria-current="page">Services </li>
+                    <li aria-current="page"><a href='Services.html'>Services</a> </li>
                     <li id="breadcrumb" aria-current="page"></li>
                 </ul>
             </nav>
         </div>
 
         <div class="title-group">
-            <p id="service_title"></p>
+            <h1 id="service_title"></h1>
         </div>
 
         
@@ -144,31 +144,22 @@
         </div>
 
         <p id="service_pratical_info"></p>
-        <!--
-        <h2>When</h2>
-         <p>Anytime</p>
-         <div class="spacer_small">
-            &nbsp;
-        </div>
-         <h2>Where</h2>
-         <p>Somewhere</p>
-        -->
 
 
-         <div class="spacer_medium">
+        <div class="spacer_medium">
             &nbsp;
         </div>
 
          <!--Related volunteers-->
-         <h2>Who is involved</h2>
+         <h1>Who is involved</h1>
          <p>The following volunteers are involved in this service</p>
          <div class="grid-container-involved-volunteers">
             <a id="person_0" href="./Person.html"  style="display: none;">
-                <div class="grid-container-involved-volunteers-item">
-                    <div class="grid-container-involved-volunteers-img" > 
+                <div class="grid-container-volunteers-item">
+                    <div class="grid-container-volunteers-img" > 
                         <img id="person_img_0" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
                     </div>
-                    <div class="grid-container-involved-volunteers-text">
+                    <div class="grid-container-volunteers-text">
                         <span>
                             <h1 id="person_fullname_0"></h1>
                             <p id="person_motto_0"></p>
@@ -177,12 +168,12 @@
                 </div>
             </a>
             <a id="person_1" href="./Person.html" style="display: none;">
-                <div class="grid-container-involved-volunteers-item">
-                    <div class="grid-container-involved-volunteers-img" > 
+                <div class="grid-container-volunteers-item">
+                    <div class="grid-container-volunteers-img" > 
                         <img id="person_img_1" src="../assets//img/profile-woman.jpg" class='grid-item-img-volunteers'>
 
                     </div>
-                    <div class="grid-container-involved-volunteers-text">
+                    <div class="grid-container-volunteers-text">
                         <span>
                             <h1 id="person_fullname_1"></h1>
                             <p id="person_motto_1"></p>
@@ -191,11 +182,11 @@
                 </div>
             </a>
             <a id="person_2" href="./Person.html" style="display: none;">
-                <div class="grid-container-involved-volunteers-item">
-                    <div class="grid-container-involved-volunteers-img" > 
+                <div class="grid-container-volunteers-item">
+                    <div class="grid-container-volunteers-img" > 
                         <img id="person_img_2" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
                     </div>
-                    <div class="grid-container-involved-volunteers-text">
+                    <div class="grid-container-volunteers-text">
                         <span>
                             <h1  id="person_fullname_2"></h1>
                             <p id="person_motto_2"></p>
@@ -206,16 +197,14 @@
          </div>
 
         <!--Related events-->
-        <h2>Related events</h2>
+        <h1>Related events</h1>
         <p>The following events will provide this service</p>
         <div class="grid-container-related-events">
             <div id="event_0" class="grid-item" style="display: none;">
                 <a id="event_link_0" href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_0" src="../assets//img/owl_day.jpg" class="card-img" alt="Owls"> 
-                        <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 id="event_desc_0" class="card-title" style="background-color: transparent;"></h5>
-                        </div>
+                        <h2 id="event_desc_0" class="card-img-overlay flex-column d-flex justify-content-end"></h2>
                     </div>
                 </a>
             </div>
@@ -224,9 +213,7 @@
                 <a id="event_link_1" href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_1" src="../assets//img/marmots_day.png" class="card-img" alt="Owls"> 
-                        <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 id="event_desc_1" class="card-title" style="background-color: transparent;"></h5>
-                        </div>
+                        <h2 id="event_desc_1" class="card-img-overlay flex-column d-flex justify-content-end"></h2>
                     </div>
                 </a>
             </div>
@@ -235,9 +222,7 @@
                 <a id="event_link_2" href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_2" src="../assets//img/ibex_day.jpg" class="card-img" alt="Owls"> 
-                        <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 id="event_desc_2" class="card-title" style="background-color: transparent;"></h5>
-                        </div>
+                        <h2 id="event_desc_2" class="card-img-overlay flex-column d-flex justify-content-end"></h2>
                     </div>
                 </a>
             </div>
@@ -246,13 +231,15 @@
                 <a id="event_link_3" href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_3" src="../assets//img/ermines_day.jpg" class="card-img" alt="Owls"> 
-                        <div class="card-img-overlay" style="background-color: transparent;">
-                            <h2 id="event_desc_3" class="card-title" style="background-color: transparent;"></h5>
-                        </div>
+                        <h2 id="event_desc_3" class="card-img-overlay flex-column d-flex justify-content-end"></h2>
                     </div>
                 </a>
             </div>
-         </div>
+        </div>
+
+        <div class="spacer">
+            &nbsp;
+        </div>
 
         <footer class="page-footer">
             <section class='footer-section'>

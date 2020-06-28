@@ -560,13 +560,15 @@ that is used as a specific stuff for orientation links*/
 
 .grid-container-involved-volunteers {
     position: relative;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-gap: 30px;
-    grid-row-gap: 5%;
-    padding: 3% 3%;
+    display: grid;    
+    grid-template-columns: 32% 32% 32%;
+    height: 100vh;
+    column-gap: 2%;
+    row-gap: 10%;
+    padding-top: 3%;
     padding-bottom: 10%;
-    margin-right: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .grid-container-involved-volunteers-item {
