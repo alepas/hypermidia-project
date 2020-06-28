@@ -306,6 +306,7 @@ that is used as a specific stuff for orientation links*/
 
 .card-img{
     border-radius: 0.2em;
+    height: 30vh;
 }
 
 .grid-item-img {
@@ -353,7 +354,7 @@ that is used as a specific stuff for orientation links*/
 .grid-container-volunteers-img {
     background-color: rgba(255, 255, 255, 0.8);
     width: 30vmin;
-    height: 29.8vh;
+    height: 29vh;
     text-align: center;
     float: left;
 
