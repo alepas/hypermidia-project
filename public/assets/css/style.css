@@ -285,6 +285,8 @@ that is used as a specific stuff for orientation links*/
     border-bottom:0.2vmin solid #3db54a;
     margin-bottom:0vmin;
     margin-top: 2vmin;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 .title-group-noline  {
