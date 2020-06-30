@@ -53,7 +53,7 @@
             <nav>
                 <ul class='breadcrumb'>
                     <li><a href='../index.html'></a> </li>
-                    <li aria-current="page">Volunteers </li>
+                    <li aria-current="page"><a href='./People.html'>Volunteers</a> </li>
                     <li id="breadcrumb" aria-current="page"></li>
                 </ul>
             </nav>
@@ -64,6 +64,9 @@
             <h1 id="person_fullname">
             </h1>
         </div>
+        <div class="spacer-medium">
+            &nbsp;
+        </div>
 
         <!--Person data-->
         <div class="person-data">
@@ -72,45 +75,39 @@
             </div>
             <div class="person-data-middle">
                 <span>
-                    <h2>Birthday</h2>
-                    <p>Yes</p>
-        
-                    <h2 >Motto</h2>
+                    <h3 >Motto</h3>
                     <p id="person_motto"></p>
                 </span>
             </div>
             <div class="person-data-right">
                 <span>
-                    <h2>Phone</h2>
+                    <h3>Phone</h3>
                     <p id="person_number"></p>
         
-                    <h2>E-mail</h2>
+                    <h3>E-mail</h3>
                     <p id="person_email"></p>
                 </span>
             </div>
         </div>
 
-        <div class="spacer_medium">
-            &nbsp;
-        </div>
     
-         <h1>Description</h1>
-         <div class="spacer_small">
+        <h1>Description</h1>
+        <div class="spacer-small">
             &nbsp;
         </div>
 
-        <p id="person_description"></p>
+        <p class="details-text" id="person_description"></p>
         
-        <div class="spacer_medium">
+        <div class="spacer-medium">
             &nbsp;
         </div>
-
-
 
          <!--Events -->
-
          <h1>Events</h1>
-         <p>The following events involve this volunteer</p>
+         <p>The following events involve this volunteer</p>        
+         <div class="spacer-small">
+            &nbsp;
+        </div>
          <div class="grid-container-related-events">
             <div id="event_0" class="grid-item" style="display: none;">
                 <a id="event_link_0" href="./Event.html">
@@ -156,15 +153,20 @@
                 </a>
             </div>
          </div>
-         
- 
- 
+
+        <div class="spacer-medium">
+            &nbsp;
+        </div>
+
+
          <!--Services-->
          
          <h1>Services</h1>
          <p>The following services involve this volunteer as coordinator</p>
- 
-         <div class="grid-container-related-events">
+         <div class="spacer-small">
+            &nbsp;
+        </div> 
+        <div class="grid-container-related-events">
             <div id="service_0" class="grid-item" style="display: none;">
                 <a id="service_link_0" href="./Service.html">
                     <div class="card bg-dark text-white">
@@ -208,29 +210,31 @@
                     </div>
                 </a>
             </div>
-          </div>
+        </div>
+        <div class="spacer">
+           &nbsp;
+       </div> 
 
-
-        <footer class="page-footer">
-            <section class='footer-section'>
-                <a href="#">Donate</a>
-                <a href="./ContactForm.html" style="margin-left: -2vw">Contact Form</a>
-                <a href="./Faq.html">FAQ</a>
-            </section>
-            <section class="social-div">
-                <p class='social'>Social</p>
-                <div>
-                    <a href="#" class="fa fa-fw fa-facebook fa-2x"></a>
-                    <a href="#" class="fa fa-fw fa-twitter fa-2x"></a>
-                    <a href="#" class="fa fa-fw fa-instagram fa-2x"></a>
-                    <a href="#" class="fa fa-fw fa-linkedin fa-2x"></a>
-                </div>
-            </section>
-            <section class='copyright'>
-                <p>© Copyright Wild Care All Rights Reserve</p>
-                <p>Developers: Stefano Bagarin - Alessandra Pasini</p>
-            </section>
-        </footer>
+       <footer class="page-footer">
+          <section class='footer-section'>
+              <a href="#">Donate</a>
+              <a href="./ContactForm.html" style="margin-left: -2vw">Contact Form</a>
+              <a href="./Faq.html">FAQ</a>
+          </section>
+          <section class="social-div">
+              <p class='social'>Social</p>
+          </section>
+          <section class="social-img-div">
+              <img class="icon" src="../assets/img/fb.png"></img>
+              <img class="icon" src="../assets/img/twitter.png"></img>
+              <img class="icon" src="../assets/img/instagram.png"></img>
+              <img class="icon" src="../assets/img/linkedin.png"></img>
+          </section>
+          <section class='copyright'>
+              <p>© Copyright Wild Care All Rights Reserve</p>
+              <p>Developers: Stefano Bagarin - Alessandra Pasini</p>
+          </section>
+      </footer>
                 <!--Bootstrap jquery-->
                 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

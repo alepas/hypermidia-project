@@ -13,6 +13,8 @@ h1 {
     font-weight: 500;
     text-decoration: none;
     margin-left: 2%;
+    margin-top:0vmin;
+    margin-bottom:0vmin;
 }
 
 h2 {
@@ -25,6 +27,9 @@ h2 {
     padding-bottom: 0.5vmin;
     text-align: center;
     background: rgba(0, 0, 0, 0.4);
+    
+    margin-top:0vmin;
+    margin-bottom:0vmin;
 }
 
 h3 {
@@ -32,35 +37,45 @@ h3 {
     font-size: 3.5vmin;
     color: #000000;
     background-color: transparent;
+    margin-top:0vmin;
+    margin-bottom:0vmin;
 }
 
 h4 {
     font-weight: 700;
     font-size: 2.5vmin;
     color: #000000;
+    margin-top:1vmin;
+    margin-bottom:0vmin;
     background-color: transparent;
 }
 
 li, a {
     font-weight: 700;
     font-size: 3vmin;
-    color: #000000
+    color: #000000;
+    margin-top:0vmin;
+    margin-bottom:0vmin;
 }
 
 p {
-    font-size: 3vmin;
+    font-size: 2.5vmin;
     font-weight: normal;
     margin-left: 2%;
+    
+    margin-top:0vmin;
+    margin-bottom:0vmin;
 }
 
 
 /*Topbar - footer and related contents*/
 header {
+    margin-top:0vmin;
     position: fixed;
     z-index: 100;
-    top: 0px;
     left: 0px;
     right: 0px;
+    margin-bottom: 0vmin;
     height: 15vh;
     transition: all .5s ease-in-out;
     display: flex;
@@ -68,7 +83,7 @@ header {
     align-items: center;
     -webkit-backface-visibility:hidden;
     backface-visibility:hidden;
-    box-shadow:1px 2px 15px rgba(100,100,100,0.5);
+    box-shadow:0.1vmin 0.2vmin 3vmin rgba(100,100,100,0.5);
 }
 
 header a{
@@ -78,19 +93,27 @@ header a{
 .spacer{
     width: 100%;
     height: 15vh;
+    margin-bottom: 0vmin;
+    margin-top:0vmin;
 }
 
 .spacer-small{
     width: 100%;
     height: 5vh;
+    margin-bottom: 0vmin;
+    margin-top:0vmin;
 }
 
 .spacer-medium{
     width: 100%;
     height: 10vh;
+    margin-bottom: 0vmin;
+    margin-top:0vmin;
 }
 
 footer {
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
     position: sticky;
     height: 50vh;
     width:100%;
@@ -120,19 +143,18 @@ footer {
 
 .nav_links {
   list-style: none;
+  height: 15vh;
+  margin-bottom: 0vmin;
 }
 
 .nav_links li {
   display: inline-block;
-  background-color: transparent;
   margin-right: 3.5vw;
+  margin-top: 0vh;
 }
 
 
-.nav__links li a {
-    height: 15vh;
-    transition: all 0.3s ease 0s;
-}
+
 
 .events-dropdown i{
     width: 2vmax !important;
@@ -146,7 +168,8 @@ footer {
 
 .nav-logo{
     width:20vmax;
-    height: auto;
+    height: 15vh;
+    margin-top: 0vmin;
     top: 0px;
     margin-left: 7vw
 }
@@ -179,14 +202,32 @@ li.dropdown {
 
 
 .social-div {
-    display: inline-block;
-    margin-bottom: 4vh;
+    display: flex;
+    margin-bottom: 1.5vh;
+    margin-top: 1.5vh;
+    width: 100%;
+    align-content: center;
+    
+    justify-content: center;
+    height: fit-content;
 }
 
-.fa, .fa-facebook .fa-twitter, .fa-instagram, .fa-linkedin{
-    text-decoration: none;
-    margin-right: 2vw;
-    margin-left: 2vw;
+.social-img-div{
+    margin-top: 5vh;
+    margin-bottom: 6vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 10vh;
+}
+
+.icon{
+    margin-bottom: 0vmin;
+    margin-top: 0vmin;
+    margin-right: 2.5vw;
+    margin-left: 2.5vw;
+    width: 6vmin;
+    height: 6vmin;
     color: #ffffff;
 }
 
@@ -194,7 +235,7 @@ li.dropdown {
 .social {
     font-weight: 300;
     color: #ffffff;
-    margin-bottom: 2vh;
+    margin-bottom: 0vmin;
 }
 
 
@@ -219,17 +260,18 @@ footer, footer section, .section-div, .social-div div, .copyright p, .social, .f
 
 /*Orientation links: breadcrumb is a predefined class 
 that is used as a specific stuff for orientation links*/
-.breadcrumb {
-    height: fit-content;
-    margin-left: 2%;
-    margin-top: 1%;
+.breadcrumb {   
+    margin-bottom:0vmin;
+    margin-top: 2vmin;
     list-style: none;
     background-color: #ffffff;
+    
 }
 
 .breadcrumb li a, .breadcrumb li{
     display: inline-block;
     font-weight: 300;
+    font-size: 2vmin;
 }
 
 .breadcrumb li a:hover{
@@ -241,12 +283,14 @@ that is used as a specific stuff for orientation links*/
 .title-group  {
     text-align: center;
     border-bottom:0.2vmin solid #3db54a;
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-bottom:0vmin;
+    margin-top: 2vmin;
 }
 
 .title-group-noline  {
     text-align: center;
+    margin-bottom:0vmin;
+    margin-top: 2vmin;
 }
 
 /*Grids of people*/
@@ -273,13 +317,15 @@ that is used as a specific stuff for orientation links*/
     position: relative;
     display: grid;
     grid-template-columns: 32% 32% 32%;
-    height: 100vh;
+    height: 105vh;
     column-gap: 2%;
-    row-gap: 10%;
+    row-gap: 5%;
     padding-top: 3%;
     padding-bottom: 10%;
     margin-left: 2%;
     margin-right: 2%;
+    margin-bottom: 0vmin;
+    margin-top: 0vmin;
 }
 
 /*Grids of events and services*/
@@ -287,13 +333,15 @@ that is used as a specific stuff for orientation links*/
     position: relative;
     display: grid;
     grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
-    height: 100vh;
+    height: 120vh;
     column-gap: 2%;
     row-gap: 10%;
     padding-top: 3%;
     padding-bottom: 10%;
     margin-left: 2%;
     margin-right: 2%;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
 }
 
 .grid-item{
@@ -304,11 +352,12 @@ that is used as a specific stuff for orientation links*/
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     height: 30vh;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
     
-    font-size: 30px;
     border-radius: 0.2em;
     
-    border: 0.5px solid #3db54a;
+    border: 0.1vmin solid #3db54a;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
@@ -339,13 +388,16 @@ that is used as a specific stuff for orientation links*/
     position: relative;
     display: grid;
     grid-template-columns: 48% 48%;
-    height: 140vh;
+    height: 160vh;
     column-gap: 4%;
-    row-gap: 10%;
+    row-gap: 5%;
     padding-top: 3%;
     padding-bottom: 10%;
     margin-left: 2%;
     margin-right: 2%;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
+    
 }
 
 .grid-container-volunteers-item {
@@ -355,6 +407,9 @@ that is used as a specific stuff for orientation links*/
     text-align: center;
     justify-content: center;
     float: left;
+    
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
 
     border-radius: 0.2em;
     
@@ -402,47 +457,70 @@ that is used as a specific stuff for orientation links*/
 /*event presentation*/
 .event-presentation {
     width: 100%;
-    height: 400px;
+    height: 70vh;
     position: relative;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
+
 }
 
 .event-presentation-left {
     float: left;
+    height: 70vh;
+    margin-bottom: 0vmin;
     width: 65%;
-
 }
 
 .event-presentation-img {
-    width: 600px;
+    width: 45vw;
+    height: 55vh;
     position: relative;
     display:block;
     margin: 0 auto;
     border-radius: 0.5em;
-    border: 0.5px solid #3db54a;
+    border: 0.1vmin solid #3db54a;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
 .event-presentation-right {
     float: left;
     width: 35%;
-    height: 400px;
-    display: flex;
+    
+    margin-bottom: 0vmin;
+    height: 70vh;
     justify-content: left;
     align-items: center;
 }
 
-.event-presentation h2 {
-    font-weight: bold;
+.event-presentation-right span{
+    display: inline-block;
+    height: 45vh;
+    width: 100%;
+    
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) 
+}
+
+.event-presentation-right span h3{
+    margin-bottom: 1vmin;
+    margin-top: 0vmin;
+}
+
+.event-presentation-right span p{
+    margin-bottom: 3vmin;
+    margin-top: 0vmin;
+    margin-left: 0vmin;
 }
 
 /*person data*/
 .person-name{
     height: auto;
-    margin-top: 50px;
-    margin-bottom: 60px;
-    padding-bottom: 20px;
-    text-align: center;  
-    border-bottom:1px solid #3db54a;
+    text-align: center;
+    border-bottom:0.2vmin solid #3db54a;
+    margin-bottom:0vmin;
+    margin-top: 2vmin;
 
 }
 .person-name h1{
@@ -452,19 +530,22 @@ that is used as a specific stuff for orientation links*/
 }
 
 .person-data {
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
     width: 100%;
-    height: 400px;
+    height: 60vh;
     position: relative;
 }
 
 .person-data-left {
     float: left;
     width: 35%;
-
+    height: 100%;
 }
 
 .person-data-img {
-    width: 300px;
+    width: 25vw;
+    height: 52.5vh;
     position: relative;
     display:block;
     margin: 0 auto;
@@ -476,7 +557,7 @@ that is used as a specific stuff for orientation links*/
 .person-data-middle {
     float: left;
     width: 30%;
-    height: 300px;
+    height: 100%;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -485,26 +566,24 @@ that is used as a specific stuff for orientation links*/
 .person-data-right {
     float: left;
     width: 35%;
-    height: 300px;
+    height: 100%;
     display: flex;
     justify-content: left;
     align-items: center;
 }
 
-.person-data h2 {
-    font-weight: bold;
-}
-
 /*Event organizer*/
 .event-organizer-container {
+    margin-top:0vmin;
+    margin-bottom: 0vmin;
     position: relative;
     width: 100%;
 }
 
 .event-organizer {
     background-color: rgba(255, 255, 255, 0.8);
-    width: 600px;
-    height: 180px;
+    width: 37vw;
+    height: 20vh;
     text-align: center;
     
     position: relative;
@@ -512,21 +591,24 @@ that is used as a specific stuff for orientation links*/
     border:none;
     margin: 0 auto;
     
-    font-size: 30px;
     border-radius: 0.2em;
     
-    border: 1.5px solid #3db54a;
+    border: 0.1vmin solid #3db54a;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
 .event-organizer-left {
     position: relative;
     width: 30%;
-    height: 100%;
+    height: 19.5vh;
     text-align: center;
     float: left;
+    
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
 
 }
+
 
 .event-organizer-right {
     background-color: transparent;
@@ -536,20 +618,19 @@ that is used as a specific stuff for orientation links*/
     height: 100%;
     text-align: center;
     float: left;
+    
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
 }
+
+
 .event-organizer-right span {
-    display: table-cell;
-    vertical-align: top;
-  }
-
-.event-organizer-right p{
-    font-size: small;
+    display: inline-block;
+    height: 19.5vh;
+    width: 100%;
+    padding-top: 5vh;
 }
 
-.event-organizer-right h1{
-    font-size: medium;
-    font-weight: bold;
-}
 
 .event-organizer-left img {
     width: 100%;
@@ -570,6 +651,8 @@ that is used as a specific stuff for orientation links*/
     padding-bottom: 10%;
     margin-left: 2%;
     margin-right: 2%;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
 }
 
 .grid-container-involved-volunteers-item {
@@ -578,7 +661,8 @@ that is used as a specific stuff for orientation links*/
     height: 20vh;
     text-align: center;
     float: left;
-
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
     border-radius: 0.2em;
     
     border: 0.15vmin solid #3db54a;
@@ -591,6 +675,8 @@ that is used as a specific stuff for orientation links*/
     height: 19.5vh;
     text-align: center;
     float: left;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
 
 }
 
@@ -599,12 +685,17 @@ that is used as a specific stuff for orientation links*/
     height: 100%;
     float: left;
     border-radius: 0.2em;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
 }
 
 
 .grid-container-involved-volunteers-text span {
     display: inline-block;
     padding-top: 5vh ;
+    
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
   }
 
 
@@ -638,6 +729,8 @@ that is used as a specific stuff for orientation links*/
     padding-bottom: 10%;
     margin-left: 2%;
     margin-right: 2%;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
 }
 
 .grid-container-related-events-item {
@@ -817,6 +910,8 @@ that is used as a specific stuff for orientation links*/
     border-bottom:0.15vh solid #3db54a;
     margin-left: 3%;
     margin-right: 3%;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
 }
 
 /* Hide the elements by default */
@@ -826,7 +921,9 @@ that is used as a specific stuff for orientation links*/
     display: grid;
     white-space: nowrap;
     width: 100%;
-    border:none;
+    
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
     align-items: center;
 }
 
@@ -837,6 +934,8 @@ that is used as a specific stuff for orientation links*/
   position: relative;
   display: inline-block;
   margin: 2vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 /* Next & previous buttons */
@@ -849,6 +948,8 @@ that is used as a specific stuff for orientation links*/
   font-size: 3vmin;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 
@@ -958,47 +1059,63 @@ that is used as a specific stuff for orientation links*/
 
 /*Event filters*/
 .event-filters .card{
-    margin-top: 5vh;
+    margin-top: 0vmin;
     border: 0.2vmin solid #3db54a;
     height: fit-content;
+    width: 100%;
+    position: relative;
     border-radius: 5em;
-    font-weight: normal;
-    font-size: 2vmin;
 }
+
+
 
 .event-filters .btn{
     border: 0.2vmin solid #3db54a;
-    font-size: 3vmin
+    font-size: 2vmin;
+    margin-top: 2vmin;
+    margin-bottom: 0vmin;
+    width: fit-content;
 }
 
 .event-filters .card-body{
     border-radius: 5em;
     background-color: rgb(188, 231, 188);
-    font-weight: normal;
-    font-size: 2vmin;
 }
 
 .event-filters .form-check-input{
     display: inline-block;
     background-color: transparent;
+    margin-top: 0.5vh;
+    border: 0vmin;
+    width: 2vmin;
     height: 2vmin;
-    width: 2vmin;;
 }
 
 .event-filters .form-check-label{
     display: inline-block;
     background-color: transparent;
-    margin-top: 0.1vh;
+    margin-top: 0.5vh;
     margin-left: 2vw;
+    font-size: 2vmin;
+    margin-top: 0.5vmin;
+    margin-bottom: 0vmin;
 }
 
 .event-filters .form-check{
     text-align: left;
+    width: 100%;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
     background-color: transparent;
 }
 
 .event-filters div{
     background-color: transparent;
+}
+
+.event-filters{
+    position: relative;
+    margin-top: 5vh;
 }
 
 /*Pagination*/
@@ -1102,15 +1219,24 @@ input[type=text], select, textarea {
     resize: vertical;
   }
   
-  input[type=submit] {
+input[type=submit] {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
+}
   
-  input[type=submit]:hover {
+input[type=submit]:hover {
     background-color: #45a049;
-  }
+}
+
+.details-text {
+    font-size: 2.5vmin;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-right: 2vw;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
+}
