@@ -39,7 +39,7 @@
                     <li><a href="./AboutUs.html">About Us</a></li>
                     <li class='dropdown'>
                         <a href="javascript:void(0)">Events</a>
-                        <img class='arrow-icon'src="assets/img/arrow.png"></img>
+                        <img class="arrow-icon" src="../assets/img/arrow.png"></img>
                         <div class='events-dropdown'>
                             <a href="./AllEvents.html">All Events</a>
                             <a href="./EventsbyMonth.html">Events by Month</a>
@@ -68,49 +68,10 @@
         </div>
         
         <!--Carousel-->
-
-        <!-- Slideshow container -->
-        <div class="carousel-containera">
-            <div class="carousel-itema">
-                <!--<a class="carousel-prev" onclick="plusSlides(-1)">&#10094;</a>-->
-                <img id="service_img_0" src="../assets/img/stambecchi.jpg" class="carousel-item-img">
-                <!--
-                <div class="carousel-item-text">Ermines</div>
-                
-                <a class="carousel-next" onclick="plusSlides(1)">&#10095;</a>-->
-            </div>
-  
-            <div class="carousel-itema">
-                <!--<a class="carousel-prev" onclick="plusSlides(-1)">&#10094;</a>-->
-                <img id="service_img_1" src="../assets//img/owl_day.jpg" class="carousel-item-img">
-                <!--
-                <div class="carousel-item-text">Howl</div>
-                
-                <a class="carousel-next" onclick="plusSlides(1)">&#10095;</a>-->
-            </div>
-  
-            <div class="carousel-itema">
-                <!--<a class="carousel-prev" onclick="plusSlides(-1)">&#10094;</a>-->
-                <img id="service_img_2" src="../assets//img/marmotte.jpg" class="carousel-item-img">
-                <!--
-                <div class="carousel-item-text">Marmots</div>
-                
-                <a class="carousel-next" onclick="plusSlides(1)">&#10095;</a>-->
-            </div>
+        <div class="carousel-containera" id="service-carousel">
         </div>
+        
 
-        
-        <br>
-        <!-- The dots/circles-->
-        <div style="text-align:center">
-            <span class="carousel-dot" onclick="currentSlide(1)"></span>
-            <span class="carousel-dot" onclick="currentSlide(2)"></span>
-            <span class="carousel-dot" onclick="currentSlide(3)"></span>
-        </div> 
-        
-        <!--Javascript-->
-        <script src="../assets/js/script.js"></script>
-        
         <div class="spacer-medium">
             &nbsp;
         </div>
@@ -141,47 +102,52 @@
         <div class="spacer-small">
             &nbsp;
         </div>
-        <div class="grid-container-involved-volunteers">
-            <a id="person_0" href="./Person.html" style="display: none;">
-                <div class="grid-container-involved-volunteers-item">
-                    <div class="grid-container-involved-volunteers-img" > 
-                        <img id="person_img_0" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
+        <div class="row grid-container">
+            <div class="col-12 col-md-6 col-lg-6">   
+                <a id="person_0" href="./Person.html" style="display: none;">
+                    <div class="person-card">
+                        <div class="event-organizer-left" > 
+                            <img id="person_img_0" src="../assets//img/profile-man.jpg">
+                        </div>
+                        <div class="event-organizer-right">
+                            <span>
+                                <h3 id="person_fullname_0"> Stefano Bagarin</h3>
+                                <p id="person_motto_0">Don't worry be happy! i wanna love you</p>
+                            </span>
+                        </div>
                     </div>
-                    <div class="grid-container-involved-volunteers-text">
-                        <span>
-                            <h1 id="person_fullname_0"></h1>
-                            <p id="person_motto_0"></p>
-                        </span>
+                </a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6">
+                <a id="person_1" href="./Person.html" style="display: none;">
+                    <div class="person-card">
+                        <div class="event-organizer-left"> 
+                            <img id="person_img_1" src="../assets//img/profile-woman.jpg">
+                        </div>
+                        <div class="event-organizer-right">
+                            <span>
+                                <h3 id="person_fullname_1">Alessandra Pasini</h3>
+                                <p id="person_motto_1">I'm glad tonsdj djs cdsjf cksjf cksefn cksnf</p>
+                            </span>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a id="person_1" href="./Person.html" style="display: none;">
-                <div class="grid-container-involved-volunteers-item">
-                    <div class="grid-container-involved-volunteers-img" > 
-                        <img id="person_img_1" src="../assets//img/profile-woman.jpg" class='grid-item-img-volunteers'>
-
+                </a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6">
+                <a id="person_2" href="./Person.html" style="display: none;">
+                    <div class="person-card">
+                        <div class="event-organizer-left"> 
+                            <img id="person_img_2" src="../assets//img/profile-man.jpg">
+                        </div>
+                        <div class="event-organizer-right">
+                            <span>
+                                <h3 id="person_fullname_2">Stefano Bagarin</h3>
+                                <p id="person_motto_2">ciao sono stufa di fare questo progetto e di studiare per l'uni</p>
+                            </span>
+                        </div>
                     </div>
-                    <div class="grid-container-involved-volunteers-text">
-                        <span>
-                            <h1 id="person_fullname_1"></h1>
-                            <p id="person_motto_1"></p>
-                        </span>
-                    </div>
-                </div>
-            </a>
-            <a id="person_2" href="./Person.html" style="display: none;">
-                <div class="grid-container-involved-volunteers-item">
-                    <div class="grid-container-involved-volunteers-img" > 
-                        <img id="person_img_2" src="../assets//img/profile-man.jpg" class='grid-item-img-volunteers'>
-                    </div>
-                    <div class="grid-container-involved-volunteers-text">
-                        <span>
-                            <h1 id="person_fullname_2"></h1>
-                            <p id="person_motto_2"></p>
-                        </span>
-                    </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
 
         <div class="spacer-medium">
@@ -194,8 +160,8 @@
         <div class="spacer-small">
             &nbsp;
         </div>
-        <div class="grid-container-related-events">
-            <div id="event_0" class="grid-item" style="display: none;">
+        <div class="row grid-container">
+            <div id="event_0" class="col-12 col-sm-6 col-md-4 col-lg-4" style="display: none;">
                 <a id="event_link_0" href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_0" src="../assets//img/owl_day.jpg" class="card-img" alt="Owls"> 
@@ -204,7 +170,7 @@
                 </a>
             </div>
 
-            <div id="event_1" class="grid-item" style="display: none;">
+            <div id="event_1" class="col-12 col-sm-6 col-md-4 col-lg-4" style="display: none;">
                 <a id="event_link_1" href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_1" src="../assets//img/marmots_day.png" class="card-img" alt="Owls"> 
@@ -213,7 +179,7 @@
                 </a>
             </div>
 
-            <div id="event_2" class="grid-item" style="display: none;">
+            <div id="event_2" class="col-12 col-sm-6 col-md-4 col-lg-4" style="display: none;">
                 <a id="event_link_2" href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_2" src="../assets//img/ibex_day.jpg" class="card-img" alt="Owls"> 
@@ -222,7 +188,7 @@
                 </a>
             </div>
 
-            <div id="event_3" class="grid-item" style="display: none;">
+            <div id="event_3" class="col-12 col-sm-6 col-md-4 col-lg-4" style="display: none;">
                 <a id="event_link_3" href="./Event.html">
                     <div class="card bg-dark text-white">
                         <img id="event_img_3" src="../assets//img/ermines_day.jpg" class="card-img" alt="Owls"> 
@@ -267,6 +233,9 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="https://kenwheeler.github.io/slick/slick/slick.min.js"></script>
 
+        <!--Javascript-->
+        <script src="../assets/js/scriptCarouselIndex.js"></script>
+
     </body>
 
     <script>
@@ -306,10 +275,15 @@
                 let {title, image, id_event, fullname, photo, motto, id_person, id_service_photo, sp_photo} = json[i];
 
                 //populate image carousel
+                
+                var img = document.createElement('img'); 
+                img.src = `${sp_photo}`;
+                document.getElementById("service-carousel").appendChild(img);
+                /*populateCarousel(sp_photo);
                 if(id_service_photoes.includes(`${id_service_photo}`)){
                     document.getElementById("service_img_" + i).src = `${sp_photo}`;
                     id_service_photoes.splice(id_service_photoes.indexOf(`${id_service_photo}`), 1);
-                }
+                }*/
 
                 //populate people cards
                 if(id_people.includes(`${id_person}`)){

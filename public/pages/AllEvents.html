@@ -63,67 +63,55 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-3 leftside">
-                    <div  class=" event-filters">
+                <div class="col-12 col-sm-12 col-md-3">
+                    <div class="event-filters">
                         <div class="card">
                             <div class="card-body">
-                                <div>
-                                     <h3>Event filters</h3>
+                                <h3>Event filters</h3>
+                                <br>
+                                <div class="row wrap-filter">
+                                    <div class="col-6 col-sm-12 col-md-12">
+                                        <h4>Filter by topic</h4>
+                                        <br>
+                                        <div class="form-check">
+                                            <input type="radio" name="topicRadio" id="topicRadio_0" value="Animal's care" >
+                                            <label for="topicRadio_0">Animal's care</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" name="topicRadio" id="topicRadio_1" value="Animals in the wild">
+                                            <label style="font-size: 2vmin;" for="topicRadio_1"> Animals in the wild</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input style="font-size: 2vmin;" type="radio" name="topicRadio" id="topicRadio_2" value="Nature" >
+                                            <label style="font-size: 2vmin;" for="topicRadio_2">Nature</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="col-6 col-sm-12 col-md-12">
+                                        <h4>Filter by period</h4>
+                                        <br>
+                                        <div class="form-check">
+                                            <input type="radio" name="periodRadio" id="periodRadio_0" value="Today" >
+                                            <label for="periodRadio_0">Today</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" name="periodRadio" id="periodRadio_1" value="Tomorrow">
+                                            <label for="periodRadio_1">Tomorrow</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" name="periodRadio" id="periodRadio_2" value="In 7 days">
+                                            <label for="periodRadio_2">In 7 days</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="radio" name="periodRadio" id="periodRadio_3" value="In 1 month" >
+                                            <label for="periodRadio_3">In 1 month</label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4>Filter by topic</h4>
-                               </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="topicRadio" id="topicRadio_0" value="Animal's care" >
-                                    <label class="form-check-label" for="topicRadio_0">
-                                        Animal's care
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="topicRadio" id="topicRadio_1" value="Animals in the wild">
-                                    <label class="form-check-label" for="topicRadio_1">
-                                        Animals in the wild
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="topicRadio" id="topicRadio_2" value="Nature" >
-                                    <label class="form-check-label" for="topicRadio_2">
-                                        Nature
-                                    </label>
-                                </div>
-                                <div>
-                                    <h4>Filter by period</h2>
-                               </div>
-                               
-                               <div class="form-check">
-                                <input class="form-check-input" type="radio" name="periodRadio" id="periodRadio_0" value="Today" >
-                                <label class="form-check-label" for="periodRadio_0">
-                                     Today
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="periodRadio" id="periodRadio_1" value="Tomorrow">
-                                <label class="form-check-label" for="periodRadio_1">
-                                    Tomorrow
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="periodRadio" id="periodRadio_2" value="In 7 days">
-                                <label class="form-check-label" for="periodRadio_2">
-                                    In 7 days
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="periodRadio" id="periodRadio_3" value="In 1 month" >
-                                <label class="form-check-label" for="periodRadio_3">
-                                    In 1 month
-                                </label>
-                              </div>
-                              <div class="spacer-small">
-                                &nbsp;
-                              </div>
-                              <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="filterEvents(0)" >Filter</button>
-                              <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="clearFilters()">Clear filters</button>
+                                <br>
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="filterEvents(0)" >Filter</button>
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="clearFilters()">Clear filters</button>
+                     
                             </div>
                         </div>
                     </div>
@@ -132,9 +120,9 @@
                 <!--Javascript-->
                 <script src="../assets/js/scriptFilterEvents.js"></script>
 
-                <div class="col-sm-9 rightside">
-                    <div class="grid-container-allEvents">
-                        <div id="event_0" class="grid-item" style="display: none;">
+                <div class="col-12 col-sm-12 col-md-9">
+                    <div class="grid-container row all-events-top-margin">
+                        <div id="event_0"  class="col-12 col-sm-6 col-md-6 col-lg-4" style="display: none;">
                             <a id="event_link_0" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_0" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_1">
@@ -143,7 +131,7 @@
                             </a>
                         </div>
             
-                        <div id="event_1" class="grid-item" style="display: none;">
+                        <div id="event_1" class="col-12 col-sm-6 col-md-6 col-lg-4" style="display: none;">
                             <a id="event_link_1" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_1" src="../assets//img/marmots_day.png" class="card-img" alt="Event_2"> 
@@ -152,16 +140,16 @@
                             </a>
                         </div>
             
-                        <div id="event_2" class="grid-item" style="display: none;">
+                        <div id="event_2" class="col-12 col-sm-6 col-md-6 col-lg-4" style="display: none;">
                             <a id="event_link_2" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_2" src="../assets//img/ibex_day.jpg" class="card-img" alt="Event_3"> 
-                                    <h2 id="event_desc_2" class="card-img-overlay flex-column d-flex justify-content-end"></h2>
+                                    <h2 id="event_desc_2" class="card-img-overlay flex-column d-flex justify-content-end">bfbfbf hsh cjef ciao come stai tutto bene e te?</h2>
                                 </div>
                             </a>
                         </div>
             
-                        <div id="event_3" class="grid-item"  style="display: none;">
+                        <div id="event_3" class="col-12 col-sm-6 col-md-6 col-lg-4" style="display: none;">
                             <a id="event_link_3" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_3" src="../assets//img/ermines_day.jpg" class="card-img" alt="Event_4"> 
@@ -170,7 +158,7 @@
                             </a>
                         </div>
             
-                        <div id="event_4" class="grid-item"  style="display: none;">
+                        <div id="event_4" class="col-12 col-sm-6 col-md-6 col-lg-4" style="display: none;">
                             <a id="event_link_4" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_4" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_5"> 
@@ -179,7 +167,7 @@
                             </a>
                         </div>   
             
-                        <div id="event_5" class="grid-item"  style="display: none;">
+                        <div id="event_5" class="col-12 col-sm-6 col-md-6 col-lg-4" style="display: none;">
                             <a id="event_link_5" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_5" src="../assets//img/marmots_day.png" class="card-img" alt="Event_6">
@@ -188,7 +176,7 @@
                             </a>
                         </div>
             
-                        <div id="event_6" class="grid-item"  style="display: none;">
+                        <div id="event_6" class="col-12 col-sm-6 col-md-6 col-lg-4" style="display: none;">
                             <a id="event_link_6" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_6" src="../assets//img/ibex_day.jpg" class="card-img" alt="Event_7"> 
@@ -197,7 +185,7 @@
                             </a>
                         </div>
             
-                        <div id="event_7" class="grid-item"  style="display: none;">
+                        <div id="event_7" class="col-12 col-sm-6 col-md-4 col-lg-4" style="display: none;">
                             <a id="event_link_7" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_7" src="../assets//img/ermines_day.jpg" class="card-img" alt="Event_8"> 
@@ -206,7 +194,7 @@
                             </a>
                         </div>
             
-                        <div id="event_8" class="grid-item" style="display: none;">
+                        <div id="event_8" class="col-12 col-sm-6 col-md-4 col-lg-4" style="display: none;">
                             <a id="event_link_8" href="./Event.html">
                                 <div class="card bg-dark text-white">
                                     <img id="event_img_8" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_9"> 
@@ -219,12 +207,7 @@
                 </div>
             </div>
         </div>
-        <div class="spacer-medium">
-            &nbsp;
-        </div>
 
-
-        <br>
         <div class=pagination-container>
             <div class="pagination">
                 <span>
