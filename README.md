@@ -4,10 +4,10 @@
 | Member n. | Role | First name | Last Name | Matricola | Email address |
 |-----------|---------------|------------|-----------|-----------|-----------------|
 | 1 | administrator | Alessandra | Pasini | 920051 | alessandra.pasini@mail.polimi.it |
-| 2 | member | Stefano | Bagarin | mtr | stefano.bagarin@mail.polimi.it |
+| 2 | member | Stefano | Bagarin | 945159 | stefano.bagarin@mail.polimi.it |
 
 ## Links to other deliverables
-- Deliverable D0: the web application is accessible at [this address](https://wild-care.herokuapp.com/index.html).
+- Deliverable D0: the web application is accessible at [this address](https://wild-care.herokuapp.com).
 - Deliverable D2: the YAML or JSON file containing the specification
 of the app API can be found at [this address](https://wild-care.herokuapp.com/backend/spec.yaml). TODO
 - Deliverable D3: the SwaggerUI page of the same API is available at
