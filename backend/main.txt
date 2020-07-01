@@ -116,3 +116,6 @@ Because of the fact that we worked together almost for the whole project we have
 * design a web page using Web technoques and popular libraries
 * impelement a complete web application
  
+
+pandoc -s -o main.html main.txt
+

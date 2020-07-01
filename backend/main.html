@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>main</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="documentation-of-the-backend-part">Documentation of the Backend part</h1>
+<blockquote>
+<p>Deliverable D1 ## General group information | Member n. | Role | First name | Last Name | Matricola | Email address | |———–|—————|————|———–|———–|—————–| | 1 | administrator | Alessandra | Pasini | 920051 | alessandra.pasini@mail.polimi.it | | 2 | member | Stefano | Bagarin | mtr | stefano.bagarin@mail.polimi.it |</p>
+</blockquote>
+<h2 id="links-to-other-deliverables">Links to other deliverables</h2>
+<ul>
+<li>Deliverable D0: the web application is accessible at <a href="https://wild-care.herokuapp.com/index.html">this address</a>.</li>
+<li>Deliverable D2: the YAML or JSON file containing the specification of the app API can be found at <a href="https://wild-care.herokuapp.com/backend/spec.yaml">this address</a>. TODO</li>
+<li>Deliverable D3: the SwaggerUI page of the same API is available at <a href="https:///wild-care.herokuapp.com/backend/swaggerui">this address</a>. TODO</li>
+<li>Deliverable D4: the source code of D0 is available as a zip file at <a href="https://example.com/backend/app.zip">this address</a>. TODO</li>
+<li>Deliverable D5: the address of the online source control repository is available <a href="https://github.com/alepas/hypermidia-project">this address</a>. We hereby declare that this is a private repository and, upon request, we will give access to the instructors. ## Specification ### Web Architecture The data layer is implemented though a <code>PostgreSQL</code> database, which contains the application data. The application layer is implemented through the backend software, where the business logic inhabit. This component exposes a REST API (under the endpoint <code>/v1</code>) to enable the interaction with frontend. The presentation layer is implemented through the frontend component, which contains the logic to load data from the REST API and render the web pages on client side.</li>
+</ul>
+<h3 id="api">API</h3>
+<h4 id="rest-compliance">REST compliance</h4>
+<p>Describe here to what extent did you follow REST principles and what are the reasons for which you might have decided to diverge. Note, you must not describe the whole API here, just the design decisions. TODO?</p>
+<h4 id="openapi-resource-models">OpenAPI Resource models</h4>
+<p>We have used the $ref mechanism to define some general models:</p>
+<ul>
+<li><code>Event</code></li>
+<li><code>Service</code></li>
+<li><code>Volunteer</code></li>
+<li><code>Photo</code></li>
+<li><code>Photo</code></li>
+<li><code>Faq</code></li>
+<li><code>request</code></li>
+</ul>
+<p>Then with the same mechanism, we defined some <em>expanded</em> models that contains all information and related entities:</p>
+<ul>
+<li><code>Event</code> → <code>ExpandedEvent</code> (contains related <code>Volunteer</code>, <code>Service</code> and all event information)</li>
+<li><code>Service</code> → <code>ExpandedService</code> (contains related <code>Volunteer</code>, <code>Event</code> and all service information)</li>
+<li><code>Volunteer</code> → <code>ExpandedVolunteer</code> (contains related <code>Event</code>, <code>Service</code> and all all volunteer information)</li>
+</ul>
+<h3 id="data-model">Data model</h3>
+<p><img src="./Design-Document/assets/ER_diagram.png" /></p>
+<p>Most of those relations map seamlessly to REST resources, but there are few considerations:</p>
+<ul>
+<li>The <em>expanded</em> resources live into the db for what concern the resource detailed information, but they don’t for what concern other entities data which are the result of joined queries.</li>
+<li>There is just one POST and it is related to the contact form. The OpenAPI model is called <code>request</code>, while the db table is called <code>Issues</code>.</li>
+</ul>
+<p>We first created the db tables using <code>Knex</code> library and than we fullfill them from <code>pgAdmin 4</code>.</p>
+<h2 id="implementation">Implementation</h2>
+<h3 id="tools-used">Tools used</h3>
+<p>The technology stack is composed by:</p>
+<ul>
+<li><code>Javascript</code> on <code>NodeJS</code> runtime</li>
+<li><code>Postgres</code> RDBMS</li>
+<li><code>Javascript</code> on frontend</li>
+</ul>
+<p>For the backend component we used:</p>
+<ul>
+<li><code>knex</code>: a “batteries included” SQL query builder for Postgres designed to be flexible and portable.</li>
+</ul>
+<h3 id="discussion-todo">Discussion //TODO</h3>
+<p>Describe here: - How did you make sure your web application adheres to the provided OpenAPI specification? Which method did you use to test all APIs endpoints against the expected response? - Why do you think your web application adheres to common practices to partition a REST-based web application (static assets vs. application data) - Describe synthetically why and how did you manage session state, what are the state change triggering actions (e.g., POST to login etc..). - Which technology did you use (relational or a no-SQL database) for managing the data model?</p>
+<h2 id="other-information">Other information</h2>
+<h3 id="task-assignment">Task assignment</h3>
+<p>Alessandra Pasini and Stefano Bagarin worked together at the same time on both front-end and back-end (we live together): &gt; - Alessandraworked on front end (50%) and OpenAPI Spec (50% of the time) &gt; - Stefano worked on front end (50%) and OpenAPI Spec (50% of the time)</p>
+<h3 id="analysis-of-existing-api-todo">Analysis of existing API //TODO</h3>
+<p>Describe here the research of (full or part of) existing APIs that are similar in objectives and scope to the one implemented, that have possibly guided implementation choices (these should not be necessarily OpenAPI implementations). Toy APIs (such as the Swagger’s Pet Store) or the example shown during lectures are not a valid response. Use TWO or more items of the form: &gt; We took (full/partial) inspiration from API <XYZ>(link) for the part of the &gt; API that manages <ABC> because of <REASON>. Or &gt; For the part of the API that manages <ABC> we considered/studied <XYZ>(link) &gt; because of <REASON> but wasn’t completely fitting to our purpose because of &gt; <REASON>.</p>
+<h3 id="learning-outcome">Learning outcome</h3>
+<p>Because of the fact that we worked together almost for the whole project we have been able to achieve the following same goals: * design end implement a usable and meaningful REST API * use Swagger * learn to deploy on a cloud platform * design a web page using Web technoques and popular libraries * impelement a complete web application</p>
+</body>
+</html>
