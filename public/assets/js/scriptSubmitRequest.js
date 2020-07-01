@@ -14,10 +14,12 @@ function submitRequest(){
            privacy: document.getElementById("privacy").checked 
         })
      })
-     .then(
-        console.log("200")
-     )
-     .catch(
-       console.log("500")
-     )
+     .then(function(response) {
+        document.getElementById("response").innerHTML = "Your message has been sent successfully. We will reply to your email address as soon as possible.";
+        document.getElementById("fullname").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("issue").value = "";
+        topics.options[0].checked = true;
+        document.getElementById("privacy").checked = false;
+     })
 }
