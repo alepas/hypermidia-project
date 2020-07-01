@@ -1,0 +1,711 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Here you can find our Wild Care API",
+    "version": "1.0.0",
+    "title": "Wild Care",
+    "contact": {
+      "email": "alessandra.pasini@mail.polimi.it"
+    },
+    "license": {
+      "name": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "wild-care.herokuapp.com",
+  "basePath": "/v1",
+  "tags": [
+    {
+      "name": "event",
+      "description": "Event done by the association"
+    },
+    {
+      "name": "service",
+      "description": "Service offered by the association"
+    },
+    {
+      "name": "volunteer",
+      "description": "Volunteer of the association"
+    },
+    {
+      "name": "information",
+      "description": "Queries related to user will of searching information"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/events": {
+      "get": {
+        "tags": [
+          "event"
+        ],
+        "summary": "Get all events",
+        "description": "This get has the aim to retrieve all events that the association has programmed",
+        "operationId": "getEvents",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "max number of items per page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Pagination offset, default 0",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "month",
+            "in": "query",
+            "description": "Filter by month",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "name": "topic",
+            "in": "query",
+            "description": "Filter by topic",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "description": "Filter by period",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Event"
+              }
+            }
+          },
+          "404": {
+            "description": "Unexpected Error"
+          }
+        },
+        "x-swagger-router-controller": "Event"
+      }
+    },
+    "/events/{eventId}": {
+      "get": {
+        "tags": [
+          "event"
+        ],
+        "summary": "Details of selected event",
+        "description": "This get has the aim to retrieve the details of the selected event",
+        "operationId": "getEvent",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ExpandedEvent"
+              }
+            }
+          },
+          "404": {
+            "description": "Unexpected Error"
+          }
+        },
+        "x-swagger-router-controller": "Event"
+      }
+    },
+    "/services": {
+      "get": {
+        "tags": [
+          "service"
+        ],
+        "summary": "Get all services",
+        "description": "This get has the aim to retrieve all services that the association has programmed",
+        "operationId": "getServices",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "max number of items per page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Pagination offset, default 0",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service"
+              }
+            }
+          },
+          "404": {
+            "description": "Unexpected Error"
+          }
+        },
+        "x-swagger-router-controller": "Service"
+      }
+    },
+    "/services/{serviceId}": {
+      "get": {
+        "tags": [
+          "service"
+        ],
+        "summary": "Details of selected service",
+        "description": "This get has the aim to retrieve the details of the selected service",
+        "operationId": "getService",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ExpandedService"
+              }
+            }
+          },
+          "404": {
+            "description": "Unexpected Error"
+          }
+        },
+        "x-swagger-router-controller": "Service"
+      }
+    },
+    "/volunteers": {
+      "get": {
+        "tags": [
+          "volunteer"
+        ],
+        "summary": "Get all volunteers",
+        "description": "This get has the aim to retrieve all volunteers that the association has programmed",
+        "operationId": "getVolunteers",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "max number of items per page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Pagination offset, default 0",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Volunteer"
+              }
+            }
+          },
+          "404": {
+            "description": "Unexpected Error"
+          }
+        },
+        "x-swagger-router-controller": "Volunteer"
+      }
+    },
+    "/volunteers/{volunteerId}": {
+      "get": {
+        "tags": [
+          "volunteer"
+        ],
+        "summary": "Details of selected Volunteer",
+        "description": "This get has the aim to retrieve the details of the selected volunteer",
+        "operationId": "getVolunteer",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "volunteerId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ExpandedVolunteer"
+              }
+            }
+          },
+          "404": {
+            "description": "Unexpected Error"
+          }
+        },
+        "x-swagger-router-controller": "Volunteer"
+      }
+    },
+    "/faq": {
+      "get": {
+        "tags": [
+          "information"
+        ],
+        "summary": "Get all FAQ",
+        "description": "This get has the aim to retrieve all FAQ",
+        "operationId": "getFaq",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Faq"
+              }
+            }
+          },
+          "404": {
+            "description": "Unexpected Error"
+          }
+        },
+        "x-swagger-router-controller": "Information"
+      }
+    },
+    "/contactUs": {
+      "post": {
+        "tags": [
+          "information"
+        ],
+        "summary": "Post a request done via contact form",
+        "description": "This post has the aim to save requests done by users through the contact form",
+        "operationId": "postForm",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "The request to create",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/request"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "x-swagger-router-controller": "Information"
+      }
+    }
+  },
+  "definitions": {
+    "Event": {
+      "type": "object",
+      "properties": {
+        "id_event": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "title": {
+          "type": "string",
+          "example": "Titolo evento"
+        },
+        "image": {
+          "$ref": "#/definitions/Photo"
+        },
+        "eventType": {
+          "type": "string"
+        }
+      },
+      "title": "Event",
+      "description": "Event info inside galley",
+      "example": {
+        "image": "base64img",
+        "id_event": 0,
+        "eventType": "Nature",
+        "title": "Owl's day"
+      }
+    },
+    "ExpandedEvent": {
+      "title": "Expanded Event",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "start_time": {
+          "type": "string"
+        },
+        "end_time": {
+          "type": "string"
+        },
+        "place": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "volunteers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Volunteer"
+          }
+        },
+        "service": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Event"
+        },
+        {}
+      ],
+      "description": "All info related to the selected event",
+      "example": {
+        "image": {},
+        "id_event": 0,
+        "eventType": "Nature",
+        "title": "Owl's day",
+        "date": "2020-01-01",
+        "start_time": "08:00:00",
+        "end_time": "20:00:00",
+        "place": "Aprica",
+        "description": "Event description",
+        "volunteers": {
+          "Volunteer1": {
+            "motto": "motto",
+            "photo": {},
+            "id_person": 0,
+            "fullname": "Mario Rossi"
+          },
+          "Volunteer2": {
+            "motto": "motto",
+            "photo": {},
+            "id_person": 1,
+            "fullname": "Mario Rossi"
+          }
+        },
+        "service": {
+          "service1": {
+            "photo": "base64img",
+            "id_service": 0,
+            "title": "Feeding owls"
+          },
+          "service2": {
+            "photo": "base64img",
+            "id_service": 1,
+            "title": "Feeding owls"
+          }
+        }
+      }
+    },
+    "Volunteer": {
+      "type": "object",
+      "properties": {
+        "id_person": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "fullname": {
+          "type": "string"
+        },
+        "motto": {
+          "type": "string"
+        },
+        "photo": {
+          "$ref": "#/definitions/Photo"
+        }
+      },
+      "title": "Volunteer",
+      "description": "Volunteer info inside galley",
+      "example": {
+        "motto": "motto",
+        "photo": "base64img",
+        "id_person": 0,
+        "fullname": "Mario Rossi"
+      }
+    },
+    "ExpandedVolunteer": {
+      "title": "Expanded Volunteer",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "number": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Event"
+          }
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Volunteer"
+        },
+        {}
+      ],
+      "description": "All info related to the selected volunteer",
+      "example": {
+        "email": "mario.rossi@gmail.com",
+        "number": "0000000000",
+        "description": "Normal person",
+        "events": {
+          "event1": {
+            "image": "base64img",
+            "id_event": 0,
+            "eventType": "Nature",
+            "title": "Owl's day"
+          },
+          "event2": {
+            "image": "base64img",
+            "id_event": 1,
+            "eventType": "Nature",
+            "title": "Owl's day"
+          }
+        },
+        "services": {
+          "service1": {
+            "photo": "base64img",
+            "id_service": 0,
+            "title": "Feeding owls"
+          },
+          "service2": {
+            "photo": "base64img",
+            "id_service": 1,
+            "title": "Feeding owls"
+          }
+        }
+      }
+    },
+    "Service": {
+      "type": "object",
+      "properties": {
+        "id_service": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "title": {
+          "type": "string"
+        },
+        "photo": {
+          "$ref": "#/definitions/Photo"
+        }
+      },
+      "title": "Service",
+      "description": "Service info inside galley",
+      "example": {
+        "photo": "base64img",
+        "id_service": 0,
+        "title": "Feeding owls"
+      }
+    },
+    "ExpandedService": {
+      "title": "Expanded Service",
+      "properties": {
+        "presentation": {
+          "type": "string"
+        },
+        "pratical_info": {
+          "type": "string"
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Event"
+          }
+        },
+        "volunteers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Volunteer"
+          }
+        },
+        "photos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Photo"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Service"
+        },
+        {}
+      ],
+      "description": "All info related to the selected service",
+      "example": {
+        "presentation": "We will feed owls together",
+        "pratical_info": "Bring a hat",
+        "events": {
+          "event1": {
+            "image": "base64img",
+            "id_event": 0,
+            "eventType": "Nature",
+            "title": "Owl's day"
+          },
+          "event2": {
+            "image": "base64img",
+            "id_event": 1,
+            "eventType": "Nature",
+            "title": "Owl's day"
+          }
+        },
+        "volunteers": {
+          "volunteer1": {
+            "motto": "motto",
+            "photo": "base64img",
+            "id_person": 0,
+            "fullname": "Mario Rossi"
+          },
+          "volunteer2": {
+            "motto": "motto",
+            "photo": "base64img",
+            "id_person": 1,
+            "fullname": "Mario Rossi"
+          }
+        },
+        "photos": {
+          "photo1": "base64img",
+          "photo2": "base64img"
+        }
+      }
+    },
+    "Photo": {
+      "type": "string",
+      "title": "Photo",
+      "format": "byte",
+      "description": "Image Element",
+      "example": "base64image"
+    },
+    "Faq": {
+      "type": "object",
+      "properties": {
+        "id_faq": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "question": {
+          "type": "string"
+        },
+        "answer": {
+          "type": "string"
+        }
+      },
+      "title": "FAQ",
+      "description": "All frequent answer and questions",
+      "example": {
+        "question": "question",
+        "answer": "answer",
+        "id_faq": 0
+      }
+    },
+    "request": {
+      "type": "object",
+      "required": [
+        "email",
+        "name",
+        "issue"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "issue": {
+          "type": "string"
+        },
+        "topic": {
+          "type": "string"
+        },
+        "privacy": {
+          "type": "boolean"
+        }
+      },
+      "example": {
+        "name": "Mario Rossi",
+        "email": "mario.rossi@gmail.com",
+        "issue": "Who are you?",
+        "topic": "Generic question",
+        "privacy": true
+      }
+    }
+  }
+}
