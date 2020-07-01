@@ -62,7 +62,7 @@ exports.getFaq = function() {
  **/
 exports.postForm = function(request) {
   var date = new Date();
-  var d_date = date.getFullYear(); + "-" + (date.getMonth() +1) + "-" + date.getDate();
+  var d_date = date.getFullYear() + "-" + (date.getMonth() +1) + "-" + date.getDate();
   sqlDb("Issues")
   .insert({
     name: request.name,
