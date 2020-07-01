@@ -1,3 +1,8 @@
+/*This is the CSS file for the whole application, styles are divided into blocks. 
+Each block starts with a little comment that has the aim to categorize it.*/
+
+/*General CSS definition: this set of definition assigns specific
+ properties to all tags (*) and text elements*/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -62,13 +67,23 @@ p {
     font-size: 2.5vmin;
     font-weight: normal;
     margin-left: 2%;
-    
     margin-top:0vmin;
     margin-bottom:0vmin;
 }
 
+.details-text {
+    font-size: 2.5vmin;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-right: 2vw;
+    margin-top: 0vmin;
+    margin-bottom: 0vmin;
+}
 
-/*Topbar - footer and related contents*/
+
+
+/*Topbar CSS definitions: the next few classes are assigned to the
+ elements that form the page topbar*/
 header {
     margin-top:0vmin;
     position: fixed;
@@ -90,6 +105,70 @@ header a{
     display: inline-block;
 }
 
+.nav_links {
+    position: relative;
+    list-style: none;
+    margin-bottom: 0vmin;
+    margin-top: 1vmin;
+}
+
+.nav_links li {
+    display: inline-block;
+    margin-right: 3.5vw;
+    margin-top: 0vh;
+}
+
+.events-dropdown i{
+    width: 2vmax !important;
+    height: 2vmax !important;
+}
+    
+.nav_links li a:hover , .events-dropdown:hover{
+    color: #3db54a;
+    text-decoration: none;
+}
+  
+.nav-logo{
+    width:20vmax;
+    height: 15vh;
+    margin-top: 0vmin;
+    top: 0px;
+    margin-left: 7vw
+}
+  
+li.dropdown {
+    display: inline-block;
+}
+  
+.events-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 13vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown:hover .events-dropdown {
+    display: block;
+}
+  
+.events-dropdown a {
+    color: black;
+    padding: 2vh 2vw;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.arrow-icon{
+    width: 2vmin; 
+    height: 2vmin; 
+}
+
+
+
+/*Empty lines of different height to better distantiate elements*/
 .spacer{
     width: 100%;
     height: 15vh;
@@ -111,11 +190,15 @@ header a{
     margin-top:0vmin;
 }
 
+
+
+/*Footer CSS definitions: the next few classes are assigned to
+ the elements that form the page footer*/
 footer {
     margin-top: 0vmin;
     margin-bottom: 0vmin;
     position: sticky;
-    height: 50vh;
+    height: 30vh;
     width:100%;
     -webkit-backface-visibility:hidden;
     backface-visibility:hidden;
@@ -125,100 +208,34 @@ footer {
     text-align: center;
 }
 
-
-
 .footer-section {
     transition: all .5s ease-in-out;
     display: flex;
     justify-content: space-between;
     align-content: center;
-    height: 10vh;
+    margin-bottom: 3vmin;
 }
-
 
 .footer-section a{
     color: #ffffff;
 }
 
-
-.nav_links {
-  list-style: none;
-  height: 15vh;
-  margin-bottom: 0vmin;
-}
-
-.nav_links li {
-  display: inline-block;
-  margin-right: 3.5vw;
-  margin-top: 0vh;
-}
-
-
-
-
-.events-dropdown i{
-    width: 2vmax !important;
-    height: 2vmax !important;
-}
-  
-.nav_links li a:hover , .events-dropdown:hover {
-    color: #3db54a;
-    text-decoration: none;
-}
-
-.nav-logo{
-    width:20vmax;
-    height: 15vh;
-    margin-top: 0vmin;
-    top: 0px;
-    margin-left: 7vw
-}
-
-
-li.dropdown {
-    display: inline-block;
-}
-
-.events-dropdown {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 13vw;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown:hover .events-dropdown {
-    display: block;
-}
-
-.events-dropdown a {
-    color: black;
-    padding: 2vh 2vw;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-
 .social-div {
     display: flex;
-    margin-bottom: 1.5vh;
-    margin-top: 1.5vh;
+    margin-bottom: 0vh;
+    margin-top: 0vh;
     width: 100%;
     align-content: center;
-    
     justify-content: center;
     height: fit-content;
 }
 
 .social-img-div{
-    margin-top: 5vh;
-    margin-bottom: 6vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
     display: flex;
     justify-content: center;
     align-content: center;
-    height: 10vh;
 }
 
 .icon{
@@ -226,11 +243,10 @@ li.dropdown {
     margin-top: 0vmin;
     margin-right: 2.5vw;
     margin-left: 2.5vw;
-    width: 6vmin;
-    height: 6vmin;
+    width: 3.5vmin;
+    height: 3.5vmin;
     color: #ffffff;
 }
-
 
 .social {
     font-weight: 300;
@@ -238,25 +254,28 @@ li.dropdown {
     margin-bottom: 0vmin;
 }
 
-
 .copyright{
     margin-top: 2vh;
     border-top:0.5vmin solid #ddd;
     justify-content: space-between;
     align-content: center;
-    height: 10vh;
-    
+    height: 5vh;
 }
+
 .copyright p{
     font-weight: 300;
+    font-size: 1.5vmin;
+    padding-top: 0.2vmin;
+    margin-bottom: 0.2vmin;
     color: #ffffff;
     font-style: italic;
-
 }
 
-footer, footer section, .section-div, .social-div div, .copyright p, .social, .fa  {
+footer, footer section, .section-div, .social-div div, .copyright p, .social  {
     background-color: #1a6735;
 }
+
+
 
 /*Orientation links: breadcrumb is a predefined class 
 that is used as a specific stuff for orientation links*/
@@ -265,7 +284,6 @@ that is used as a specific stuff for orientation links*/
     margin-top: 2vmin;
     list-style: none;
     background-color: #ffffff;
-    
 }
 
 .breadcrumb li a, .breadcrumb li{
@@ -279,7 +297,8 @@ that is used as a specific stuff for orientation links*/
     text-decoration: none;
 }
 
-/*Title are of each page: this are going to be general elements related to every page*/
+/*Title are of each page: this are going to be general elements 
+related to every page*/
 .title-group  {
     text-align: center;
     border-bottom:0.2vmin solid #3db54a;
@@ -295,24 +314,10 @@ that is used as a specific stuff for orientation links*/
     margin-top: 2vmin;
 }
 
-/*Grids of people*/
-.people-grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 30px;
-    padding: 1% 3%;
-}
 
-.people-grid-container div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 20% 0px;
-    font-size: 30px;
-    border-radius: 0.2em;
-    
-    border: 0.5px solid #3db54a;
-    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
-}
+
+/*The following defintions are used for styling the grids of events, services and volunteers 
+into the AllEvent, EventsbyMonth, Services and volunters pages*/
 
 /*Grids of all events*/
 .grid-container-allEvents {
@@ -516,7 +521,7 @@ that is used as a specific stuff for orientation links*/
     margin-left: 0vmin;
 }
 
-/*person data*/
+/*Styling of person details that can be fond at page Person.html*/
 .person-name{
     height: auto;
     text-align: center;
@@ -524,11 +529,6 @@ that is used as a specific stuff for orientation links*/
     margin-bottom:0vmin;
     margin-top: 2vmin;
 
-}
-.person-name h1{
-    font-weight: bold;
-    font-size: xx-large;
-    
 }
 
 .person-data {
@@ -574,6 +574,11 @@ that is used as a specific stuff for orientation links*/
     align-items: center;
 }
 
+
+
+/*Styling of person that is the organizer of a certain event. The result 
+can be seen into Event.html page*/
+
 /*Event organizer*/
 .event-organizer-container {
     margin-top:0vmin;
@@ -605,10 +610,8 @@ that is used as a specific stuff for orientation links*/
     height: 19.5vh;
     text-align: center;
     float: left;
-    
     margin-top: 0vmin;
     margin-bottom: 0vmin;
-
 }
 
 
@@ -640,8 +643,12 @@ that is used as a specific stuff for orientation links*/
     border-radius: 0.2em;
 }
 
-/*Grids for involved volunteers*/
 
+
+/*Styling of person that is involved into a certain service. The result 
+can be seen into Service.html page*/
+
+/*Grids for involved volunteers*/
 .grid-container-involved-volunteers {
     position: relative;
     display: grid;    
@@ -679,7 +686,6 @@ that is used as a specific stuff for orientation links*/
     float: left;
     margin-top: 0vmin;
     margin-bottom: 0vmin;
-
 }
 
 .grid-container-involved-volunteers-text {
@@ -717,9 +723,7 @@ that is used as a specific stuff for orientation links*/
 
 
 
-
 /*Grids for related events and services*/
-
 .grid-container-related-events {
     position: relative;
     display: grid;
@@ -988,7 +992,7 @@ that is used as a specific stuff for orientation links*/
     background-color: #ffffff;
 }
 
-/*Buttond for faq*/
+/*FAQ css*/
 .btn-block{
     background-color: white;
     border-color: green;
@@ -1039,7 +1043,6 @@ that is used as a specific stuff for orientation links*/
     max-width: 80%;
 }
 
-/*Cards for faq*/
 .faq-answer .card {
     display: none;
     width: 80%;
@@ -1054,10 +1057,11 @@ that is used as a specific stuff for orientation links*/
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
-/*Button form*/
 .form-button .btn{
     border-radius: 1em;
 }
+
+
 
 /*Event filters*/
 .event-filters .card{
@@ -1068,8 +1072,6 @@ that is used as a specific stuff for orientation links*/
     position: relative;
     border-radius: 5em;
 }
-
-
 
 .event-filters .btn{
     border: 0.2vmin solid #3db54a;
@@ -1119,6 +1121,8 @@ that is used as a specific stuff for orientation links*/
     position: relative;
     margin-top: 5vh;
 }
+
+
 
 /*Pagination*/
 @import url('https://rsms.me/inter/inter-ui.css');
@@ -1232,13 +1236,4 @@ input[type=submit] {
   
 input[type=submit]:hover {
     background-color: #45a049;
-}
-
-.details-text {
-    font-size: 2.5vmin;
-    text-align: justify;
-    text-justify: inter-word;
-    margin-right: 2vw;
-    margin-top: 0vmin;
-    margin-bottom: 0vmin;
 }
