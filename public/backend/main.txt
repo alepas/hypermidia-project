@@ -47,7 +47,7 @@ Then with the same mechanism, we defined some _expanded_ models that contains al
 
 * `Event` → `ExpandedEvent` (contains related `Volunteer`, `Service` and all event information)
 * `Service` → `ExpandedService` (contains related `Volunteer`, `Event` and all service information)
-* `Volunteer` → `ExpandedVolunteer` (contains related `Event`, `Service` and all all volunteer information)
+* `Volunteer` → `ExpandedVolunteer` (contains related `Event`, `Service` and all volunteer information)
 
 ### Data model
 ![](./Design-Document/assets/ER_diagram.png)
