@@ -50,7 +50,7 @@ Then with the same mechanism, we defined some _expanded_ models that contains al
 * `Volunteer` → `ExpandedVolunteer` (contains related `Event`, `Service` and all volunteer information)
 
 ### Data model
-![](./Design-Document/assets/ER_diagram.png)
+![](./assets/ER_diagram.png)
 
 Most of those relations map seamlessly to REST resources, but there are few considerations:
 
@@ -84,6 +84,7 @@ what are the state change triggering actions (e.g., POST to login
 etc..).
 - Which technology did you use (relational or a no-SQL database) for
 managing the data model?
+To manage the data model we used PostgreSQL: a relational database.
 
 
 ## Other information
@@ -113,8 +114,8 @@ Because of the fact that we worked together almost for the whole project we have
 * design end implement a usable and meaningful REST API
 * use Swagger 
 * learn to deploy on a cloud platform
-* design a web page using Web technoques and popular libraries
-* impelement a complete web application
+* design a web page using Web techniques and popular libraries
+* implement a complete web application
  
 
 pandoc -s -o main.html main.txt
