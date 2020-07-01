@@ -61,17 +61,24 @@ exports.getFaq = function() {
  * no response value expected for this operation
  **/
 exports.postForm = function(request) {
-
+  var date = new Date();
+  var d_date = date.getFullYear(); + "-" + (date.getMonth() +1) + "-" + date.getDate();
   sqlDb("Issues")
   .insert({
     name: request.name,
     email: request.email,
     topic: request.topic,
     issue: request.issue,
+    date: d_date,
     privacy: request.privacy
   })
   .then(function () {
-    return "ok";
+    return new Promise(function(resolve, reject) {
+      resolve();
+    });
   })
+  return new Promise(function(resolve, reject) {
+    resolve();
+  });
 }
 
