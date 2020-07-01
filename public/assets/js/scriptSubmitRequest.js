@@ -1,16 +1,21 @@
 
 function submitRequest(){
-    var topics = document.getElementById("topic");
+   var topics = document.getElementById("topic");
+   var v_name = document.getElementById("fullname").value;
+   var v_email = document.getElementById("email").value;
+   var v_issue = document.getElementById("issue").value;
+
+   if(v_name != "" && v_email != "" && v_issue != ""){
     fetch("../../v1/contactUs", { 
         method: "post",
         headers: new Headers({
            "Content-Type": "application/json"
         }),
         body: JSON.stringify({
-           name: document.getElementById("fullname").value,
-           email: document.getElementById("email").value,
+           name: v_name,
+           email: v_email,
            topic: topics.options[topics.selectedIndex].text,
-           issue: document.getElementById("issue").value,
+           issue: v_issue,
            privacy: document.getElementById("privacy").checked 
         })
      })
@@ -19,7 +24,11 @@ function submitRequest(){
         document.getElementById("fullname").value = "";
         document.getElementById("email").value = "";
         document.getElementById("issue").value = "";
-        topics.options[0].checked = true;
+        topics.selectedIndex = 0;
         document.getElementById("privacy").checked = false;
      })
+   }
+   else{
+      document.getElementById("response").innerHTML = "You must fill in all the fields.";
+   }
 }
