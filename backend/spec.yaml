@@ -261,10 +261,10 @@ definitions:
     title: "Event"
     description: "Event info inside galley"
     example:
-      image: {}
+      image: "base64img"
       id_event: 0
-      eventType: "eventType"
-      title: "Titolo evento"
+      eventType: "Nature"
+      title: "Owl's day"
   ExpandedEvent:
     title: "Expanded Event"
     properties:
@@ -291,6 +291,40 @@ definitions:
     - $ref: "#/definitions/Event"
     - {}
     description: "All info related to the selected event"
+    example:
+      image: {}
+      id_event: 0
+      eventType: "Nature"
+      title: "Owl's day"
+      date: "2020-01-01"
+      start_time: "08:00:00"
+      end_time: "20:00:00"
+      place: "Aprica"
+      description: "Event description"
+      volunteers: {
+        Volunteer1: {
+          motto: "motto",
+          photo: {},
+          id_person: 0,
+          fullname: "Mario Rossi"},
+        Volunteer2: {
+          motto: "motto",
+          photo: {},
+          id_person: 1,
+          fullname: "Mario Rossi"}
+      }
+      service: {
+        service1: {
+          photo: "base64img",
+          id_service: 0,
+          title: "Feeding owls"
+        },
+        service2: {
+          photo: "base64img",
+          id_service: 1,
+          title: "Feeding owls"
+        }
+      }
   Volunteer:
     type: "object"
     properties:
@@ -299,7 +333,6 @@ definitions:
         format: "int64"
       fullname:
         type: "string"
-        example: "Nome Cognome"
       motto:
         type: "string"
       photo:
@@ -308,9 +341,9 @@ definitions:
     description: "Volunteer info inside galley"
     example:
       motto: "motto"
-      photo: {}
+      photo: "base64img"
       id_person: 0
-      fullname: "Nome Cognome"
+      fullname: "Mario Rossi"
   ExpandedVolunteer:
     title: "Expanded Volunteer"
     properties:
@@ -332,6 +365,36 @@ definitions:
     - $ref: "#/definitions/Volunteer"
     - {}
     description: "All info related to the selected volunteer"
+    example:
+      email: "mario.rossi@gmail.com"
+      number: "0000000000"
+      description: "Normal person"
+      events: {
+        event1: {
+          image: "base64img",
+          id_event: 0,
+          eventType: "Nature",
+          title: "Owl's day"
+        },
+        event2: {
+          image: "base64img",
+          id_event: 1,
+          eventType: "Nature",
+          title: "Owl's day"
+        }
+      }
+      services: {
+        service1: {
+          photo: "base64img",
+          id_service: 0,
+          title: "Feeding owls"
+        },
+        service2: {
+          photo: "base64img",
+          id_service: 1,
+          title: "Feeding owls"
+        }
+      }
   Service:
     type: "object"
     properties:
@@ -340,15 +403,14 @@ definitions:
         format: "int64"
       title:
         type: "string"
-        example: "Nome servizio"
       photo:
         $ref: "#/definitions/Photo"
     title: "Service"
     description: "Service info inside galley"
     example:
-      photo: {}
+      photo: "base64img"
       id_service: 0
-      title: "Nome servizio"
+      title: "Feeding owls"
   ExpandedService:
     title: "Expanded Service"
     properties:
@@ -356,7 +418,6 @@ definitions:
         type: "string"
       pratical_info:
         type: "string"
-        example: "Informazioni pratiche"
       events:
         type: "array"
         items:
@@ -373,11 +434,47 @@ definitions:
     - $ref: "#/definitions/Service"
     - {}
     description: "All info related to the selected service"
+    example:
+      presentation: "We will feed owls together"
+      pratical_info: "Bring a hat"
+      events: {
+        event1: {
+          image: "base64img",
+          id_event: 0,
+          eventType: "Nature",
+          title: "Owl's day"
+        },
+        event2: {
+          image: "base64img",
+          id_event: 1,
+          eventType: "Nature",
+          title: "Owl's day" 
+        }
+      }
+      volunteers: {
+        volunteer1: {
+          motto: "motto",
+          photo: "base64img",
+          id_person: 0,
+          fullname: "Mario Rossi"
+        },
+        volunteer2: {
+          motto: "motto",
+          photo: "base64img",
+          id_person: 1,
+          fullname: "Mario Rossi"
+        }
+      }
+      photos: {
+        photo1: "base64img",
+        photo2: "base64img"
+      }
   Photo:
     type: "string"
     title: "Photo"
     format: "byte"
     description: "Image Element"
+    example: "base64image"
   Faq:
     type: "object"
     properties:
@@ -411,3 +508,9 @@ definitions:
         type: "string"
       privacy:
         type: "boolean"
+    example:
+      name: "Mario Rossi"
+      email: "mario.rossi@gmail.com"
+      issue: "Who are you?"
+      topic: "Generic question"
+      privacy: true
