@@ -55,8 +55,8 @@ exports.getVolunteer = function(volunteerId) {
       .leftJoin('Service AS s', 's.id_service','=', 'ps.id_service')
       .leftJoin('Event AS e', 'e.id_person','=', 'p.id_person')
       .leftJoin('Service_Photo AS sp', 's.id_service','=', 'sp.id_service')
-      .distinctOn('s.id_service')
       .distinctOn('e.id_event')
+      .distinctOn('s.id_service')
       .then(data => {
         return data
       })
