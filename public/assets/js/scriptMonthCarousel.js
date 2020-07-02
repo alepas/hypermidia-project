@@ -49,8 +49,10 @@ function changeMonth(month){
           for (var i = 0; i < json.length; i++) {
               let {title, image, id_event} = json[i];
               document.getElementById("event_" + i).style.display = "block";
+              document.getElementById("event_desc_" + i).style.color = "white";
               document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
               document.getElementById("event_img_" + i).src = `${image}`;
+              document.getElementById("event_link_0").href = "./Event.html"
               document.getElementById("event_link_" + i).onclick = function() 
                   {localStorage["id_event"] = `${id_event}`;};
           }
