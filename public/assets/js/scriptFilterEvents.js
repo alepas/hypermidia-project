@@ -32,6 +32,7 @@ function clearFilters(){
     return response.json();
     })
     .then(function(json) {
+        document.getElementById("all_event_index_1").style.display = "inline-block";
         for (var i = 0; i < json.length; i++) {
             let {title, image, id_event} = json[i];
 
@@ -61,7 +62,7 @@ function fetchEvents(offset){
         if(json.length < 10 && offset < 9)
             document.getElementById("all_event_index_1").style.display = "none";
         else if(json.length >= 10)
-            document.getElementById("all_event_index_1").style.display = "block";
+            document.getElementById("all_event_index_1").style.display = "inline-block";
         for(var i=0; i<9; i++)
             document.getElementById("event_" + i).style.display = "none";
 
