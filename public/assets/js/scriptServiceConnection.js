@@ -54,13 +54,15 @@ return response.json();
 
         //populate event cards
         if(id_events.includes(`${id_event}`)){
-            console.log(`${id_event}`);
+            console.log("round" + i);
+            console.log("id before" + id_events);
             document.getElementById("event_" + i).style.display = "block";
             document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
             document.getElementById("event_img_" + i).src = `${image}`;
             document.getElementById("event_link_" + i).onclick = function() 
                 {localStorage["id_event"] = `${id_event}`;};
             id_events.splice(id_events.indexOf(`${id_event}`), 1);
+            console.log("id after" + id_events);
         }
 
     }
