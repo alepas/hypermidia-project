@@ -60,6 +60,8 @@ function fetchEvents(offset){
     .then(function(json) {
         if(json.length < 10 && offset < 9)
             document.getElementById("all_event_index_1").style.display = "none";
+        else if(json.length >= 10)
+            document.getElementById("all_event_index_1").style.display = "block";
         for(var i=0; i<9; i++)
             document.getElementById("event_" + i).style.display = "none";
 
