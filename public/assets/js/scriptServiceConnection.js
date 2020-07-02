@@ -54,6 +54,7 @@ return response.json();
 
         //populate event cards
         if(id_events.includes(`${id_event}`)){
+            console.log(`${id_event}`);
             document.getElementById("event_" + i).style.display = "block";
             document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
             document.getElementById("event_img_" + i).src = `${image}`;
