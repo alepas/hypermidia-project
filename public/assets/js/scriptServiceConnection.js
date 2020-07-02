@@ -27,8 +27,6 @@ return response.json();
             id_service_photoes.push(`${id_service_photo}`)
         }
     }
-
-    //setSlides(id_service_photoes.length);
     
     for (var i = 0; i < json.length; i++) {
         let {title, image, id_event, fullname, photo, motto, id_person, id_service_photo, sp_photo} = json[i];
@@ -40,8 +38,7 @@ return response.json();
             img.classList.add('carousel-item-img');
             img.src = `${sp_photo}`;
             document.getElementById("service-carousel").appendChild(img);
-            /*document.getElementById("service_img_" + i).src = `${sp_photo}`;
-            id_service_photoes.splice(id_service_photoes.indexOf(`${id_service_photo}`), 1);*/
+            id_service_photoes.splice(id_service_photoes.indexOf(`${id_service_photo}`), 1);
         }
 
         //populate people cards
