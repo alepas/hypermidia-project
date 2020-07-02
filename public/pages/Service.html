@@ -232,10 +232,6 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="https://kenwheeler.github.io/slick/slick/slick.min.js"></script>
-
-        <!--Javascript-->
-        <script src="../assets/js/scriptCarouselIndex.js"></script>
-
     </body>
 
     <script>
@@ -275,10 +271,13 @@
                 let {title, image, id_event, fullname, photo, motto, id_person, id_service_photo, sp_photo} = json[i];
 
                 //populate image carousel
-                
+                var div = document.createElement('div');
+                div.class = "carousel-itema";
+                document.getElementById("service-carousel").appendChild(div);
+
                 var img = document.createElement('img'); 
                 img.src = `${sp_photo}`;
-                document.getElementById("service-carousel").appendChild(img);
+                div.appendChild(img);
                 /*populateCarousel(sp_photo);
                 if(id_service_photoes.includes(`${id_service_photo}`)){
                     document.getElementById("service_img_" + i).src = `${sp_photo}`;
@@ -307,6 +306,14 @@
                 }
 
             }
+            $(document).ready(function(){
+                $('.carousel-containera').slick({
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    dots: true,
+                    arrows: false
+                });
+            });
         });
     </script>
 </html>

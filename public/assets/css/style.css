@@ -891,37 +891,42 @@ can be seen into Event.html page*/
     background-color: white;
     border-color: green;
     color: green;
-    font-size: x-large;
+    font-size: 3vmin;
+    font-weight: 600;
     margin-top: 1.5%;
     margin-left: 10%;
     max-width: 80%;
+    height: fit-content;
 }
 
 .btn-block:hover{
     background-color: green;
     border-color: green;
     color: white;
-    font-size: x-large;
+    font-size: 3vmin;
+    font-weight: 600;
     margin-top: 1.5%;
     margin-left: 10%;
     max-width: 80%;
 }
 
 .btn-block::selection{
-        background-color: green;
-        border-color: green;
-        color: white;
-        font-size: x-large;
-        margin-top: 1.5%;
-        margin-left: 10%;
-        max-width: 80%;
+    background-color: green;
+    border-color: green;
+    color: white;
+    font-size: 3vmin;
+    font-weight: 600;
+    margin-top: 1.5%;
+    margin-left: 10%;
+    max-width: 80%;
 }
 
 .btn-block:active{
     background-color: green;
     border-color: green;
     color: white;
-    font-size: x-large;
+    font-size: 3vmin;
+    font-weight: 600;
     margin-top: 1.5%;
     margin-left: 10%;
     max-width: 80%;
@@ -931,7 +936,8 @@ can be seen into Event.html page*/
     background-color: green;
     border-color: green;
     color: white;
-    font-size: x-large;
+    font-size: 3vmin;
+    font-weight: 600;
     margin-top: 1.5%;
     margin-left: 10%;
     max-width: 80%;
@@ -941,13 +947,12 @@ can be seen into Event.html page*/
     display: none;
     width: 80%;
     margin-left: 10%;
-
+    font-size: 2vmin;
+    font-weight: normal;
     text-align: center;
-    
-    font-size: medium;
     border-radius: 0.2em;
     
-    border: 2px solid #3db54a;
+    border: 0.2vmin solid #3db54a;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
