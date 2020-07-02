@@ -15,19 +15,20 @@ function filterPeople(){
 
         for(var i = 0; i < json.length; i++){
             let {fullname} = json[i];
-            if(`${fullname}`.includes(filter))
+            if(`${fullname}`.toLocaleUpperCase.includes(filter))
                 count++;
         }
         if(count <= 8)
             document.getElementById("person_index_1").style.display = "none";
         else
             document.getElementById("person_index_1").style.display = "inline-block";
+        console.log(count);
         count=0;
 
         //populate peoples
         for (var i = 0; i < json.length && count<8; i++) {
             let {fullname, photo, motto, id_person} = json[i];
-            if(`${fullname}`.includes(filter)){
+            if(`${fullname}`.toLowerCase.includes(filter)){
                 document.getElementById("person_" + count).style.display = "block";
                 document.getElementById("person_name_" + count).innerHTML =  `${fullname}`;
                 document.getElementById("person_img_" + count).src = `${photo}`;
@@ -37,5 +38,6 @@ function filterPeople(){
                 count++;
             }
         }
+        console.log(count);
     });
 }
