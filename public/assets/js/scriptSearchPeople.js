@@ -19,11 +19,11 @@ function filterPeople(){
                 count++;
         }
         if(count <= 8)
-            document.getElementById("all_event_index_1").style.display = "none";
+            document.getElementById("person_index_1").style.display = "none";
         else
-            document.getElementById("all_event_index_1").style.display = "inline-block";
+            document.getElementById("person_index_1").style.display = "inline-block";
         count=0;
-        
+
         //populate peoples
         for (var i = 0; i < json.length && count<8; i++) {
             let {fullname, photo, motto, id_person} = json[i];
