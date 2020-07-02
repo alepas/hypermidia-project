@@ -663,6 +663,16 @@ can be seen into Event.html page*/
 
 
 /* Carousel container */
+.carousel{
+    position: relative;
+    width: 100%;
+    height: 60vmin;
+    z-index: 1;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #eceff1;
+}
+
 .casousel-containera {
     position: relative;
     width: 100%;
