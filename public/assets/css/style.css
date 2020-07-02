@@ -666,6 +666,8 @@ can be seen into Event.html page*/
 .carousel{
     position: relative;
     width: 100%;
+    display: inline-block;
+    align-content: center;
     height: 60vmin;
     z-index: 1;
     margin: 0 auto;
@@ -680,12 +682,13 @@ can be seen into Event.html page*/
     z-index: 1;
     margin: 0 auto;
     text-align: center;
-    background-color: #eceff1;
 }
 
 #service-carousel{
     width: 60% !important;
     height: 60vmin;
+    display: inline-block;
+    background-color: #eceff1;
 }
 
 /* carousel image*/
