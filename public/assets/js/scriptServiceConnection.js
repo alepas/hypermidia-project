@@ -73,7 +73,7 @@ return response.json();
             a.appendChild(div2);
 
             var img = document.createElement('img');
-            img.classList.add(card-img);
+            img.classList.add('card-img');
             img.src = `${image}`;
             div2.appendChild(img);
 
