@@ -58,13 +58,36 @@ return response.json();
         //populate event cards
         if(id_events.includes(`${id_event}`)){
             console.log("id before" + id_events);
-            document.getElementById("event_" + i).style.display = "block";
+            var div1 = document.createElement('div');
+            div1.classList.add('col-12', 'col-sm-6', 'col-md-4', 'col-lg-4');
+            div1.style.display = "block";
+            document.getElementById("event-of-service").appendChild(div1);
+
+            var a = document.createElement('a');
+            a.href = "./Event.html";
+            a.onclick = function() {localStorage["id_event"] = `${id_event}`;};
+            div1.appendChild(a);
+
+            var div2 = document.createElement('div');
+            div2.classList.add('card', 'bg-dark', 'text-white');
+            a.appendChild(div2);
+
+            var img = document.createElement('img');
+            img.classList.add(card-img);
+            img.src = `${image}`;
+            div2.appendChild(img);
+
+            var h2 = document.createElement('h2');
+            h2.classList.add('card-img-overlay', 'flex-column', 'd-flex', 'justify-content-end');
+            h2.innerHTML = `${title}`;
+            div2.appendChild(h2);
+
+            /*document.getElementById("event_" + i).style.display = "block";
             document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
             document.getElementById("event_img_" + i).src = `${image}`;
             document.getElementById("event_link_" + i).onclick = function() 
-                {localStorage["id_event"] = `${id_event}`;};
+                {localStorage["id_event"] = `${id_event}`;};*/
             id_events.splice(id_events.indexOf(`${id_event}`), 1);
-            console.log("id after" + id_events);
         }
 
     }
