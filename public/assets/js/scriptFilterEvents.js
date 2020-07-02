@@ -2,7 +2,7 @@ var topic;
 var period;
 
 function filterEvents(offset){
-    var radios = document.getElementsByClassName("form-check-input");
+    var radios = document.getElementsByClassName("radio-event-filter");
 
     for(var i=0; i< radios.length; i++){
         if(radios[i].checked){
@@ -17,8 +17,10 @@ function filterEvents(offset){
 }
 
 function clearFilters(){
-    var radios = document.getElementsByClassName("form-check-input");
+    var radios = document.getElementsByClassName("radio-event-filter");
 
+    topic = null;
+    period = null;
     for(var i=0; i< radios.length; i++){
         radios[i].checked = false;
     }
