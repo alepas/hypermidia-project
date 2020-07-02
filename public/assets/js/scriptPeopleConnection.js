@@ -5,6 +5,7 @@ if (!response.ok)
 return response.json();
 })
 .then(function(json) {
+    //populate peoples
     for (var i = 0; i < json.length; i++) {
         let {fullname, photo, motto, id_person} = json[i];
 
@@ -14,6 +15,5 @@ return response.json();
         document.getElementById("person_motto_" + i).innerHTML =  `${motto}`;
         document.getElementById("person_" + i).onclick = function() 
             {localStorage["id_person"] = `${id_person}`;};
-        savePeople(`${fullname}`);
     }
 });

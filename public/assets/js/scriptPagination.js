@@ -12,23 +12,21 @@ indexs.forEach((index, i) => {
       c.classList.add('flip')
     }
     cur = i
-
+    //services pagination
     if(index.id.includes("service_index")){
       var offset = (index.innerHTML - 1) * 12;
-      console.log(offset);
-      console.log(index.innerHTML);
-    fetch("../../v1/services?limit=12&offset=" + offset)
-    .then(function(response) {
-    if (!response.ok) 
+      fetch("../../v1/services?limit=12&offset=" + offset)
+      .then(function(response) {
+      if (!response.ok) 
         throw new Error("HTTP error, status = " + response.status);
-    return response.json();
-    })
+      return response.json();
+      })
 
-    .then(function(json) {
-      for (var i = 0; i < 12; i++) {
-        document.getElementById("service_" + i).style.display = "none";
-      }
-      for (var i = 0; i < json.length; i++) {
+      .then(function(json) {
+        for (var i = 0; i < 12; i++) {
+          document.getElementById("service_" + i).style.display = "none";
+        }
+        for (var i = 0; i < json.length; i++) {
           let {title, photo, id_service} = json[i];
 
           document.getElementById("service_desc_" + i).innerHTML =  `${title}`;
@@ -36,12 +34,11 @@ indexs.forEach((index, i) => {
           document.getElementById("service_img_" + i).src = `${photo}`;
           document.getElementById("service_link_" + i).onclick = function() 
               {localStorage["id_service"] = `${id_service}`;};
-      }
-     });
+        }
+      });
+    //people pagination
     } else if(index.id.includes("person_index")){
       var offset = (index.innerHTML - 1) * 8;
-      console.log(offset);
-      console.log(index.innerHTML);
       fetch("../../v1/volunteers?limit=8&offset=" + offset)
       .then(function(response) {
       if (!response.ok) 
@@ -61,14 +58,11 @@ indexs.forEach((index, i) => {
               document.getElementById("person_motto_" + i).innerHTML =  `${motto}`;
               document.getElementById("person_" + i).onclick = function() 
                   {localStorage["id_person"] = `${id_person}`;};
-              savePeople(`${fullname}`);
           }
       });
+    //events pagination
     } else if(index.id.includes("all_event_index")){
       var offset = (index.innerHTML - 1) * 9;
-      console.log(offset);
-      console.log(index.innerHTML);
-
       fetchEvents(offset)
     }
   })
