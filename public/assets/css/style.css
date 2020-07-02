@@ -671,6 +671,11 @@ can be seen into Event.html page*/
     text-align: center;
 }
 
+#service-carousel{
+    height: 60vmin;
+    background-color: #eceff1;
+}
+
 /* carousel image*/
 .carousel-item-img{
     display:block;
@@ -678,8 +683,12 @@ can be seen into Event.html page*/
     height: 60vmin;
     margin: 0 auto;
     border-radius: 0.5em;
-    border: 0.5px solid #3db54a;
+    border: 0.1vmin solid #3db54a;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+#service-carousel img{
+    width: 60%;
 }
 
 
@@ -697,7 +706,6 @@ can be seen into Event.html page*/
     text-align: center;
     background: rgba(0, 0, 0, 0.5);
 }
-
 
 
 /* Hide the images by default */
