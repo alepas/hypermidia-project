@@ -43,6 +43,7 @@ function changeMonth(month){
       if(json.length == 0){
           document.getElementById("event_desc_0").innerHTML = "Oh no! Looks like there are still no events scheduled for this month";
           document.getElementById("event_desc_0").style.color = "black";
+          document.getElementById("event_img_0").src = "../assets//img/cartoon_desert.jpg";
           document.getElementById("event_0").style.display = "block";
           document.getElementById("event_link_0").href = "javascript:function() { return false; }"
       }else{
