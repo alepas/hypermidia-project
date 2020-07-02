@@ -30,10 +30,7 @@ return response.json();
     
     for (var i = 0; i < json.length; i++) {
         let {title, image, id_event, fullname, photo, motto, id_person, id_service_photo, sp_photo} = json[i];
-        
-        console.log("length" + json.length);
-        console.log("count" + i);
-        console.log(json[i]);
+
         //populate image carousel
         if(id_service_photoes.includes(`${id_service_photo}`)){
 
