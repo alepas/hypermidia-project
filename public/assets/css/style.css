@@ -673,7 +673,7 @@ can be seen into Event.html page*/
 
 #service-carousel{
     height: 60vmin;
-    background-color: #eceff1;
+    background-color: #eceff1; /*#c1d5e0 #eceff1; #cfd8dc*/
 }
 
 /* carousel image*/
@@ -688,7 +688,7 @@ can be seen into Event.html page*/
 }
 
 #service-carousel img{
-    width: 60%;
+    width: 50%;
 }
 
 
