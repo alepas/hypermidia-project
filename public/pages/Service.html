@@ -251,18 +251,18 @@
 
             var id_events = [];
             var id_people = [];
-            //var id_service_photoes = [];
+            var id_service_photoes = [];
             for(var i = 0; i < json.length; i++){
-                let{id_event, id_person} = json[i];  //, id_service_photo
+                let{id_event, id_person, id_service_photo} = json[i];  
                 if(! id_events.includes(`${id_event}`)){
                     id_events.push(`${id_event}`)
                 }
                 if(! id_people.includes(`${id_person}`)){
                     id_people.push(`${id_person}`)
                 }
-                /*if(! id_service_photoes.includes(`${id_service_photo}`)){
+                if(! id_service_photoes.includes(`${id_service_photo}`)){
                     id_service_photoes.push(`${id_service_photo}`)
-                }*/
+                }
             }
 
             //setSlides(id_service_photoes.length);
@@ -271,19 +271,15 @@
                 let {title, image, id_event, fullname, photo, motto, id_person, id_service_photo, sp_photo} = json[i];
 
                 //populate image carousel
-                var div = document.createElement('div');
-                div.class = "carousel-itema";
-                document.getElementById("service-carousel").appendChild(div);
-
-                var img = document.createElement('img'); 
-                img.class = "carousel-item-img";
-                img.src = `${sp_photo}`;
-                div.appendChild(img);
-                /*populateCarousel(sp_photo);
                 if(id_service_photoes.includes(`${id_service_photo}`)){
-                    document.getElementById("service_img_" + i).src = `${sp_photo}`;
-                    id_service_photoes.splice(id_service_photoes.indexOf(`${id_service_photo}`), 1);
-                }*/
+
+                    var img = document.createElement('img'); 
+                    img.classList.add('carousel-item-img');
+                    img.src = `${sp_photo}`;
+                    document.getElementById("service-carousel").appendChild(img);
+                    /*document.getElementById("service_img_" + i).src = `${sp_photo}`;
+                    id_service_photoes.splice(id_service_photoes.indexOf(`${id_service_photo}`), 1);*/
+                }
 
                 //populate people cards
                 if(id_people.includes(`${id_person}`)){
