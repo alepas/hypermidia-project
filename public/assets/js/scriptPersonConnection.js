@@ -32,13 +32,15 @@ return response.json();
     var flag_s = 1;
     for (var i = 0; i < json.length; i++) {
         let {title, image, id_event,  id_service, s_title, sp_photo} = json[i];
-
+        console.log(json[i]);
+        console.log("events" + id_events);
+        console.log("service" + id_services);
         //populate event cards
         if(id_events.includes(`${id_event}`)){
             var div1 = document.createElement('div');
             div1.classList.add('col-12', 'col-sm-6', 'col-md-4', 'col-lg-4');
             div1.style.display = "block";
-           document.getElementById("event-of-person").appendChild(div1);
+            document.getElementById("event-of-person").appendChild(div1);
 
             var a = document.createElement('a');
             a.href = "./Event.html";
