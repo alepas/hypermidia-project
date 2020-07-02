@@ -14,6 +14,7 @@ return response.json();
     document.getElementById("person_email").innerHTML = `${email}`;
     document.getElementById("person_description").innerHTML = `${description}`;
     document.getElementById("person_photo").src = `${photo}`;
+    document.getElementById("person_photo").style.display = "block";
 
     var id_events = [];
     var id_services = [];
