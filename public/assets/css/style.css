@@ -63,7 +63,7 @@ li, a {
     margin-bottom:0vmin;
 }
 
-p {
+p, .mission {
     font-size: 2.5vmin;
     font-weight: normal;
     margin-left: 2vw;
@@ -256,7 +256,7 @@ footer {
 
 .copyright{
     margin-top: 2vh;
-    border-top:0.5vmin solid #ddd;
+    border-top:0.2vmin solid #ddd;
     justify-content: space-between;
     align-content: center;
     height: 5vh;
@@ -689,7 +689,7 @@ can be seen into Event.html page*/
 
 .service-carousel-item-img{
     display:block;
-    width: 50vw;
+    width: 60% !important;
     height: 60vmin;
     margin: 0 auto;
     border-radius: 0.5em;
@@ -809,7 +809,7 @@ can be seen into Event.html page*/
 
 
 
-/*Division of pages with filters into the left*/
+/*About us page CSS*/
 .about-menu{
     height: fit-content;
     width: 100%;
@@ -846,6 +846,24 @@ can be seen into Event.html page*/
     color: #3db54a;
     background-color: transparent;
 }
+
+.about-us-text{
+    margin-left: 0vmin; 
+    text-align: justify;
+}
+
+.mission-goals{
+    margin-top: 1vmin; 
+    text-align: center;  
+    justify-content: center;
+    display: inline-block;
+}
+
+.mission-goals img{
+    border-radius: 100%;
+    width: 20vmin;
+}
+
 
 /*FAQ css*/
 .btn-block{
