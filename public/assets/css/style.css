@@ -671,17 +671,6 @@ can be seen into Event.html page*/
     text-align: center;
 }
 
-/* Hide the images by default */
-.carousel-itema {
-    position: relative;
-    display: none;
-    align-items: center;
-    display:block;
-    width: 94%;
-    border:none;
-    margin: 0 auto;
-}
-
 /* carousel image*/
 .carousel-item-img{
     display:block;
