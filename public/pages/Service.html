@@ -272,14 +272,11 @@
 
                 //populate image carousel
                 if(id_service_photoes.includes(`${id_service_photo}`)){
-                    var div = document.createElement('div');
-                    div.class = "carousel-item-index";
-                    document.getElementById("service-carousel").appendChild(div);
 
                     var img = document.createElement('img'); 
-                    img.class = "carousel-item-img";
+                    img.classList.add('carousel-item-img');
                     img.src = `${sp_photo}`;
-                    div.appendChild(img);
+                    document.getElementById("service-carousel").appendChild(img);
                     /*document.getElementById("service_img_" + i).src = `${sp_photo}`;
                     id_service_photoes.splice(id_service_photoes.indexOf(`${id_service_photo}`), 1);*/
                 }
