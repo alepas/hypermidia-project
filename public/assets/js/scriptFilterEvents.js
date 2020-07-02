@@ -19,6 +19,8 @@ function filterEvents(offset){
 function clearFilters(){
     var radios = document.getElementsByClassName("radio-event-filter");
 
+    topic = null;
+    period = null;
     for(var i=0; i< radios.length; i++){
         radios[i].checked = false;
     }
