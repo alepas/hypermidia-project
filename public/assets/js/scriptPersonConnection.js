@@ -33,8 +33,62 @@ return response.json();
     for (var i = 0; i < json.length; i++) {
         let {title, image, id_event,  id_service, s_title, sp_photo} = json[i];
 
-        //populate people cards
-        if(flag_s == 1 && `${id_service}` == "null"){
+        //populate event cards
+        if(id_events.includes(`${id_event}`)){
+            var div1 = document.createElement('div');
+            div1.classList.add('col-12', 'col-sm-6', 'col-md-4', 'col-lg-4');
+            div1.style.display = "block";
+           document.getElementById("event-of-person").appendChild(div1);
+
+            var a = document.createElement('a');
+            a.href = "./Event.html";
+            a.onclick = function() {localStorage["id_event"] = `${id_event}`;};
+            div1.appendChild(a);
+
+            var div2 = document.createElement('div');
+            div2.classList.add('card', 'bg-dark', 'text-white');
+            a.appendChild(div2);
+
+           var img = document.createElement('img');
+            img.classList.add('card-img');
+            img.src = `${image}`;
+            div2.appendChild(img);
+
+            var h2 = document.createElement('h2');
+            h2.classList.add('card-img-overlay', 'flex-column', 'd-flex', 'justify-content-end');
+            h2.innerHTML = `${title}`;
+            div2.appendChild(h2);
+            id_events.splice(id_events.indexOf(`${id_event}`), 1);
+        }
+
+        if(id_services.includes(`${id_service}`)){
+            var div1 = document.createElement('div');
+            div1.classList.add('col-12', 'col-sm-6', 'col-md-4', 'col-lg-4');
+            div1.style.display = "block";
+           document.getElementById("service-of-person").appendChild(div1);
+
+            var a = document.createElement('a');
+            a.href = "./Event.html";
+            a.onclick = function() {localStorage["id_event"] = `${id_service}`;};
+            div1.appendChild(a);
+
+            var div2 = document.createElement('div');
+            div2.classList.add('card', 'bg-dark', 'text-white');
+            a.appendChild(div2);
+
+           var img = document.createElement('img');
+            img.classList.add('card-img');
+            img.src = `${sp_photo}`;
+            div2.appendChild(img);
+
+            var h2 = document.createElement('h2');
+            h2.classList.add('card-img-overlay', 'flex-column', 'd-flex', 'justify-content-end');
+            h2.innerHTML = `${s_title}`;
+            div2.appendChild(h2);
+            id_services.splice(id_services.indexOf(`${id_service}`), 1);
+
+        }
+        /*if(flag_s == 1 && `${id_service}` == "null"){
             document.getElementById("service_desc_" + i).innerHTML = "Oh no! " + `${fullname}` + " is not related to any service at the moment";
             document.getElementById("service_desc_" + i).style.color = "black";
             document.getElementById("service_" + i).style.display = "block";
@@ -67,6 +121,6 @@ return response.json();
                     {localStorage["id_event"] = `${id_event}`;};
                 id_events.splice(id_events.indexOf(`${id_event}`), 1);
             }
-        }
+        }*/
     }
 });
