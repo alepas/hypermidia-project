@@ -255,23 +255,6 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 
-    <script>
-        fetch("../v1/events?limit=9&offset=0")
-        .then(function(response) {
-        if (!response.ok) 
-            throw new Error("HTTP error, status = " + response.status);
-        return response.json();
-        })
-        .then(function(json) {
-            for (var i = 0; i < json.length; i++) {
-                let {title, image, id_event} = json[i];
-
-                document.getElementById("event_" + i).style.display = "block";
-                document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
-                document.getElementById("event_img_" + i).src = `${image}`;
-                document.getElementById("event_link_" + i).onclick = function() 
-                    {localStorage["id_event"] = `${id_event}`;};
-            }
-        });
-    </script>
+    <!--Javascript for connection with backend-->
+    <script src="../assets/js/scriptAllEventsConnection.js"></script>
 </html>

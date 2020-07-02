@@ -250,25 +250,6 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 
-    <script>
-        fetch("../v1/volunteers?limit=8&offset=0")
-        .then(function(response) {
-        if (!response.ok) 
-            throw new Error("HTTP error, status = " + response.status);
-        return response.json();
-        })
-        .then(function(json) {
-            for (var i = 0; i < json.length; i++) {
-                let {fullname, photo, motto, id_person} = json[i];
-
-                document.getElementById("person_" + i).style.display = "block";
-                document.getElementById("person_name_" + i).innerHTML =  `${fullname}`;
-                document.getElementById("person_img_" + i).src = `${photo}`;
-                document.getElementById("person_motto_" + i).innerHTML =  `${motto}`;
-                document.getElementById("person_" + i).onclick = function() 
-                    {localStorage["id_person"] = `${id_person}`;};
-                savePeople(`${fullname}`);
-            }
-        });
-    </script>
+    <!--Javascript for connection with backend-->
+    <script src="../assets/js/scriptPeopleConnection.js"></script>
 </html>

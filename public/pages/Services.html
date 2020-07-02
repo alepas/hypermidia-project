@@ -223,24 +223,6 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 
-    <script>
-        fetch("../v1/services?limit=12&offset=0")
-        .then(function(response) {
-        if (!response.ok) 
-            throw new Error("HTTP error, status = " + response.status);
-        return response.json();
-        })
-
-        .then(function(json) {
-            for (var i = 0; i < json.length; i++) {
-                let {title, photo, id_service} = json[i];
-
-                document.getElementById("service_desc_" + i).innerHTML =  `${title}`;
-                document.getElementById("service_" + i).style.display = "block";
-                document.getElementById("service_img_" + i).src = `${photo}`;
-                document.getElementById("service_link_" + i).onclick = function() 
-                    {localStorage["id_service"] = `${id_service}`;};
-            }
-        });
-    </script>
+    <!--Javascript for connection with backend-->
+    <script src="../assets/js/scriptServicesConnection.js"></script>
 </html>
