@@ -236,7 +236,7 @@
             <div id="event_0" class="col-6 col-md-4 col-lg-4" style="display: none;">
                 <a id="event_link_0" href="./Event.html">
                     <div class="card bg-dark text-white">
-                        <img id="event_img_0" src="../assets//img/owl_day.jpg" class="card-img" alt="Event_1"> 
+                        <img id="event_img_0" src="../assets//img/cartoon_desert.jpg" class="card-img" alt="Event_1"> 
                         <h2 id="event_desc_0" class="card-img-overlay flex-column d-flex justify-content-end">Such a cutie</h2>
                     </div>
                 </a>
@@ -377,14 +377,20 @@
         return response.json();
         })
         .then(function(json) {
-            for (var i = 0; i < json.length; i++) {
-                let {title, image, id_event, date} = json[i];
-
-                document.getElementById("event_" + i).style.display = "block";
-                document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
-                document.getElementById("event_img_" + i).src = `${image}`;
-                document.getElementById("event_link_" + i).onclick = function() 
-                    {localStorage["id_event"] = `${id_event}`;};
+            if(json.length == 0){
+                document.getElementById("event_desc_0").innerHTML = "Oh no! Looks like there are still no events scheduled for this month";
+                document.getElementById("event_desc_0").style.color = "black";
+                document.getElementById("event_0").style.display = "block";
+                document.getElementById("event_link_0").href = "javascript:function() { return false; }"
+            }else{
+                for (var i = 0; i < json.length; i++) {
+                    let {title, image, id_event} = json[i];
+                    document.getElementById("event_" + i).style.display = "block";
+                    document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
+                    document.getElementById("event_img_" + i).src = `${image}`;
+                    document.getElementById("event_link_" + i).onclick = function() 
+                        {localStorage["id_event"] = `${id_event}`;};
+                }
             }
         });
     </script>

@@ -40,12 +40,20 @@ function changeMonth(month){
   .then(function(json) {
       for(var i=0; i<12; i++)
         document.getElementById("event_" + i).style.display = "none";
-      for (var i = 0; i < json.length; i++) {
-          let {title, image, id_event, date} = json[i];
-
-          document.getElementById("event_" + i).style.display = "block";
-          document.getElementById("event_img_" + i).src = `${image}`;
-          document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
+      if(json.length == 0){
+          document.getElementById("event_desc_0").innerHTML = "Oh no! Looks like there are still no events scheduled for this month";
+          document.getElementById("event_desc_0").style.color = "black";
+          document.getElementById("event_0").style.display = "block";
+          document.getElementById("event_link_0").href = "javascript:function() { return false; }"
+      }else{
+          for (var i = 0; i < json.length; i++) {
+              let {title, image, id_event} = json[i];
+              document.getElementById("event_" + i).style.display = "block";
+              document.getElementById("event_desc_" + i).innerHTML =  `${title}`;
+              document.getElementById("event_img_" + i).src = `${image}`;
+              document.getElementById("event_link_" + i).onclick = function() 
+                  {localStorage["id_event"] = `${id_event}`;};
+          }
       }
   });
 }
