@@ -35,7 +35,7 @@ return response.json();
         if(id_service_photoes.includes(`${id_service_photo}`)){
 
             var img = document.createElement('img'); 
-            img.classList.add('service-carousel-item-img');
+            img.classList.add('carousel-item-img');
             img.src = `${sp_photo}`;
             document.getElementById("service-carousel").appendChild(img);
             id_service_photoes.splice(id_service_photoes.indexOf(`${id_service_photo}`), 1);
