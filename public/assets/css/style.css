@@ -513,7 +513,7 @@ into the AllEvent, EventsbyMonth, Services and volunters pages*/
     margin-top: 0vmin;
     margin-bottom: 0vmin;
     width: 100%;
-    height: 40vmin;
+    height: 50vmin;
     position: relative;
 }
 
@@ -524,8 +524,8 @@ into the AllEvent, EventsbyMonth, Services and volunters pages*/
 }
 
 .person-data-img {
-    width: 25vw;
-    height: 30vmin;
+    width: 22vw;
+    height: 40vmin;
     position: relative;
     display:block;
     margin: 0 auto;
