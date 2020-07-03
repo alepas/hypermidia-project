@@ -12,10 +12,12 @@ function filterPeople(){
     .then(function(json) {
         var count=0;
         var filter = document.getElementById("filter").value.toLowerCase();
+        //count the number of people that respects the filter
         for(var i = 0; i < json.length; i++){
             let {fullname} = json[i];
             var name = `${fullname}`;
-            if(name.toLowerCase.includes(filter))
+            var l_name = name.toLowerCase();
+            if(l_name.includes(filter))
                 count++;
         }
         if(count <= 8)
@@ -25,11 +27,12 @@ function filterPeople(){
         console.log(count);
         count=0;
 
-        //populate peoples
+        //populate people
         for (var i = 0; i < json.length && count<8; i++) {
             let {fullname, photo, motto, id_person} = json[i];
             var name = `${fullname}`;
-            if(name.toLowerCase.includes(filter)){
+            var l_name = name.toLowerCase();
+            if(l_name.includes(filter)){
                 document.getElementById("person_" + count).style.display = "block";
                 document.getElementById("person_name_" + count).innerHTML =  `${fullname}`;
                 document.getElementById("person_img_" + count).src = `${photo}`;
