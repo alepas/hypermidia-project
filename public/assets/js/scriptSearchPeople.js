@@ -24,7 +24,6 @@ function filterPeople(){
             document.getElementById("person_index_1").style.display = "none";
         else
             document.getElementById("person_index_1").style.display = "inline-block";
-        console.log(count);
         count=0;
 
         //populate people
@@ -42,6 +41,5 @@ function filterPeople(){
                 count++;
             }
         }
-        console.log(count);
     });
 }
