@@ -1,0 +1,121 @@
+\documentclass[11pt, a4paperm, hidelinks]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+
+
+\usepackage[a4paper,top=3cm,bottom=3cm,left=3cm,right=3cm]{geometry}
+\usepackage{chngcntr}
+
+%package used to enumerate figures
+\usepackage[labelfont=bf]{caption}
+
+%hyperref for interactive PDF index
+\usepackage[bookmarks, colorlinks, breaklinks]{hyperref}
+\hypersetup{linkcolor=black, citecolor=black, filecolor=black, urlcolor=black}
+
+%Package required to use special symbols
+\usepackage{amsmath, amssymb}
+
+%Package required to use figures
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{placeins}
+\usepackage{wrapfig}
+
+%Include the bibliography in the table of contents
+\usepackage{tocbibind}
+
+%Package used to insert figures at the specified position
+\usepackage{float}
+\usepackage{longtable}
+
+\usepackage{times}
+
+%Our chapters must be called sections
+\addto\captionsenglish{\renewcommand{\chaptername}{Section}}
+
+%Tables
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{booktabs}
+
+%Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Stefano Bagarin - Alessandra Pasini}
+\lhead{User Testing Document}
+\rfoot{Page \thepage}
+
+\usepackage{xurl}
+\begin{document}
+
+	%Code for title page
+	\begin{titlepage}
+		\centering
+		\includegraphics[width=0.20\textwidth]{./assets/polimi-logo.png}\par
+
+		{Politecnico di Milano \\ AA 2019/2020} \par
+		\vspace{1.5cm}
+
+		{Computer Science and Engineering}\par
+		\Large{Hypermidia Applications}\par
+		\vspace{1.0cm}
+
+		{\LARGE \textbf{User Testing Document} \par}
+		\vspace{1.5cm}
+
+		{\normalsize {\textbf{Stefano Bagarin}: mrt. 945159 -  stefano.bagarin@mail.polimi.it }\par}
+		\vspace{0.2cm}
+		{\normalsize{\textbf{Alessandra Pasini}: mtr. 920051 - alessandra.pasini@mail.polimi.it}\par}
+		\vspace{1.0cm}
+		
+		{\normalsize {\textbf{Our website}: \url{https://wild-care.herokuapp.com/index.html}}\par}
+		\vspace{0.2cm}
+		{\normalsize {\textbf{Delivery final date}: July 6, 2020}\par}
+		\vfill
+
+		% Bottom of the page
+		{\large Document version: 1.0\par}
+		{\large \today \par}
+	\end{titlepage}
+
+	%Make the table of contents
+	\tableofcontents
+	\clearpage
+
+
+	%Abstract
+	\section{Abstract}
+	The aim of this document is to report the User-Testing-based Usability Evaluation of Wild Care website which can be found at 	\url{https://wild-care.herokuapp.com/}.	\\ The website that is analyzed into this document is intended to provide 				information about Wild Care association, the events that it organizes, the services provided and the volunteers that are 			involved into the association and its activities. It also gives the possibility to read faqs and to sent request via a form.\\
+ 	Tester followed a 2 steps procedure:
+	\begin{enumerate}
+		\item Execute given task following scenarios while they are evaluated with specific criteria
+		\item Surf the website freely
+		\item Fulfill a form with some questions related to landmarks, navigation and layout.
+	\end{enumerate}	
+
+	%Design
+	\section{Design of the study}
+	\input{./sections/design-study.tex}
+
+
+	%Execution
+	\subsection{Execution of the study}
+	The study has been executed in person at the end of the development of the website.
+
+
+	%Results
+	\section{Results}
+	\input{./sections/results.tex}
+	\clearpage
+
+
+	%Conclusion
+	\section{Conclusion}	
+	\clearpage
+
+\end{document}
