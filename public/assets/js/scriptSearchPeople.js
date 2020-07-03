@@ -12,10 +12,9 @@ function filterPeople(){
     .then(function(json) {
         var count=0;
         var filter = document.getElementById("filter").value.toLowerCase();
-
         for(var i = 0; i < json.length; i++){
             let {fullname} = json[i];
-            if(`${fullname}`.toLocaleUpperCase.includes(filter))
+            if(`${fullname}`.toLowerCase.includes(filter))
                 count++;
         }
         if(count <= 8)
