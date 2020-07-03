@@ -55,10 +55,9 @@ exports.getVolunteer = function(volunteerId) {
       .fullOuterJoin('Event AS e', 'e.id_person','=', 'p.id_person')
       .fullOuterJoin('Service AS s', 's.id_service','=', 'ps.id_service')
       .fullOuterJoin('Service_Photo AS sp', 's.id_service','=', 'sp.id_service')
-      .groupBy('e.id_event')
+      .distinctOn('e.id_event')
       .distinctOn('s.id_service')
       .then(data => {
-        console.log(data);
         return data
       })
 }
