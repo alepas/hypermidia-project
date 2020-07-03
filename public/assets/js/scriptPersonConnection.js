@@ -32,9 +32,6 @@ return response.json();
     var flag_s = 1;
     for (var i = 0; i < json.length; i++) {
         let {title, image, id_event,  id_service, s_title, sp_photo} = json[i];
-        console.log(json[i]);
-        console.log("events" + id_events);
-        console.log("service" + id_services);
         //populate event cards
         if(id_events.includes(`${id_event}`)){
             var div1 = document.createElement('div');
