@@ -53,12 +53,11 @@ exports.getVolunteer = function(volunteerId) {
       .where('p.id_person', volunteerId)
       .fullOuterJoin('Person_Service AS ps', 'ps.id_person', '=', 'p.id_person')
       .fullOuterJoin('Event AS e', 'e.id_person','=', 'p.id_person')
+      .distinctOn('e.id_event')
       .fullOuterJoin('Service AS s', 's.id_service','=', 'ps.id_service')
       .fullOuterJoin('Service_Photo AS sp', 's.id_service','=', 'sp.id_service')
-      .groupBy('e.id_event')
       .distinctOn('s.id_service')
       .then(data => {
-        console.log(data);
         return data
       })
 }
