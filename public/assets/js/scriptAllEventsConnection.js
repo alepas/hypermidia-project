@@ -1,3 +1,13 @@
+var figcaption = document.createElement('p');
+figcaption.innerHTML = "Loading";
+figcaption.style.marginTop = '5vh';
+document.getElementById("loading-div").appendChild(figcaption);
+
+var loading = document.createElement('img');
+loading.src = '../assets/img/loading.png';
+loading.classList.add('icn-spinner');
+document.getElementById("loading-div").appendChild(loading);
+
 fetch("../v1/events?limit=9&offset=0")
 .then(function(response) {
 if (!response.ok) 
@@ -14,4 +24,6 @@ return response.json();
         document.getElementById("event_link_" + i).onclick = function() 
             {localStorage["id_event"] = `${id_event}`;};
     }
+    document.getElementById("loading-div").removeChild(figcaption);
+    document.getElementById("loading-div").removeChild(loading);
 });
