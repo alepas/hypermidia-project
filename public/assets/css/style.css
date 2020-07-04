@@ -1117,3 +1117,28 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }
+
+/*Loading data*/
+#loading-div{
+    display: inline-block;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.icn-spinner {
+    animation: spin-animation 1s infinite;
+    width: 13vmin;
+    margin-top: 1.5vmin;
+    margin-bottom: 40vh;
+    height: auto;
+  }
+  
+  @keyframes spin-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+  }

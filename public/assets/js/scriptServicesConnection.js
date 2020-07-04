@@ -1,3 +1,14 @@
+var figcaption = document.createElement('p');
+figcaption.innerHTML = "Loading";
+document.getElementById("loading-div").appendChild(figcaption);
+
+var loading = document.createElement('img');
+loading.src = '../assets/img/loading.png';
+loading.classList.add('icn-spinner');
+document.getElementById("loading-div").appendChild(loading);
+
+
+
 fetch("../v1/services?limit=12&offset=0")
 .then(function(response) {
 if (!response.ok) 
@@ -15,4 +26,8 @@ return response.json();
         document.getElementById("service_link_" + i).onclick = function() 
             {localStorage["id_service"] = `${id_service}`;};
     }
-});
+    document.getElementById("loading-div").removeChild(figcaption);
+    document.getElementById("loading-div").removeChild(loading);
+})
+;
+
