@@ -953,6 +953,7 @@ can be seen into Event.html page*/
     width: 100%;
     position: relative;
     border-radius: 3vmin;
+    display: table;
 }
 
 .event-filters .btn{
