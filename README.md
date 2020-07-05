@@ -19,7 +19,7 @@ of the app API can be found at [this address](https://wild-care.herokuapp.com/ba
 - Deliverable D3: the SwaggerUI page of the same API is available at
 [this address](https:///wild-care.herokuapp.com/backend/swaggerui.html).
 - Deliverable D4: the source code of D0 is available as a zip file at
-[this address](https://example.com/backend/app.zip).
+[this address](https://wild-care.herokuapp.com/backend/app.zip).
 - Deliverable D5: the address of the online source control repository
 is available [this address](https://github.com/alepas/hypermidia-project). We hereby
 declare that this is a private repository and, upon request, we will
