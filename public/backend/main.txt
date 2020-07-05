@@ -1,13 +1,16 @@
 # Documentation of the Backend part
+
 > Deliverable D1
+
+
 ## General group information
+
+
 | Member n. | Role | First name | Last Name | Matricola | Email address |
-
 |-----------|---------------|------------|-----------|-----------|-----------------|
-
 | 1 | administrator | Alessandra | Pasini | 920051 | alessandra.pasini@mail.polimi.it |
-
 | 2 | member | Stefano | Bagarin | 945159 | stefano.bagarin@mail.polimi.it |
+
 
 ## Links to other deliverables
 - Deliverable D0: the web application is accessible at [this address](https://wild-care.herokuapp.com).
@@ -75,22 +78,29 @@ For the backend component we used:
 * `knex`: a "batteries included" SQL query builder for Postgres designed to be flexible and portable.
 
 ### Discussion
-Describe here:
+
 - How did you make sure your web application adheres to the provided
 OpenAPI specification? Which method did you use to test all APIs
 endpoints against the expected response?
-We made sure to adhere the openAPI specification by deploing it through swaggerEditor and simoultaneously checking the documentation. To test the APIs endpoints we used [swagger inspector] (https://swagger.io/tools/swagger-inspector).
+
+	We made sure to adhere the openAPI specification by deploing it through swaggerEditor and simoultaneously checking the documentation. To test the APIs endpoints we used [swagger inspector](https://swagger.io/tools/swagger-inspector).
+
 - Why do you think your web application adheres to common practices to
 partition a REST-based web application (static assets vs.
 application data)
-The application strictly separate the frontend from the backend components and they communicate only through the REST API. The source of backend is placed in project root, while the source of frontend is placed under /public directory.
+
+	The application strictly separate the frontend from the backend components and they communicate only through the REST API. The source of backend is placed in project root, while the source of frontend is placed under /public directory.
+
 - Describe synthetically why and how did you manage session state,
 what are the state change triggering actions (e.g., POST to login
 etc..).
-There is no login/signup functionality for the website, so there aren't state changes.
+
+	There is no login/signup functionality for the website, so there aren't state changes.
+
 - Which technology did you use (relational or a no-SQL database) for
 managing the data model?
-To manage the data model we used PostgreSQL relational database.
+
+	To manage the data model we used PostgreSQL relational database.
 
 
 ## Other information
@@ -102,7 +112,7 @@ Alessandra Pasini and Stefano Bagarin worked together at the same time on both f
 
 
 ### Analysis of existing API
-We did not take inspiration from specific APIs, but we learned a lot about them mainly through https://apihandyman.io and https://apievangelist.com/. In those blogs they talk about everyday API design problems and mistakes. In particular the first one maintains an interesting tool called API Stylebook, a website that collects API design guidelines from different companies with indexed topics.
+We did not take inspiration from specific APIs, but we learned a lot about them mainly through [apihandyman.io](https://apihandyman.io) and [apievangelist.com](https://apievangelist.com). In those blogs they talk about everyday API design problems and mistakes. In particular the first one maintains an interesting tool called API Stylebook, a website that collects API design guidelines from different companies with indexed topics.
   
 ### Learning outcome
 Because of the fact that we worked together almost for the whole project we have been able to achieve the following same goals:
