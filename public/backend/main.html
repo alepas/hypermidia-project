@@ -21,16 +21,22 @@
 <body>
 <h1 id="documentation-of-the-backend-part">Documentation of the Backend part</h1>
 <blockquote>
-<p>Deliverable D1 ## General group information | Member n. | Role | First name | Last Name | Matricola | Email address | |———–|—————|————|———–|———–|—————–| | 1 | administrator | Alessandra | Pasini | 920051 | alessandra.pasini@mail.polimi.it | | 2 | member | Stefano | Bagarin | 945159 | stefano.bagarin@mail.polimi.it |</p>
+<p>Deliverable D1 ## General group information | Member n. | Role | First name | Last Name | Matricola | Email address |</p>
 </blockquote>
+<p>|———–|—————|————|———–|———–|—————–|</p>
+<div class="line-block">1 | administrator | Alessandra | Pasini | 920051 | alessandra.pasini@mail.polimi.it |</div>
+<div class="line-block">2 | member | Stefano | Bagarin | 945159 | stefano.bagarin@mail.polimi.it |</div>
 <h2 id="links-to-other-deliverables">Links to other deliverables</h2>
 <ul>
 <li>Deliverable D0: the web application is accessible at <a href="https://wild-care.herokuapp.com">this address</a>.</li>
 <li>Deliverable D2: the YAML or JSON file containing the specification of the app API can be found at <a href="https://wild-care.herokuapp.com/backend/spec.yaml">this address</a>.</li>
 <li>Deliverable D3: the SwaggerUI page of the same API is available at <a href="https:///wild-care.herokuapp.com/backend/swaggerui.html">this address</a>.</li>
 <li>Deliverable D4: the source code of D0 is available as a zip file at <a href="https://example.com/backend/app.zip">this address</a>.</li>
-<li>Deliverable D5: the address of the online source control repository is available <a href="https://github.com/alepas/hypermidia-project">this address</a>. We hereby declare that this is a private repository and, upon request, we will give access to the instructors. ## Specification ### Web Architecture The data layer is implemented though a <code>PostgreSQL</code> database, which contains the application data. The application layer is implemented through the backend software, where the business logic inhabit. This component exposes a REST API (under the endpoint <code>/v1</code>) to enable the interaction with frontend. The presentation layer is implemented through the frontend component, which contains the logic to load data from the REST API and render the web pages on client side.</li>
+<li>Deliverable D5: the address of the online source control repository is available <a href="https://github.com/alepas/hypermidia-project">this address</a>. We hereby declare that this is a private repository and, upon request, we will give access to the instructors.</li>
 </ul>
+<h2 id="specification">Specification</h2>
+<h3 id="web-architecture">Web Architecture</h3>
+<p>The data layer is implemented though a <code>PostgreSQL</code> database, which contains the application data. The application layer is implemented through the backend software, where the business logic inhabit. This component exposes a REST API (under the endpoint <code>/v1</code>) to enable the interaction with frontend. The presentation layer is implemented through the frontend component, which contains the logic to load data from the REST API and render the web pages on client side.</p>
 <h3 id="api">API</h3>
 <h4 id="rest-compliance">REST compliance</h4>
 <p>The website follows all principles of REST except for the caching principle because the clients pool is not enough to stress the server and the database is still small enough.</p>

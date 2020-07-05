@@ -2,8 +2,11 @@
 > Deliverable D1
 ## General group information
 | Member n. | Role | First name | Last Name | Matricola | Email address |
+
 |-----------|---------------|------------|-----------|-----------|-----------------|
+
 | 1 | administrator | Alessandra | Pasini | 920051 | alessandra.pasini@mail.polimi.it |
+
 | 2 | member | Stefano | Bagarin | 945159 | stefano.bagarin@mail.polimi.it |
 
 ## Links to other deliverables
@@ -18,7 +21,9 @@ of the app API can be found at [this address](https://wild-care.herokuapp.com/ba
 is available [this address](https://github.com/alepas/hypermidia-project). We hereby
 declare that this is a private repository and, upon request, we will
 give access to the instructors.
+
 ## Specification
+
 ### Web Architecture
 The data layer is implemented though a `PostgreSQL` database, which contains the application data.
 The application layer is implemented through the backend software, where the business logic inhabit. This component exposes a REST API (under the endpoint `/v1`) to enable the interaction with frontend.
