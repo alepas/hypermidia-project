@@ -27,13 +27,13 @@
 <ul>
 <li>Deliverable D0: the web application is accessible at <a href="https://wild-care.herokuapp.com">this address</a>.</li>
 <li>Deliverable D2: the YAML or JSON file containing the specification of the app API can be found at <a href="https://wild-care.herokuapp.com/backend/spec.yaml">this address</a>.</li>
-<li>Deliverable D3: the SwaggerUI page of the same API is available at <a href="https:///wild-care.herokuapp.com/backend/swaggerui">this address</a>.</li>
-<li>Deliverable D4: the source code of D0 is available as a zip file at <a href="https://example.com/backend/app.zip">this address</a>. TODO</li>
+<li>Deliverable D3: the SwaggerUI page of the same API is available at <a href="https:///wild-care.herokuapp.com/backend/swaggerui.html">this address</a>.</li>
+<li>Deliverable D4: the source code of D0 is available as a zip file at <a href="https://example.com/backend/app.zip">this address</a>.</li>
 <li>Deliverable D5: the address of the online source control repository is available <a href="https://github.com/alepas/hypermidia-project">this address</a>. We hereby declare that this is a private repository and, upon request, we will give access to the instructors. ## Specification ### Web Architecture The data layer is implemented though a <code>PostgreSQL</code> database, which contains the application data. The application layer is implemented through the backend software, where the business logic inhabit. This component exposes a REST API (under the endpoint <code>/v1</code>) to enable the interaction with frontend. The presentation layer is implemented through the frontend component, which contains the logic to load data from the REST API and render the web pages on client side.</li>
 </ul>
 <h3 id="api">API</h3>
 <h4 id="rest-compliance">REST compliance</h4>
-<p>Describe here to what extent did you follow REST principles and what are the reasons for which you might have decided to diverge. Note, you must not describe the whole API here, just the design decisions. TODO?</p>
+<p>The website follows all principles of REST except for the caching principle because the clients pool is not enough to stress the server and the database is still small enough.</p>
 <h4 id="openapi-resource-models">OpenAPI Resource models</h4>
 <p>We have used the $ref mechanism to define some general models:</p>
 <ul>
@@ -71,15 +71,14 @@
 <ul>
 <li><code>knex</code>: a “batteries included” SQL query builder for Postgres designed to be flexible and portable.</li>
 </ul>
-<h3 id="discussion-todo">Discussion //TODO</h3>
-<p>Describe here: - How did you make sure your web application adheres to the provided OpenAPI specification? Which method did you use to test all APIs endpoints against the expected response? - Why do you think your web application adheres to common practices to partition a REST-based web application (static assets vs. application data) - Describe synthetically why and how did you manage session state, what are the state change triggering actions (e.g., POST to login etc..). - Which technology did you use (relational or a no-SQL database) for managing the data model? To manage the data model we used PostgreSQL: a relational database.</p>
+<h3 id="discussion">Discussion</h3>
+<p>Describe here: - How did you make sure your web application adheres to the provided OpenAPI specification? Which method did you use to test all APIs endpoints against the expected response? We made sure to adhere the openAPI specification by deploing it through swaggerEditor and simoultaneously checking the documentation. To test the APIs endpoints we used [swagger inspector] (https://swagger.io/tools/swagger-inspector). - Why do you think your web application adheres to common practices to partition a REST-based web application (static assets vs. application data) The application strictly separate the frontend from the backend components and they communicate only through the REST API. The source of backend is placed in project root, while the source of frontend is placed under /public directory. - Describe synthetically why and how did you manage session state, what are the state change triggering actions (e.g., POST to login etc..). There is no login/signup functionality for the website, so there aren’t state changes. - Which technology did you use (relational or a no-SQL database) for managing the data model? To manage the data model we used PostgreSQL relational database.</p>
 <h2 id="other-information">Other information</h2>
 <h3 id="task-assignment">Task assignment</h3>
-<p>Alessandra Pasini and Stefano Bagarin worked together at the same time on both front-end and back-end (we live together): &gt; - Alessandraworked on front end (50%) and OpenAPI Spec (50% of the time) &gt; - Stefano worked on front end (50%) and OpenAPI Spec (50% of the time)</p>
-<h3 id="analysis-of-existing-api-todo">Analysis of existing API //TODO</h3>
-<p>Describe here the research of (full or part of) existing APIs that are similar in objectives and scope to the one implemented, that have possibly guided implementation choices (these should not be necessarily OpenAPI implementations). Toy APIs (such as the Swagger’s Pet Store) or the example shown during lectures are not a valid response. Use TWO or more items of the form: &gt; We took (full/partial) inspiration from API <XYZ>(link) for the part of the &gt; API that manages <ABC> because of <REASON>. Or &gt; For the part of the API that manages <ABC> we considered/studied <XYZ>(link) &gt; because of <REASON> but wasn’t completely fitting to our purpose because of &gt; <REASON>.</p>
+<p>Alessandra Pasini and Stefano Bagarin worked together at the same time on both front-end and back-end for the majority of the project: &gt; - Alessandra worked on front end (50%) and OpenAPI Spec (50% of the time) &gt; - Stefano worked on front end (50%) and OpenAPI Spec (50% of the time)</p>
+<h3 id="analysis-of-existing-api">Analysis of existing API</h3>
+<p>We did not take inspiration from specific APIs, but we learned a lot about them mainly through https://apihandyman.io and https://apievangelist.com/. In those blogs they talk about everyday API design problems and mistakes. In particular the first one maintains an interesting tool called API Stylebook, a website that collects API design guidelines from different companies with indexed topics.</p>
 <h3 id="learning-outcome">Learning outcome</h3>
 <p>Because of the fact that we worked together almost for the whole project we have been able to achieve the following same goals: * design end implement a usable and meaningful REST API * use Swagger * learn to deploy on a cloud platform * design a web page using Web techniques and popular libraries * implement a complete web application</p>
-<p>pandoc -s -o main.html main.txt</p>
 </body>
 </html>

@@ -106,7 +106,5 @@ Because of the fact that we worked together almost for the whole project we have
 * learn to deploy on a cloud platform
 * design a web page using Web techniques and popular libraries
 * implement a complete web application
- 
 
-pandoc -s -o main.html main.txt
 
